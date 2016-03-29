@@ -1,5 +1,8 @@
 import cv2
 
+cv2.setUseOptimized(True)
+
+e1 = cv2.getTickCount()
 img1 = cv2.imread('capture 0.png')
 img2 = cv2.imread('images.png')
 
@@ -19,6 +22,11 @@ dst = cv2.add(img1_bg, img2_fg)
 img1[0:rows, 0:cols] = dst
 
 cv2.imshow('image',img1)
+e2 = cv2.getTickCount()
+
+t = (e2 - e1)/ cv2.getTickFrequency()
+
+print t
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

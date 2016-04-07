@@ -17,10 +17,10 @@ from matplotlib import pyplot as plt
         . index : contours의 index(-1이면 외곽선을 그림)
 """
 
-img = cv2.imread('bad_rect.tiff')
+img = cv2.imread('imageHierarchy.png')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret, thresh = cv2.threshold(gray,127,255,0) #binary Image
-image,contours,hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+image,contours,hierarchy = cv2.findContours(thresh,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
 print len(contours)
 cnt = contours[1]
 

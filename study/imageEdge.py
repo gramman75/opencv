@@ -35,7 +35,7 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt 
 
-img = cv2.imread('me.jpg')
+img = cv2.imread('lena.jpg')
 canny = cv2.Canny(img,30,70)
 gaussian = cv2.GaussianBlur(img,(5,5),0)
 gray = cv2.cvtColor(gaussian,cv2.COLOR_BGR2GRAY)

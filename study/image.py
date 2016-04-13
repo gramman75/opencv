@@ -11,3 +11,6 @@ img2 = cv2.merge([r,g,b])
 plt.imshow(img2)
 # plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
 plt.show()
+
+
+

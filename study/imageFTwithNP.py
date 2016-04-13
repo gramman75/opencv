@@ -17,11 +17,11 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt 
 
+
 img = cv2.imread('lena.jpg')
 b,g,r = cv2.split(img)
 img = cv2.merge([r,g,b])
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
 """
 # Fourier Transform을 적용.
  적용을 하면 0,0, 즉 화면 좌측상단점이 중심이고, 거기에 저자파가 모여 있음.

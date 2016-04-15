@@ -22,7 +22,7 @@ ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 kernel = np.ones((3,3),np.uint8)
 opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel,iterations=2)
 
-#dilate를 통해서 확실한 Backgroud
+# dilate를 통해서 확실한 Backgroud
 sure_bg = cv2.dilate(opening,kernel,iterations=3)
 
 #distance transform을 적용하면 중심으로 부터 Skeleton Image를 얻을 수 있음.

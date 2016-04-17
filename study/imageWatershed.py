@@ -13,7 +13,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
-img = cv2.imread('watershed.jpg')
+img = cv2.imread('images/watershed.jpg')
 # binaray image로 변환
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)

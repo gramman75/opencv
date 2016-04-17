@@ -15,7 +15,7 @@ import numpy as np
 img = cv2.imread('chessboard.jpg')
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-sift =cv2.xfea
+sift =cv2.FastFeatureDetector_create()
 
 kp = sift.detect(gray,None)
 

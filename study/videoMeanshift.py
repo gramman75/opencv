@@ -5,20 +5,24 @@
     . 대상이 되는 이미지(set of point)가 있고, 그것을 포함하는 window가 주어지면
       window는 주변에서 가장 point 밀도가 높은쪽으로 window를 이동
     . 추적하는 대상과 배경이 유사하면 실패할 확률이 높아 고정된 환경(공장 자동화)에서 활용
-    .
+    . Histogram분석시 빛의 영향을 덜 받는 Hue값을 사용함.
     . cv2.meanShif
 """
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('images/vtest.avi')
 
 # video로 부터 첫번째 frame 얻기
 ret, frame = cap.read()
 
 # 임의의 window 생성
-r,h,c,w = 250,90,400,125
+# r,h,c,w =342,103,698,70
+r,h,c,w =150,103,500,70
 track_window = (c,r,w,h)
+
+# img3 = cv2.rectangle(frame, (c, r), (c + w, r + h), 255, 2)
+# cv2.imwrite('temp.jpg',img3)
 
 # Tracking을 위한 Region of Image(ROI)생성
 roi = frame[r:r+h, c:c+w]

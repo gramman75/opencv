@@ -13,14 +13,14 @@ import numpy as np
 # 1. roi를 선택하여 hsv로 변환. 찿고자하는 대상이 됨. 
 """
 
-roi = cv2.imread('rose_red.png')
+roi = cv2.imread('images/rose_red.png')
 hsv = cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
 
 """
 # 2. 전체 이미지를 HSV로 변환. 
 """
 
-target = cv2.imread('rose_cat.jpg')
+target = cv2.imread('images/rose_cat.jpg')
 hsvt = cv2.cvtColor(target,cv2.COLOR_BGR2HSV)
 
 """

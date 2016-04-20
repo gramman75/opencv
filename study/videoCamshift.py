@@ -35,7 +35,9 @@ while(1):
         pts = cv2.boxPoints(ret)
         pts = np.int0(pts)
         img2 = cv2.polylines(frame,[pts],True, 255, 2)
-        cv2.imshow('img2', img2)
+        # 이미지 반전,  0:상하, 1 : 좌우
+        dst = cv2.flip(img2, 1)
+        cv2.imshow('img2', dstq)
 
         k = cv2.waitKey(60) & 0xFF
 

@@ -52,7 +52,7 @@ for fname in images:
  - tvecs : translation vector
 """
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
-
+np.savez('calibration.npz', ret=ret, mtx=mtx, dist=dist, rvecs=rvecs, tvecs=tvecs)
 img = cv2.imread('images/chessboard02.png')
 h, w = img.shape[:2]
 """

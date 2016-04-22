@@ -21,14 +21,14 @@ import glob
 # termination criteria
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
-c = 10 # column
+c = 9 # column
 r = 6 # row
 objp = np.zeros((c*r,3), np.float32)
 objp[:,:2] = np.mgrid[0:r,0:c].T.reshape(-1,2)
 # Arrays to store object points and image points from all the images.
 objpoints = [] # 3d point in real world space
 imgpoints = [] # 2d points in image plane.
-images = glob.glob('images/chessboard02.png') # 여러장의 이미지로 테스트
+images = glob.glob('images/chessboard/frame*.jpg') # 여러장의 이미지로 테스트
 for fname in images:
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -53,7 +53,7 @@ for fname in images:
 """
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 np.savez('calibration.npz', ret=ret, mtx=mtx, dist=dist, rvecs=rvecs, tvecs=tvecs)
-img = cv2.imread('images/chessboard02.png')
+img = cv2.imread('images/chessboard/frame01.jpg')
 h, w = img.shape[:2]
 """
  - newcameramtx : free sacale 기반의 camera matrix return

@@ -33,7 +33,7 @@ def draw(img, corners, imgpts):
     return img
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
-c, r = 10, 6
+c, r = 9, 6
 
 objp = np.zeros((c*r,3), np.float32)
 objp[:,:2] = np.mgrid[0:r,0:c].T.reshape(-1,2)
@@ -41,7 +41,7 @@ objp[:,:2] = np.mgrid[0:r,0:c].T.reshape(-1,2)
 # axis = np.float32([[2,0,0], [0,2,0], [0,0,-2]]).reshape(-1,3)
 axis = np.float32([[0,0,0], [0,3,0], [3,3,0], [3,0,0],[0,0,-3],[0,3,-3],[3,3,-3],[3,0,-3] ])
 
-for fname in glob.glob('images/chessboard02.png'):
+for fname in glob.glob('images/chessboard/frame*.jpg'):
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

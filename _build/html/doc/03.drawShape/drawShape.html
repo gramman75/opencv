@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>도형 그리기 &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="영상 다루기" href="../02.videoStart/videoStart.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">도형 그리기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line">Line 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">사각형 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">원 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polygon">Polygon 그리기</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>도형 그리기</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/03.drawShape/drawShape.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>도형 그리기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>다양한 모양의 도형을 그릴 수 있다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.line()</span></code> , <code class="docutils literal"><span class="pre">cv2.circle()</span></code> , <code class="docutils literal"><span class="pre">cv2.rectangle()</span></code> , <code class="docutils literal"><span class="pre">cv2.putText()</span></code> 사용법을 알 수 있다.</li>
+</ul>
+</div></blockquote>
+<p>도형그리기는 동영상이나 이미지에서 Match가 되는 영역을 찾은 후에 사용자가 인식하기 쉽게 표시하는 목적으로
+사용됩니다.</p>
+</div>
+<div class="section" id="line">
+<h2>Line 그리기<a class="headerlink" href="#line" title="Permalink to this headline">¶</a></h2>
+<p>Start와 End 점을 연결하여 직선을 그립니다.</p>
+<dl class="function">
+<dt id="cv2.line">
+<code class="descclassname">cv2.</code><code class="descname">line</code><span class="sig-paren">(</span><em>img</em>, <em>start</em>, <em>end</em>, <em>color</em>, <em>thickness</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.line" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; 그림을 그릴 이미지 파일</li>
+<li><strong>start</strong> &#8211; 시작 좌표(ex; (0,0))</li>
+<li><strong>end</strong> &#8211; 종료 좌표(ex; (500. 500))</li>
+<li><strong>color</strong> &#8211; BGR형태의 Color(ex; (255, 0, 0) -&gt; Blue)</li>
+<li><strong>thickness</strong> (<em>int</em>) &#8211; 선의 두께. pixel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="c1">#모두 0으로 되어 있는 빈 Canvas(검정색)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">511</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id2">
+<h2>사각형 그리기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>top-left corner와 bottom-right corner점을 연결하는 사각형을 그립니다.</p>
+<dl class="function">
+<dt id="cv2.rectangle">
+<code class="descclassname">cv2.</code><code class="descname">rectangle</code><span class="sig-paren">(</span><em>img</em>, <em>start</em>, <em>end</em>, <em>color</em>, <em>thickness</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; 그림을 그릴 이미지</li>
+<li><strong>start</strong> &#8211; 시작 좌표(ex; (0,0))</li>
+<li><strong>end</strong> &#8211; 종료 좌표(ex; (500. 500))</li>
+<li><strong>color</strong> &#8211; BGR형태의 Color(ex; (255, 0, 0) -&gt; Blue)</li>
+<li><strong>thickness</strong> (<em>int</em>) &#8211; 선의 두께. pixel</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">510</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>원 그리기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cv2.circle">
+<code class="descclassname">cv2.</code><code class="descname">circle</code><span class="sig-paren">(</span><em>img</em>, <em>center</em>, <em>radian</em>, <em>color</em>, <em>thickness</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.circle" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; 그림을 그릴 이미지</li>
+<li><strong>center</strong> &#8211; 원의 중심 좌표(x, y)</li>
+<li><strong>radian</strong> &#8211; 반지름</li>
+<li><strong>color</strong> &#8211; BGR형태의 Color</li>
+<li><strong>thickness</strong> &#8211; 선의 두께, -1 이면 원 안쪽을 채움</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">447</span><span class="p">,</span><span class="mi">63</span><span class="p">),</span> <span class="mi">63</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="polygon">
+<h2>Polygon 그리기<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../02.videoStart/videoStart.html" class="btn btn-neutral" title="영상 다루기" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

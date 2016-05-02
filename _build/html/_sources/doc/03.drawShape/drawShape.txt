@@ -81,27 +81,8 @@ top-left corner와 bottom-right corner점을 연결하는 사각형을 그립니
 
     img = cv2.circle(img, (447,63), 63, (0,0,255), -1)
 
-타원 그리기
-========
-
-.. py:function:: cv2.ellipse(img, center, axes, angle, startAngle, endAngle, color[, thickness[, lineType[, shift]]]) → img
-
-    :param img: image
-    :param center: 타원의 중심
-    :param axes: 중심에서 가장 큰 거리와 작은 거리
-    :param angle: 타원의 기울기 각
-    :param startAngle: 타원의 시작 각도
-    :param endAngle: 타원이 끝나는 각도
-    :param color: 타원의 색
-    :param thickness: 선 두께 -1이면 안쪽을 채움
-
-.. code-block:: python
-
-    img = cvw.ellipse(img, (256,256), (100,50), 0, 0, 180, 255, -1)
 
 Polygon 그리기
-============
-
-
+==============
 
 

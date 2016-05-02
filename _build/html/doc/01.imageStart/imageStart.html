@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>이미지 다루기 &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="영상 다루기" href="../02.videoStart/videoStart.html"/>
+        <link rel="prev" title="Welcome to gramman’s documentation!" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">이미지 다루기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">이미지 읽기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">이미지 보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">이미지 저장하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matplotlib">Matplotlib 사용하기</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>이미지 다루기</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/01.imageStart/imageStart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>이미지 다루기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>이미지 파일을 읽고, 보고, 저장하는 방법에 대해서 알아봅니다.</li>
+<li>관련 함수인 <code class="docutils literal"><span class="pre">cv2.imread()</span></code>, <code class="docutils literal"><span class="pre">cv2.imshow()</span></code>, <code class="docutils literal"><span class="pre">cv2.imwrite()</span></code> 에 대해서 알아 봅니다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>이미지 읽기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>우선 openCV모듈을 import합니다.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">cv2.imread()</span></code> 함수를 이용하여 이미지 파일을 읽습니다. 이미지 파일의 경로는 절대/상대경로가 가능합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="cv2.imread">
+<code class="descclassname">cv2.</code><code class="descname">imread</code><span class="sig-paren">(</span><em>fileName</em>, <em>flag</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.imread" title="Permalink to this definition">¶</a></dt>
+<dd><p>이미지 파일을 flag값에 따라서 읽어들입니다.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileName</strong> (<em>str</em>) &#8211; 이미지파일의 경로</li>
+<li><strong>flag</strong> (<em>int</em>) &#8211; 이미지 파일을 읽을 때의 Option.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">image객체 행렬</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numpy.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>이미지 읽기의 flag는 3가지가 있습니다.</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">cv2.IMREAD_COLOR</span></code> : 이미지 파일을 Color로 읽어들입니다. 투명한 부분은 무시되며, Default값입니다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.IMREAD_GRAYSCALE</span></code> : 이미지를 Grayscale로 읽어 들입니다. 실제 이미지 처리시 중간단계로 많이 사용합니다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.IMREAD_UNCHANGED</span></code> : 이미지파일을 alpha channel까지 포함하여 읽어 들입니다.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">3개의 flag대신에 1, 0, -1을 사용해도 됩니다.</p>
+</div>
+<p>img값은 numpy의 ndarray type입니다. numpy는 python에서 수학적 처리를 위한 모듈로 openCV에서도 많이 사용됩니다.
+img가 어떤 형태의 행렬인지 확인을 해보려면 아래와 같이 입력합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(206, 207, 3)</span>
+</pre></div>
+</div>
+<p>이미지는 3차원 행렬로 return이 됩니다. 206은 행(Y축), 207은 열(X축), 3은 행과 열이 만나는 지점의 값이 몇개의
+원소로 이루어져 있는지를 나타납니다. 위 값의 의미는 이미지의 사이즈는 207 X 206이라는 의미입니다.</p>
+<p>그렇다면 3은 어떤 의미일까요. 바로 색을 표현하는 BGR값입니다. 일반적으로 RGB로 많이 나타내는데, openCV는
+B(lue), G(reen), R(ed)로 표현을 합니다.</p>
+<p>다음은 읽은 이미지를 보는 방법에 대해서 알아보겠습니다.</p>
+</div>
+<div class="section" id="id3">
+<h2>이미지 보기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">cv2.imshow()</span></code> 함수는 이미지를 사이즈에 맞게 보여줍니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c22</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="cv2.imshow">
+<code class="descclassname">cv2.</code><code class="descname">imshow</code><span class="sig-paren">(</span><em>title</em>, <em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.imshow" title="Permalink to this definition">¶</a></dt>
+<dd><p>읽어들인 이미지 파일을 윈도우창에 보여줍니다.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>title</strong> (<em>str</em>) &#8211; 윈도우 창의 Title</li>
+<li><strong>image</strong> (<em>numpy.ndarray</em>) &#8211; <code class="docutils literal"><span class="pre">cv2.imread()</span></code> 의 return값</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><code class="docutils literal"><span class="pre">cv2.waitKey()</span></code> 는 keyboard입력을 대기하는 함수로 0이면 key입력까지 무한대기이며 특정 시간동안 대기하려면 milisecond값을 넣어주면 됩니다.</p>
+<p><code class="docutils literal"><span class="pre">cv2.destroyAllWindows()</span></code> 는 화면에 나타난 윈도우를 종료합니다. 일반적으로 위 3개는 같이 사용됩니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default" id="imageshow"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;lena.jpg&#39;</span>
+
+<span class="n">original</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+<span class="n">unchange</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span> <span class="n">original</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Gray&#39;</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Unchange&#39;</span><span class="p">,</span> <span class="n">unchange</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-center" id="id5">
+<img alt="../../_images/lena.jpg" src="../../_images/lena.jpg" />
+<p class="caption"><span class="caption-text">Sample Image</span></p>
+</div>
+<p>아래는 각 flag에 따른 이미지 결과입니다.</p>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/1.jpg" src="../../_images/1.jpg" />
+<p class="caption"><span class="caption-text">Original</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/2.jpg" src="../../_images/2.jpg" />
+<p class="caption"><span class="caption-text">Grayscale</span></p>
+</div>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/3.jpg" src="../../_images/3.jpg" />
+<p class="caption"><span class="caption-text">Unchange</span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>이미지 저장하기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">cv2.imwrite()</span></code> 함수를 이용하여 변환된 이미지나 동영상의 특정 프레임을 저장합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;lenagray.png&#39;</span><span class="p">,</span> <span class="n">gray</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="cv2.imwrite">
+<code class="descclassname">cv2.</code><code class="descname">imwrite</code><span class="sig-paren">(</span><em>fileName</em>, <em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.imwrite" title="Permalink to this definition">¶</a></dt>
+<dd><p>image파일을 저장합니다.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fileName</strong> (<em>str</em>) &#8211; 저장될 파일명</li>
+<li><strong>image</strong> &#8211; 저장할 이미지</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<p>이미지를 읽어서 esc키를 누르면 종료, &#8216;s&#8217; key를 누르면 grayscale이미지가 저장이 되는 Sample입니다.
+<code class="docutils literal"><span class="pre">cv2.waitKey()</span></code> 사용을 잘 보시기 바랍니다.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span> <span class="c1"># esc key</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindow</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">):</span> <span class="c1"># &#39;s&#39; key</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;lenagray.png&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindow</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">64bit OS의 경우 k = cv2.waitKey(0) &amp; 0xFF로 bit연산을 수행해야 합니다.</p>
+</div>
+</div>
+<div class="section" id="matplotlib">
+<h2>Matplotlib 사용하기<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib는 다양한 plot기능을 가진 Python Plot Library입니다. 이미지를 zoom하거나 하나의 화면에 여러개의 이미지를
+보고자 할 때 유용합니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> <span class="c1"># as는 alias 적용시 사용</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span> <span class="c1"># x축 눈금</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span> <span class="c1"># y축 눈금</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/4.jpg" src="../../_images/4.jpg" />
+<p class="caption"><span class="caption-text">Matplotlib Result</span></p>
+</div>
+<p>그런데 결과가 좀 이상합니다. 원본은 붉은색 계열인데, 결과는 파란색 계열로 나타납니다.</p>
+<p>이유는 openCV는 BGR로 사용하지만, Matplotlib는 RGB로 이미지를 보여주기 때문입니다.</p>
+<p>즉 결과 값은 3차원 배열의 값중 첫번째와 세번째 배열값을 서로 바꿔 주여야 합니다.</p>
+<p>그럼 변경된 Sample을 보시기 바랍니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> <span class="c1"># as는 alias 적용시 사용</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_COLOR</span><span class="p">)</span>
+
+<span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>   <span class="c1"># img파일을 b,g,r로 분리</span>
+<span class="n">img2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">])</span> <span class="c1"># b, r을 바꿔서 Merge</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span> <span class="c1"># x축 눈금</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span> <span class="c1"># y축 눈금</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id10">
+<img alt="../../_images/5.jpg" src="../../_images/5.jpg" />
+<p class="caption"><span class="caption-text">RGB값은 변경한 결과</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../02.videoStart/videoStart.html" class="btn btn-neutral float-right" title="영상 다루기" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../index.html" class="btn btn-neutral" title="Welcome to gramman’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

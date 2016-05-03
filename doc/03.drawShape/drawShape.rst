@@ -36,8 +36,8 @@ Start와 End 점을 연결하여 직선을 그립니다.
     import cv2
 
     #모두 0으로 되어 있는 빈 Canvas(검정색)
-    img = np.zeros((512, 512), np.uint8)
-    img = cv2.line(img, (200, 0), (100, 511), (255, 0, 0), 5)
+    img = np.zeros((512, 512, 3), np.uint8)
+    img = cv2.line(img, (0, 0), (511, 511), (255, 0, 0), 5)
 
     cv2.imshow('image',img)
     cv2.waitKey(0)
@@ -95,13 +95,54 @@ top-left corner와 bottom-right corner점을 연결하는 사각형을 그립니
     :param color: 타원의 색
     :param thickness: 선 두께 -1이면 안쪽을 채움
 
+**Sample Code**
+
 .. code-block:: python
 
-    img = cvw.ellipse(img, (256,256), (100,50), 0, 0, 180, 255, -1)
+    img = cv2.ellipse(img, (256,256), (100,50), 0, 0, 180, 255, -1)
 
 Polygon 그리기
-============
+==============
+
+.. py:function:: cv2.polylines(img, pts, isClosed, color, thickness)
+
+    :param img: image
+    :param pts: 연결할 꼭지점 좌표
+    :type pts: array
+    :param isClosed: 닫흰 도형 여부
+    :param color: Color
+    :param thickness: 선 두께
+
+**Sample Code**
+
+.. code-block:: python
+
+    pts = np.array([[10,5], [20,30], [70,20], [50,10]], np.int32) # 각 꼭지점은 2차원 행렬로 선언
+    # 이미지에 표현하기 위해 3차원 행렬로 변환. 변환이전과 이후의 행렬 갯수는 동일해야함.
+    # -1은 원본에 해당하는 값을 그대로 유지.
+    pts = pts.reshape((-1, 1, 2))
+    img = cv2.polylines(img, [pts], True, (0,255,255))
+
+이미지에 Text 추가
+==================
+
+.. py:function:: cv2.putText(img, text, org, font, fontSacle, color)
+
+    :param img: image
+    :param text: 표시할 문자열
+    :param org: 문자열이 표시될 위치. 문자열의 bottom-left corner점
+    :param font: font type. CV2.FONT_XXX
+    :param fontSacle: Font Size
+    :param color: fond color
 
 
+**Sample Code**
 
+.. code-block:: python
 
+    cv2.putText(img, 'OpenCV', (10,500), cv2.FONT_HERSHEY_SIMPLEX, 4, (255,255,255), 2)
+
+지금까지 예제로 보여 주웠던 Sample Code를 실행시키면 아래와 같은 결과가 나옵니다.
+
+.. figure:: ../../_static/03.drawShape/1.png
+    :align: center

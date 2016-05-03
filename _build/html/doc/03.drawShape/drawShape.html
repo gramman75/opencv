@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="Mouse로 그리기" href="../04.drawWithMouse/drawWithMouse.html"/>
         <link rel="prev" title="영상 다루기" href="../02.videoStart/videoStart.html"/> 
 
   
@@ -88,9 +89,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#line">Line 그리기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">사각형 그리기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">원 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">타원 그리기</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#polygon">Polygon 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text">이미지에 Text 추가</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
 </ul>
 
             
@@ -185,8 +189,8 @@
 <span class="kn">import</span> <span class="nn">cv2</span>
 
 <span class="c1">#모두 0으로 되어 있는 빈 Canvas(검정색)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">511</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">511</span><span class="p">,</span> <span class="mi">511</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
 
 <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -249,8 +253,98 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="id4">
+<h2>타원 그리기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt>
+<code class="descname">cv2.ellipse(img, center, axes, angle, startAngle, endAngle, color[, thickness[, lineType[, shift]]]) → img</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; image</li>
+<li><strong>center</strong> &#8211; 타원의 중심</li>
+<li><strong>axes</strong> &#8211; 중심에서 가장 큰 거리와 작은 거리</li>
+<li><strong>angle</strong> &#8211; 타원의 기울기 각</li>
+<li><strong>startAngle</strong> &#8211; 타원의 시작 각도</li>
+<li><strong>endAngle</strong> &#8211; 타원이 끝나는 각도</li>
+<li><strong>color</strong> &#8211; 타원의 색</li>
+<li><strong>thickness</strong> &#8211; 선 두께 -1이면 안쪽을 채움</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">256</span><span class="p">,</span><span class="mi">256</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="polygon">
 <h2>Polygon 그리기<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cv2.polylines">
+<code class="descclassname">cv2.</code><code class="descname">polylines</code><span class="sig-paren">(</span><em>img</em>, <em>pts</em>, <em>isClosed</em>, <em>color</em>, <em>thickness</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.polylines" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; image</li>
+<li><strong>pts</strong> (<em>array</em>) &#8211; 연결할 꼭지점 좌표</li>
+<li><strong>isClosed</strong> &#8211; 닫흰 도형 여부</li>
+<li><strong>color</strong> &#8211; Color</li>
+<li><strong>thickness</strong> &#8211; 선 두께</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">],</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span> <span class="c1"># 각 꼭지점은 2차원 행렬로 선언</span>
+<span class="c1"># 이미지에 표현하기 위해 3차원 행렬로 변환. 변환이전과 이후의 행렬 갯수는 동일해야함.</span>
+<span class="c1"># -1은 원본에 해당하는 값을 그대로 유지.</span>
+<span class="n">pts</span> <span class="o">=</span> <span class="n">pts</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">polylines</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">[</span><span class="n">pts</span><span class="p">],</span> <span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text">
+<h2>이미지에 Text 추가<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cv2.putText">
+<code class="descclassname">cv2.</code><code class="descname">putText</code><span class="sig-paren">(</span><em>img</em>, <em>text</em>, <em>org</em>, <em>font</em>, <em>fontSacle</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.putText" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; image</li>
+<li><strong>text</strong> &#8211; 표시할 문자열</li>
+<li><strong>org</strong> &#8211; 문자열이 표시될 위치. 문자열의 bottom-left corner점</li>
+<li><strong>font</strong> &#8211; font type. CV2.FONT_XXX</li>
+<li><strong>fontSacle</strong> &#8211; Font Size</li>
+<li><strong>color</strong> &#8211; fond color</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s1">&#39;OpenCV&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>지금까지 예제로 보여 주웠던 Sample Code를 실행시키면 아래와 같은 결과가 나옵니다.</p>
+<div class="figure align-center">
+<img alt="../../_images/1.png" src="../../_images/1.png" />
+</div>
 </div>
 </div>
 
@@ -260,6 +354,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../04.drawWithMouse/drawWithMouse.html" class="btn btn-neutral float-right" title="Mouse로 그리기" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../02.videoStart/videoStart.html" class="btn btn-neutral" title="영상 다루기" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -89,13 +89,16 @@ ROI 설정은 Numpy의 indexing방법을 사용합니다. 만일 아래와 같�
 
 .. figure:: ../../_static/06.basicOperation/1.jpg
     :align: center
-
+    
     Original
 
 .. figure:: ../../_static/06.basicOperation/2.jpg
     :align: center
 
     Result
+
+
+
 
 이미지 Channels
 =============

@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>이미지 임계처리 &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="이미지 Processing" href="../08.imageProcessing/imageProcessing.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">이미지 임계처리</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">기본 임계처리</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">적응 임계처리</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#otsu">Otsu의 이진화</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>이미지 임계처리</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/09.imageThresholding/imageThresholding.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>이미지 임계처리<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>이미지 이진화의 방법인 Simple thresholding, Adaptive thresholding, Otsu’s thresholding에 대해서 알 수 있다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.thresh()</span></code> , <code class="docutils literal"><span class="pre">cv2.adaptiveThreshold()</span></code> 함수에 대해서 알 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>기본 임계처리<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>이진화 처리는 간단하지만, 쉽지 않은 문제를 가지고 있다. 이진화란 영상을 흑/백으로 분류하여 처리하는 것을 말합니다.
+이때 기준이 되는 임계값을 어떻게 결정할 것인지가 중요한 문제가 됩니다.
+기본 임계처리는 사용자가 고정된 임계값을 결정하고 그 결과를 보여주는 단순한 형태입니다.</p>
+<p>이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.thresh()</span></code> 입니다.</p>
+<dl class="function">
+<dt id="cv2.thresh">
+<code class="descclassname">cv2.</code><code class="descname">thresh</code><span class="sig-paren">(</span><em>src</em>, <em>thresh</em>, <em>maxval</em>, <em>type</em><span class="sig-paren">)</span> &rarr; retval, dst<a class="headerlink" href="#cv2.thresh" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; input image로 single-channel 이미지.(grayscale 이미지)</li>
+<li><strong>thresh</strong> &#8211; 임계값</li>
+<li><strong>maxval</strong> &#8211; 임계값을 넘었을 때 적용할 value</li>
+<li><strong>type</strong> &#8211; thresholding type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>thresholding type은 아래와 같습니다.</dt>
+<dd><ul class="first last simple">
+<li>cv2.THRESH_BINARY</li>
+<li>cv2.THRESH_BINARY_INV</li>
+<li>cv2.THRESH_TRUNC</li>
+<li>cv2.THRESH_TOZERO</li>
+<li>cv2.THRESH_TOZERO_INV</li>
+</ul>
+</dd>
+</dl>
+<p>아래 예제는 각 type별 thresholding 결과입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;gradient.jpg&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_TRUNC</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh4</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_TOZERO</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh5</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_TOZERO_INV</span><span class="p">)</span>
+
+<span class="n">titles</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span><span class="s1">&#39;BINARY&#39;</span><span class="p">,</span><span class="s1">&#39;BINARY_INV&#39;</span><span class="p">,</span><span class="s1">&#39;TRUNC&#39;</span><span class="p">,</span><span class="s1">&#39;TOZERO&#39;</span><span class="p">,</span><span class="s1">&#39;TOZERO_INV&#39;</span><span class="p">]</span>
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="p">,</span><span class="n">thresh1</span><span class="p">,</span><span class="n">thresh2</span><span class="p">,</span><span class="n">thresh3</span><span class="p">,</span><span class="n">thresh4</span><span class="p">,</span><span class="n">thresh5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">여러 이미지를 하나의 화면에 보여줄때 <code class="docutils literal"><span class="pre">plt.subplot()</span></code> 함수를 사용합니다. 사용법은 위 소스나 Matplotlib Document를 참고하시기 바랍니다.</p>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result011.jpg" src="../../_images/result011.jpg" />
+</div>
+</div>
+<div class="section" id="id3">
+<h2>적응 임계처리<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>이전 Section에서의 결과를 보면 한가지 문제점이 있습니다. 임계값을 이미지 전체에 적용하여 처리하기 때문에 하나의 이미지에 음영이 다르면
+일부 영역이 모두 흰색 또는 검정색으로 보여지게 됩니다.</p>
+<p>이런 문제를 해결하기 위해서 이미지의 작은 영역별로 thresholding을 하는 것입니다. 이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.adaptiveThreshold()</span></code> 입니다.</p>
+<dl class="function">
+<dt id="cv2.adaptiveThreshold">
+<code class="descclassname">cv2.</code><code class="descname">adaptiveThreshold</code><span class="sig-paren">(</span><em>src</em>, <em>maxValue</em>, <em>adaptiveMethod</em>, <em>thresholdType</em>, <em>blockSize</em>, <em>C</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.adaptiveThreshold" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; grayscale image</li>
+<li><strong>maxValue</strong> &#8211; 임계값</li>
+<li><strong>adaptiveMethod</strong> &#8211; thresholding value를 결정하는 계산 방법</li>
+<li><strong>thresholdType</strong> &#8211; threshold type</li>
+<li><strong>blockSize</strong> &#8211; thresholding을 적용할 영역 사이즈</li>
+<li><strong>C</strong> &#8211; 평균이나 가중평균에서 차감할 값</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="docutils">
+<dt>Adaptive Method는 아래와 같습니다.</dt>
+<dd><ul class="first last simple">
+<li>cv2.ADAPTIVE_THRESH_MEAN_C : 주변영역의 평균값으로 결정</li>
+<li>cv2.ADAPTIVE_THRESH_GAUSSIAN_C :</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/dave.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># img = cv2.medianBlur(img,5)</span>
+
+<span class="n">ret</span><span class="p">,</span> <span class="n">th1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
+
+
+
+<span class="n">th2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">adaptiveThreshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">ADAPTIVE_THRESH_MEAN_C</span><span class="p">,</span>\
+<span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">th3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">adaptiveThreshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">ADAPTIVE_THRESH_GAUSSIAN_C</span><span class="p">,</span>\
+<span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span><span class="s1">&#39;Global&#39;</span><span class="p">,</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span><span class="s1">&#39;Gaussian&#39;</span><span class="p">]</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="p">,</span><span class="n">th1</span><span class="p">,</span><span class="n">th2</span><span class="p">,</span><span class="n">th3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result021.jpg" src="../../_images/result021.jpg" />
+</div>
+</div>
+<div class="section" id="otsu">
+<h2>Otsu의 이진화<a class="headerlink" href="#otsu" title="Permalink to this headline">¶</a></h2>
+<p>지금까지 thresholding처리를 하면서 임계값을 사용자가 결정하여 parameter로 전달하였습니다. 그렇다면 그 임계값을 어떻게 정의해야 할까요? 가장 일반적인 방법은 trial and error방식으로 결정했습니다. 그러나 <strong>bimodal image</strong> (히스토그램으로 분석하면 2개의 peak가 있는 이미지)의 경우는 히스토그램에서 임계값을 어느정도 정확히 계산 할 수 있습니다. Otsu의 이진화(Otsu’s Binarization)란 bimodal image에서 임계값을 자동으로 계산해주는 것을 말합니다.</p>
+<p>적용 방법은 <code class="docutils literal"><span class="pre">cv2.threshold()</span></code> 함수의 flag에 추가로 <code class="docutils literal"><span class="pre">cv2.THRESH_STSU</span></code> 를 적용하면 됩니다. 이때 임계값은 0으로 전달하면 됩니다.</p>
+<p>아래 예제는 global threshold값, Otsu thresholding적용, Gaussian blur를 통해 nosise를 제거한 후 Otsu thresholding적용 결과 입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-default"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>import cv2
+import numpy as np 
+from matplotlib import pyplot as plt 
+
+img = cv2.imread(&#39;noise.png&#39;,0)
+
+# global thresholding
+ret1, th1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+
+ret2, th2 - cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+blur = cv2.GaussianBlur(img,(5,5),0)
+
+ret3, th3 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+# plot all the images and their histograms
+images = [img, 0, th1, img, 0, th2, blur, 0, th3]
+
+titles = [&#39;Original Noisy Image&#39;,&#39;Histogram&#39;,&#39;Global Thresholding (v=127)&#39;, &#39;Original Noisy Image&#39;,&#39;Histogram&#39;,&quot;Otsu&#39;s Thresholding&quot;, &#39;Gaussian filtered Image&#39;,&#39;Histogram&#39;,&quot;Otsu&#39;s Thresholding&quot;]
+
+for i in xrange(3):
+	plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],&#39;gray&#39;)
+	plt.title(titles[i*3]), plt.xticks([]), plt.yticks([])
+	plt.subplot(3,3,i*3+2),plt.hist(images[i*3].ravel(),256)
+	plt.title(titles[i*3+1]), plt.xticks([]), plt.yticks([])
+	plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],&#39;gray&#39;)
+	plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
+
+™£plt.show()
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../08.imageProcessing/imageProcessing.html" class="btn btn-neutral" title="이미지 Processing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

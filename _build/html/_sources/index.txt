@@ -23,6 +23,7 @@ Contents:
    doc/07.imageArithmetic/imageArithmetic.rst
    doc/08.imageProcessing/imageProcessing.rst
    doc/09.imageThresholding/imageThresholding.rst
+   doc/10.imageTransformation/imageTransformation.rst
 
 Indices and tables
 ==================

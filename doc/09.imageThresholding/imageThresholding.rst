@@ -81,7 +81,7 @@ Adaptive Method는 아래와 같습니다.
 
 
 Otsu의 이진화
-===========
+=============
 
 지금까지 thresholding처리를 하면서 임계값을 사용자가 결정하여 parameter로 전달하였습니다. 그렇다면 그 임계값을 어떻게 정의해야 할까요? 가장 일반적인 방법은 trial and error방식으로 결정했습니다. 그러나 **bimodal image** (히스토그램으로 분석하면 2개의 peak가 있는 이미지)의 경우는 히스토그램에서 임계값을 어느정도 정확히 계산 할 수 있습니다. Otsu의 이진화(Otsu’s Binarization)란 bimodal image에서 임계값을 자동으로 계산해주는 것을 말합니다.
 

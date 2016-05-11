@@ -42,7 +42,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-#source_encoding = 'utf-8-sig'
+source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
@@ -229,7 +229,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'gramman.tex', u'gramman Documentation',
+    (master_doc, 'gramman.tex', u'OpenCV Python Documentation',
      u'gramman', 'manual'),
 ]
 
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'gramman', u'gramman Documentation',
+    (master_doc, 'gramman', u'OpenCV Python Documentation',
      [author], 1)
 ]
 
@@ -273,7 +273,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'gramman', u'gramman Documentation',
+    (master_doc, 'gramman', u'OpenCV Python Documentation',
      author, 'gramman', 'One line description of project.',
      'Miscellaneous'),
 ]

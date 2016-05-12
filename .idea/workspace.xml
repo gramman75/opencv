@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/08.imageProcessing/image2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/08.imageProcessing/image3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/10.imageTransformation/result05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/10.imageTransformation/result06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/08.imageProcessing/image2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/08.imageProcessing/image3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/10.imageTransformation/result05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/10.imageTransformation/result06.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/study/images/perspective.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" />
@@ -17,25 +29,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/.buildinfo" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/08.imageProcessing/imageProcessing.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/08.imageProcessing/imageProcessing.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/03.drawShape/drawShape.html" afterPath="$PROJECT_DIR$/_build/html/doc/03.drawShape/drawShape.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/04.drawWithMouse/drawWithMouse.html" afterPath="$PROJECT_DIR$/_build/html/doc/04.drawWithMouse/drawWithMouse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/05.trackBar/trackBar.html" afterPath="$PROJECT_DIR$/_build/html/doc/05.trackBar/trackBar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" afterPath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" afterPath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/10.imageTransformation/imageTransformation.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/10.imageTransformation/imageTransformation.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" afterPath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" afterPath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" afterPath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/imageRead.html" afterPath="$PROJECT_DIR$/_build/html/imageRead.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/search.html" afterPath="$PROJECT_DIR$/_build/html/search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" afterPath="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/temp.py" afterPath="$PROJECT_DIR$/study/temp.py" />
     </list>
     <ignored path="opencv.iws" />
@@ -50,22 +56,22 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/opencv$videoCamshift.coverage" NAME="videoCamshift Coverage Results" MODIFIED="1461162144103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageThreshold__1_.coverage" NAME="imageThreshold (1) Coverage Results" MODIFIED="1462515055019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/09.imageThresholding" />
+    <SUITE FILE_PATH="coverage/opencv$video.coverage" NAME="video Coverage Results" MODIFIED="1460819842074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageFeaturesFAST.coverage" NAME="imageFeaturesFAST Coverage Results" MODIFIED="1460768926962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$cameraCalibration.coverage" NAME="cameraCalibration Coverage Results" MODIFIED="1461163389282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageWatershed.coverage" NAME="imageWatershed Coverage Results" MODIFIED="1460794026676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$temp.coverage" NAME="temp Coverage Results" MODIFIED="1462976138311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageFeaturesORB.coverage" NAME="imageFeaturesORB Coverage Results" MODIFIED="1460778280434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageThreshold.coverage" NAME="imageThreshold Coverage Results" MODIFIED="1462425108031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageThreshold__1_.coverage" NAME="imageThreshold (1) Coverage Results" MODIFIED="1462515055019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/09.imageThresholding" />
-    <SUITE FILE_PATH="coverage/opencv$imageRead.coverage" NAME="imageRead Coverage Results" MODIFIED="1461998039301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Learning/01" />
-    <SUITE FILE_PATH="coverage/opencv$video.coverage" NAME="video Coverage Results" MODIFIED="1460819842074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoPoseEstimation.coverage" NAME="videoPoseEstimation Coverage Results" MODIFIED="1461380831999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$objectTracking.coverage" NAME="objectTracking Coverage Results" MODIFIED="1462515019967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/08.imageProcessing" />
     <SUITE FILE_PATH="coverage/opencv$matchDigits.coverage" NAME="matchDigits Coverage Results" MODIFIED="1461380916219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageRead.coverage" NAME="imageRead Coverage Results" MODIFIED="1461998039301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Learning/01" />
+    <SUITE FILE_PATH="coverage/opencv$videoPoseEstimation.coverage" NAME="videoPoseEstimation Coverage Results" MODIFIED="1461380831999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageThreshold.coverage" NAME="imageThreshold Coverage Results" MODIFIED="1462425108031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageWatershed.coverage" NAME="imageWatershed Coverage Results" MODIFIED="1460794026676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageFeatureMacthBFM.coverage" NAME="imageFeatureMacthBFM Coverage Results" MODIFIED="1460794045280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoMeanshift.coverage" NAME="videoMeanshift Coverage Results" MODIFIED="1460819861675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoCamshift.coverage" NAME="videoCamshift Coverage Results" MODIFIED="1461162144103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageAdaptiveThreshold.coverage" NAME="imageAdaptiveThreshold Coverage Results" MODIFIED="1462515616668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$objectTracking.coverage" NAME="objectTracking Coverage Results" MODIFIED="1462515019967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/08.imageProcessing" />
+    <SUITE FILE_PATH="coverage/opencv$imageFeaturesORB.coverage" NAME="imageFeaturesORB Coverage Results" MODIFIED="1460778280434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$videoMeanshift.coverage" NAME="videoMeanshift Coverage Results" MODIFIED="1460819861675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$temp.coverage" NAME="temp Coverage Results" MODIFIED="1463042409677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$Harr_cascade.coverage" NAME="Harr-cascade Coverage Results" MODIFIED="1461995508368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -84,10 +90,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="152">
               <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
@@ -97,7 +103,7 @@
       <file leaf-file-name="drawShape.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/03.drawShape/drawShape.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
+            <state relative-caret-position="1159">
               <caret line="61" column="3" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
               <folding />
             </state>
@@ -107,7 +113,7 @@
       <file leaf-file-name="imageThresholding.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/09.imageThresholding/imageThresholding.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="1539">
               <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
@@ -117,7 +123,7 @@
       <file leaf-file-name="imageRead.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imageRead.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-630">
+            <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -127,9 +133,28 @@
       <file leaf-file-name="imageTransformation.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+            <state relative-caret-position="25">
+              <caret line="200" column="30" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chessboard.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/study/images/chessboard.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/study/temp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#22#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -191,8 +216,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="658" />
-    <option name="height" value="800" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -202,12 +229,12 @@
             <id />
           </State>
           <State>
-            <id>General</id>
+            <id>Python</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>AngularJS</id>
+            <id>Python</id>
           </State>
         </selected-state>
       </profile-state>
@@ -238,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -267,7 +293,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="study" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -285,73 +343,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="08.imageProcessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="_static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="08.imageProcessing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/study/Learning/01" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="temp&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/temp.py&#10;rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/03.drawShape/drawShape.rst&#10;imageTra&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;imageTr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;index.rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;index&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;imageproc&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/08.imageProcessing/imageProcessing.rst&#10;indexr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;trackbar&#9;null&#9;null&#10;con&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/conf.py&#10;ari&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/07.imageArithmetic/imageArithmetic.rst&#10;drawl&#9;null&#9;null&#10;basic&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/06.BasicOperation/basicOperation.rst&#10;cam&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/cameraCalibration.py&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
-    <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="te&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;temp.py&#9;FILE&#9;file://D:/GitHub/opevcv/study/temp.py&#10;temp&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/temp.py&#10;rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/03.drawShape/drawShape.rst&#10;imageTra&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;imageTr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;index.rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;index&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;imageproc&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/08.imageProcessing/imageProcessing.rst&#10;indexr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;trackbar&#9;null&#9;null&#10;con&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/conf.py&#10;ari&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/07.imageArithmetic/imageArithmetic.rst&#10;drawl&#9;null&#9;null&#10;basic&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/06.BasicOperation/basicOperation.rst&#10;cam&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/cameraCalibration.py&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="opencv" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="opencv" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -372,7 +388,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python" />
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/study" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -793,28 +809,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="658" height="800" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1066" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4190341" sideWeight="0.5067114" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32577905" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2471591" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43607953" sideWeight="0.49328858" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27272728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18831168" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15491453" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760474" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4586549" sideWeight="0.5176282" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524806" sideWeight="0.49786323" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2471591" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4586549" sideWeight="0.4823718" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29327452" sideWeight="0.48397437" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15751211" sideWeight="0.51643836" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39660057" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39660057" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -878,11 +894,6 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/study/temp.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/doc/09.imageThresholding/imageThreshold.py</url>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -897,31 +908,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/study/images/watershed.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/chessboard01.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/chessboard02.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/capture 0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/capture 1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study/images/cap_template.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1060,9 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#23#33#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1094,7 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1110,7 +1091,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,7 +1111,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/03.drawShape/drawShape.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
+        <state relative-caret-position="1159">
           <caret line="61" column="3" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
           <folding />
         </state>
@@ -1139,30 +1119,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imageRead.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result03.tiff">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result02.tiff">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result01.tiff">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result03.tiff" />
+    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result02.tiff" />
+    <entry file="file://$PROJECT_DIR$/_static/10.imageTransformation/result01.tiff" />
     <entry file="file://$PROJECT_DIR$/doc/09.imageThresholding/imageThresholding.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="1539">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
@@ -1172,33 +1140,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/images/chessboard01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/images/chessboard02.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/images/chessboard02.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/images/chessboard.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        <state relative-caret-position="25">
+          <caret line="200" column="30" selection-start-line="200" selection-start-column="30" selection-end-line="200" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/study/temp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="380">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#22#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>

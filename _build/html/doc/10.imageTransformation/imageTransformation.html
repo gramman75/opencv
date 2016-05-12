@@ -341,9 +341,123 @@ numpy array입니다.</p>
 </div>
 <div class="section" id="rotation">
 <h3>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h3>
+<p>이미지를 𝜃 만큼 회전하는 변환 입니다. 역시 변환 행렬이 필요한데, 변환 행렬을 생성하는 함수가 <code class="docutils literal"><span class="pre">cv2.getRotationMatrix2D()</span></code> 함수입니다.</p>
+<dl class="function">
+<dt id="cv2.getRotationMatrix2D">
+<code class="descclassname">cv2.</code><code class="descname">getRotationMatrix2D</code><span class="sig-paren">(</span><em>center</em>, <em>angle</em>, <em>scale</em><span class="sig-paren">)</span> &rarr; M<a class="headerlink" href="#cv2.getRotationMatrix2D" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>center</strong> &#8211; 이미지의 중심 좌표</li>
+<li><strong>angle</strong> &#8211; 회전 각도</li>
+<li><strong>scale</strong> &#8211; scale factor</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>위 결과에서 나온 변환행렬을 <code class="docutils literal"><span class="pre">cv2.warpAffine()</span></code> 함수에 적용합니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/logo.png&#39;</span><span class="p">)</span>
+
+<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 이미지의 중심점을 기준으로 90도 회전 하면서 0.5배 Scale</span>
+<span class="n">M</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">((</span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">rows</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="mi">90</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">M</span><span class="p">,(</span><span class="n">cols</span><span class="p">,</span> <span class="n">rows</span><span class="p">))</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Rotation&#39;</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result05.jpg" src="../../_images/result05.jpg" />
+</div>
 </div>
 <div class="section" id="affine-transformation">
 <h3>Affine Transformation<a class="headerlink" href="#affine-transformation" title="Permalink to this headline">¶</a></h3>
+<p>Affine Transformation은 선의 평행성은 유지가 되면서 이미지를 변환하는 작업입니다. 이동, 확대, Scale, 반전까지 포함된 변환입니다.
+Affine 변환을 위해서는 3개의 Match가 되는 점이 있으면 변환행렬을 구할 수 있습니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/chessboard.jpg&#39;</span><span class="p">)</span>
+<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="n">pts1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">200</span><span class="p">,</span><span class="mi">100</span><span class="p">],[</span><span class="mi">400</span><span class="p">,</span><span class="mi">100</span><span class="p">],[</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">]])</span>
+<span class="n">pts2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">],[</span><span class="mi">400</span><span class="p">,</span><span class="mi">200</span><span class="p">],[</span><span class="mi">200</span><span class="p">,</span><span class="mi">400</span><span class="p">]])</span>
+
+<span class="c1"># pts1의 좌표에 표시. Affine 변환 후 이동 점 확인.</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getAffineTransform</span><span class="p">(</span><span class="n">pts1</span><span class="p">,</span> <span class="n">pts2</span><span class="p">)</span>
+
+<span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="p">(</span><span class="n">cols</span><span class="p">,</span><span class="n">rows</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dst</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Affine&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result06.jpg" src="../../_images/result06.jpg" />
+</div>
 </div>
 <div class="section" id="perspective-transformation">
 <h3>Perspective Transformation<a class="headerlink" href="#perspective-transformation" title="Permalink to this headline">¶</a></h3>

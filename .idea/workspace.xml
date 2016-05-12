@@ -5,44 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/08.imageProcessing/image2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/08.imageProcessing/image3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/10.imageTransformation/result05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/10.imageTransformation/result06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/08.imageProcessing/image2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/08.imageProcessing/image3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/10.imageTransformation/result05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/10.imageTransformation/result06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/study/images/perspective.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/04.drawWithMouse/drawWithMouse.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/04.drawWithMouse/drawWithMouse.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/05.trackBar/trackBar.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/05.trackBar/trackBar.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/.buildinfo" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/10.imageTransformation/imageTransformation.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/10.imageTransformation/imageTransformation.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" afterPath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" afterPath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" afterPath="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/temp.py" afterPath="$PROJECT_DIR$/study/temp.py" />
     </list>
     <ignored path="opencv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -796,7 +759,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462975423331</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="20160512-01">
+      <created>1463042641194</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1463042641194</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -873,7 +843,8 @@
     <MESSAGE value="20160503" />
     <MESSAGE value="4" />
     <MESSAGE value="20160511" />
-    <option name="LAST_COMMIT_MESSAGE" value="20160511" />
+    <MESSAGE value="20160512-01" />
+    <option name="LAST_COMMIT_MESSAGE" value="20160512-01" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

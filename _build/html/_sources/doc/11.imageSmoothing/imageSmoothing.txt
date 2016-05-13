@@ -1,0 +1,201 @@
+.. imageSmoothing
+
+===============
+Image Smoothing
+===============
+
+Goal
+====
+
+    * 다양한 Filter를 이용하여 Blur 이미지를 만들 수 있다.
+    * 사용자 정의 Filter를 적용할 수 있다.
+
+Image Filtering
+===============
+
+이미지도 음성 신호처럼 주파수로 표현할 수 있습니다. 일반적으로 고주파는 밝기의 변화가 많은 곳, 즉 경계선 영역에서 나타나며,
+일반적인 배경은 저주파로 나타납니다. 이것을 바탕으로 고주파를 제거하면 Blur처리가 되며, 저주파를 제거하면 대상의 영역을 확인할 수 있습니다.
+
+Low-pass filter(LPF)와 High-pass filter(HPF)를 이용하여, LPF를 적용하면 노이즈제거나 blur처리를 할 수 있으며, HPF를 적용하면 경계선을 찾을 수 있습니다.
+
+OpenCV에서는 ``cv2.filter2D()`` 함수를 이용하여 이미지에 kernel(filter)를 적용하여 이미지를 Filtering할 수 있습니다.
+kernel은 행렬을 의미하는데 kernel의 크기가 크면 이미지 전체가 blur처리가 많이 됩니다.
+일반적으로 5X5행렬을 아래와 같이 생성하여 적용합니다.
+
+.. math::
+
+    K =  \frac{1}{25} \begin{bmatrix} 1 & 1 & 1 & 1 & 1  \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \\ 1 & 1 & 1 & 1 & 1 \end{bmatrix}
+
+Filter가 적용되는 방법은
+
+    * 이미지의 각 pixel에 kernel을 적용합니다.
+    * 위 kernel을 예로들면 각 pixel에 5X5윈도우를 올려 놓고, 그 영역안에 포함되는 값의 Sum을 한 후에 25로 나눕니다.
+    * 그 결과는 해당 윈도우 영역안의 평균값이 되고, 그 값을 해당 pixel에 적용하는 방식입니다.
+
+아래 trackbar를 이용하여 kernel사이즈를 조정하면서 결과를 확인할 수 있는 예제입니다.
+
+**Sample Code**
+
+.. code-block:: python
+    :linenos:
+
+    #-*- coding:utf-8 -*-
+    import cv2
+    import numpy as np
+
+    def nothing(x):
+        pass
+
+    img = cv2.imread('images/lena.jpg')
+
+    cv2.namedWindow('image')
+    cv2.createTrackbar('K','image',1,20, nothing)
+
+    while(1):
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
+        k = cv2.getTrackbarPos('K','image')
+
+        #(0,0)이면 에러가 발생함으로 1로 치환
+        if k == 0:
+            k = 1
+
+        # trackbar에 의해서 (1,1) ~ (20,20) kernel생성
+        kernel = np.ones((k,k),np.float32)/(k*2)
+        dst = cv2.filter2D(img,-1,kernel)
+
+        cv2.imshow('image',dst)
+
+    cv2.destroyAllWindows()
+
+**Result**
+
+.. figure:: ../../_static/11.imageSmoothing/result01.jpg
+    :align: center
+
+    5X5 Kernel적용 결과
+
+Image Blurring
+===============
+
+Image Blurring은 low-pass filter를 이미지에 적용하여 얻을 수 있습니다. 고주파영역을 제거함으로써 노이즈를 제거하거나
+경계선을 흐리게 할 수 있습니다. OpenCV에는 4가지 형태의 blurring 방법을 제공하고 있습니다.
+
+Averaging
+---------
+
+Box형태의 kernel을 이미지에 적용한 후 평균값을 box의 중심점에 적용하는 형태입니다. ``cv2.blur()`` 또는 ``cv2.boxFilter()`` 함수로 적용할 수 있습니다.
+예를 들어 3x3형태의 필터는 아래와 같습니다.
+
+.. math::
+
+    K =  \frac{1}{9} \begin{bmatrix} 1 & 1 & 1  \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
+
+.. py:function:: cv2.blur(src, ksize) -> dst
+
+    :param src: Chennel수는 상관없으나, depth(Data Type)은 CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+    :param ksize: kernel 사이즈(ex; (3,3))
+
+.. note:: OpenCV에서 이미지의 Data Type은 아래와 같이 표현이 됩니다.::
+
+    * CV_8U : 8-bit unsigned integer: uchar ( 0..255 )
+    * CV_8S : 8-bit signed integer: schar ( -128..127 )
+    * CV_16U : 16-bit unsigned integer: ushort ( 0..65535 )
+    * CV_16S : 16-bit signed integer: short ( -32768..32767 )
+    * CV_32S : 32-bit signed integer: int ( -2147483648..2147483647 )
+    * CV_32F : 32-bit floating-point number: float ( -FLT_MAX..FLT_MAX, INF, NAN )
+    * CV_64F : 64-bit floating-point number: double ( -DBL_MAX..DBL_MAX, INF, NAN )
+
+    일반적으로 Data Type과 채널수가 같이 표현이 되어 **CV_8UC1** 과 같이 표현이 됩니다.(8bit unsiged integer이면서 채널이 1개)
+
+Gaussian Filtering
+------------------
+
+box filter는 동일한 값으로 구성된 kernel을 사용하지만, Gaussian Filter는 Gaussian함수를 이용한 Kernel을 적용합니다.
+즉, kernel 행렬의 값을 Gaussian 함수를 통해서 수학적으로 생성하여 적용합니다.
+kernel의 사이즈는 양수이면서 홀수로 지정을 해야 합니다. 이미지의 `Gaussian Noise <https://en.wikipedia.org/wiki/Gaussian_noise>`_ (전체적으로 밀도가 동일한 노이즈, 백색노이즈)를  제거하는 데 가장 효과적입니다.
+
+.. py:function:: cv2.GaussianBlur(img, ksize, sigmaX)
+
+    :param img: Chennel수는 상관없으나, depth(Data Type)은 CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+    :param ksize: (width, height) 형태의 kernel size. width와 height는 서로 다를 수 있지만, 양수의 홀수로 지정해야 함.
+    :param sigmaX: Gaussian kernel standard deviation in X direction.
+
+Median Filtering
+----------------
+
+kernel window와 pixel의 값들을 정렬한 후에 중간값을 선택하여 적용합니다. `salt-and-pepper noise <https://ko.wikipedia.org/wiki/%EC%A0%90%EC%9E%A1%EC%9D%8C>`_ 제거에 가장 효과적입니다.
+예를 들면 아래와 같이 kernel window을 적용시킨 결과가 다음과 같다면
+
+.. figure:: ../../_static/11.imageSmoothing/image1.jpg
+    :align: center
+
+크기순으로 정렬을 하면 33,54,67,84,102,163,189,212,224입니다. 이중에 중간값인 102가 중앙값으로 결정이 됩니다.(중앙에 있는 189가 102로 변경됨.)
+
+.. py:function:: cv2.medianBlur(src, ksize)
+
+    :param src: 1,3,4 channel image. depth가 CV_8U, CV_16U, or CV_32F 이면 ksize는 3또는5,  CV_8U이면 더 큰 ksize가능
+    :param ksize: 1보다 큰 홀수
+
+Bilateral Filtering
+-------------------
+
+지금까지의 Blur처리는 경계선까지 Blur처리가 되어, 경계선이 흐려지게 됩니다.
+Bilateral Filtering(양방향 필터)은 경계선을 유지하면서 Gaussian Blur처리를 해주는 방법입니다.
+
+Gaussian 필터를 적용하고, 또 하나의 Gaussian 필터를 주변 pixel까지 고려하여 적용하는 방식입니다.
+
+.. py:function:: cv2.bilateralFilter(src, d, sigmaColor, sigmaSpace)
+
+    :param src: 8-bit, 1 or 3 Channel image
+    :param d: filtering시 고려할 주변 pixel 지름
+    :param sigmaColor: Color를 고려할 공간. 숫자가 크면 멀리 있는 색도 고려함.
+    :param sigmaSpace: 숫자가 크면 멀리 있는 pixel도 고려함.
+
+아래 지금까지 설명한 Blur처리 방법을 적용한 예제입니다.
+
+**Sample Code**
+
+.. code-block:: python
+    :linenos:
+
+    #-*-coding:utf-8 -*-
+    import cv2
+    import numpy as np
+    from matplotlib import pyplot as plt
+
+    img = cv2.imread('images/lena.jpg')
+
+    # pyplot를 사용하기 위해서 BGR을 RGB로 변환.
+    b,g,r = cv2.split(img)
+    img = cv2.merge([r,g,b])
+
+
+    # 일반 Blur
+    dst1 = cv2.blur(img,(7,7))
+
+    # GaussianBlur
+    dst2 = cv2.GaussianBlur(img,(5,5),0)
+
+    # Median Blur
+    dst3 = cv2.medianBlur(img,9)
+
+    # Bilateral Filtering
+    dst4 = cv2.bilateralFilter(img,9,75,75)
+
+    images = [img,dst1,dst2,dst3,dst4]
+    titles=['Original','Blur(7X7)','Gaussian Blur(5X5)','Median Blur','Bilateral']
+
+    for i in xrange(5):
+        plt.subplot(3,2,i+1),plt.imshow(images[i]),plt.title(titles[i])
+        plt.xticks([]),plt.yticks([])
+
+    plt.show()
+
+**Result**
+
+.. figure:: ../../_static/11.imageSmoothing/result02.jpg
+    :align: center
+
+
+

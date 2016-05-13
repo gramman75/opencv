@@ -53,15 +53,43 @@ Grayscale Image는 Pixel당 8bit, 즉 256단계의 명암(빛의 세기)을 표�
 
 Color Image
 -----------
-Color
+Color 이미지는 pixel의 색을 표현하기 위해서 pixel당 24bit를 사용합니다. 총 16,777,216 가지의 색을 표현할 수 있습니다.
+이것을 일반적으로 True color image라고 합니다. pixel은 RGB 각각을 위해서 8bit를 사용하게 됩니다.
+OpenCV에서는 BGR로 표현을 하기 때문에 Blue->(255,0,0), Green->(0,255,0), Red->(0,0,255), White->(255,255,255), Black->(0,0,0)으로
+표현할 수 있습니다.
 
+각 pixel당 3Byte를 사용하기 때문에 용량이 큽니다. 이를 해결하기 위해서 lookup table을 사용하여, 해당 pixel에는 index만 을 저장하기도 합니다.
 
+.. figure:: ../../_static/08.imageProcessing/image4.png
+    :align: center
+
+    Indexed Color Image
 
 RGB Color-space
 ---------------
+RGB 모델은 빛의 삼원색인 빨간색, 초록색, 파란색을 기본 색으로 사용을 합니다. 정육면체 모델 형태로 표현할 수 있습니다.
+
+.. figure:: ../../_static/08.imageProcessing/image5.png
+    :align: center
+
+    RGB 모델(출처 : `위키피디아 <https://ko.wikipedia.org/wiki/RGB_%EA%B0%80%EC%82%B0%ED%98%BC%ED%95%A9>`_)
 
 HSV Color-space
 ---------------
+이미지 처리에서 가장 많이 사용되는 형태의 Color 모델입니다. 하나의 모델에서 색과 채도, 명도를 모두 알 수 있습니다.
+원뿔 형태의 모델로 표현이 됩니다.
+
+.. figure:: ../../_static/08.imageProcessing/image6.png
+    :align: center
+
+    HSV 모델
+
+HSV의 의미는 다음과 같습니다.
+
+    * H(ue) : 색상. 일반적인 색을 의미함. 원추모형에서 각도로 표현이 됨.(0: Red, 120도 : Green, 240: Blue)
+    * S(aturation) : 채도. 색읜 순수성을 의미하며 일반적으로 짙다, 흐리다로 표현이 됨. 중심에서 바깥쪽으로 이동하면 채도가 높음.
+    * V(alue) : 명도. 색의 밝고 어두운 정도. 수직축의 깊이로 표현. 어둡다 밝다로 표현이 됨.
+
 
 Color-space 변환
 ===============

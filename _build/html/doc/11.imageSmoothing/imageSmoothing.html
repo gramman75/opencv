@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Image Smoothing &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="이미지의 기하학적 변형" href="../10.imageTransformation/imageTransformation.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Smoothing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-filtering">Image Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#image-blurring">Image Blurring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#averaging">Averaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gaussian-filtering">Gaussian Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#median-filtering">Median Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bilateral-filtering">Bilateral Filtering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Image Smoothing</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/11.imageSmoothing/imageSmoothing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-smoothing">
+<h1>Image Smoothing<a class="headerlink" href="#image-smoothing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>다양한 Filter를 이용하여 Blur 이미지를 만들 수 있다.</li>
+<li>사용자 정의 Filter를 적용할 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="image-filtering">
+<h2>Image Filtering<a class="headerlink" href="#image-filtering" title="Permalink to this headline">¶</a></h2>
+<p>이미지도 음성 신호처럼 주파수로 표현할 수 있습니다. 일반적으로 고주파는 밝기의 변화가 많은 곳, 즉 경계선 영역에서 나타나며,
+일반적인 배경은 저주파로 나타납니다. 이것을 바탕으로 고주파를 제거하면 Blur처리가 되며, 저주파를 제거하면 대상의 영역을 확인할 수 있습니다.</p>
+<p>Low-pass filter(LPF)와 High-pass filter(HPF)를 이용하여, LPF를 적용하면 노이즈제거나 blur처리를 할 수 있으며, HPF를 적용하면 경계선을 찾을 수 있습니다.</p>
+<p>OpenCV에서는 <code class="docutils literal"><span class="pre">cv2.filter2D()</span></code> 함수를 이용하여 이미지에 kernel(filter)를 적용하여 이미지를 Filtering할 수 있습니다.
+kernel은 행렬을 의미하는데 kernel의 크기가 크면 이미지 전체가 blur처리가 많이 됩니다.
+일반적으로 5X5행렬을 아래와 같이 생성하여 적용합니다.</p>
+<div class="math">
+\[\begin{split}K =  \frac{1}{25} \begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1  \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<p>Filter가 적용되는 방법은</p>
+<blockquote>
+<div><ul class="simple">
+<li>이미지의 각 pixel에 kernel을 적용합니다.</li>
+<li>위 kernel을 예로들면 각 pixel에 5X5윈도우를 올려 놓고, 그 영역안에 포함되는 값의 Sum을 한 후에 25로 나눕니다.</li>
+<li>그 결과는 해당 윈도우 영역안의 평균값이 되고, 그 값을 해당 pixel에 적용하는 방식입니다.</li>
+</ul>
+</div></blockquote>
+<p>아래 trackbar를 이용하여 kernel사이즈를 조정하면서 결과를 확인할 수 있는 예제입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">nothing</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/lena.jpg&#39;</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">namedWindow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">createTrackbar</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span> <span class="n">nothing</span><span class="p">)</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span> <span class="o">==</span> <span class="mi">27</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getTrackbarPos</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+
+    <span class="c1">#(0,0)이면 에러가 발생함으로 1로 치환</span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># trackbar에 의해서 (1,1) ~ (20,20) kernel생성</span>
+    <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">k</span><span class="p">,</span><span class="n">k</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">kernel</span><span class="p">)</span>
+
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="n">dst</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/result013.jpg" src="../../_images/result013.jpg" />
+<p class="caption"><span class="caption-text">5X5 Kernel적용 결과</span></p>
+</div>
+</div>
+<div class="section" id="image-blurring">
+<h2>Image Blurring<a class="headerlink" href="#image-blurring" title="Permalink to this headline">¶</a></h2>
+<p>Image Blurring은 low-pass filter를 이미지에 적용하여 얻을 수 있습니다. 고주파영역을 제거함으로써 노이즈를 제거하거나
+경계선을 흐리게 할 수 있습니다. OpenCV에는 4가지 형태의 blurring 방법을 제공하고 있습니다.</p>
+<div class="section" id="averaging">
+<h3>Averaging<a class="headerlink" href="#averaging" title="Permalink to this headline">¶</a></h3>
+<p>Box형태의 kernel을 이미지에 적용한 후 평균값을 box의 중심점에 적용하는 형태입니다. <code class="docutils literal"><span class="pre">cv2.blur()</span></code> 또는 <code class="docutils literal"><span class="pre">cv2.boxFilter()</span></code> 함수로 적용할 수 있습니다.
+예를 들어 3x3형태의 필터는 아래와 같습니다.</p>
+<div class="math">
+\[\begin{split}K =  \frac{1}{9} \begin{bmatrix} 1 &amp; 1 &amp; 1  \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}\end{split}\]</div>
+<dl class="function">
+<dt id="cv2.blur">
+<code class="descclassname">cv2.</code><code class="descname">blur</code><span class="sig-paren">(</span><em>src</em>, <em>ksize</em><span class="sig-paren">)</span> &rarr; dst<a class="headerlink" href="#cv2.blur" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; Chennel수는 상관없으나, depth(Data Type)은 CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.</li>
+<li><strong>ksize</strong> &#8211; kernel 사이즈(ex; (3,3))</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>OpenCV에서 이미지의 Data Type은 아래와 같이 표현이 됩니다.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">CV_8U</span> <span class="p">:</span> <span class="mi">8</span><span class="o">-</span><span class="n">bit</span> <span class="n">unsigned</span> <span class="n">integer</span><span class="p">:</span> <span class="n">uchar</span> <span class="p">(</span> <span class="mf">0.</span><span class="o">.</span><span class="mi">255</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_8S</span> <span class="p">:</span> <span class="mi">8</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="n">integer</span><span class="p">:</span> <span class="n">schar</span> <span class="p">(</span> <span class="o">-</span><span class="mf">128.</span><span class="o">.</span><span class="mi">127</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_16U</span> <span class="p">:</span> <span class="mi">16</span><span class="o">-</span><span class="n">bit</span> <span class="n">unsigned</span> <span class="n">integer</span><span class="p">:</span> <span class="n">ushort</span> <span class="p">(</span> <span class="mf">0.</span><span class="o">.</span><span class="mi">65535</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_16S</span> <span class="p">:</span> <span class="mi">16</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="n">integer</span><span class="p">:</span> <span class="n">short</span> <span class="p">(</span> <span class="o">-</span><span class="mf">32768.</span><span class="o">.</span><span class="mi">32767</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_32S</span> <span class="p">:</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">signed</span> <span class="n">integer</span><span class="p">:</span> <span class="nb">int</span> <span class="p">(</span> <span class="o">-</span><span class="mf">2147483648.</span><span class="o">.</span><span class="mi">2147483647</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_32F</span> <span class="p">:</span> <span class="mi">32</span><span class="o">-</span><span class="n">bit</span> <span class="n">floating</span><span class="o">-</span><span class="n">point</span> <span class="n">number</span><span class="p">:</span> <span class="nb">float</span> <span class="p">(</span> <span class="o">-</span><span class="n">FLT_MAX</span><span class="o">..</span><span class="n">FLT_MAX</span><span class="p">,</span> <span class="n">INF</span><span class="p">,</span> <span class="n">NAN</span> <span class="p">)</span>
+<span class="o">*</span> <span class="n">CV_64F</span> <span class="p">:</span> <span class="mi">64</span><span class="o">-</span><span class="n">bit</span> <span class="n">floating</span><span class="o">-</span><span class="n">point</span> <span class="n">number</span><span class="p">:</span> <span class="n">double</span> <span class="p">(</span> <span class="o">-</span><span class="n">DBL_MAX</span><span class="o">..</span><span class="n">DBL_MAX</span><span class="p">,</span> <span class="n">INF</span><span class="p">,</span> <span class="n">NAN</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p class="last">일반적으로 Data Type과 채널수가 같이 표현이 되어 <strong>CV_8UC1</strong> 과 같이 표현이 됩니다.(8bit unsiged integer이면서 채널이 1개)</p>
+</div>
+</div>
+<div class="section" id="gaussian-filtering">
+<h3>Gaussian Filtering<a class="headerlink" href="#gaussian-filtering" title="Permalink to this headline">¶</a></h3>
+<p>box filter는 동일한 값으로 구성된 kernel을 사용하지만, Gaussian Filter는 Gaussian함수를 이용한 Kernel을 적용합니다.
+즉, kernel 행렬의 값을 Gaussian 함수를 통해서 수학적으로 생성하여 적용합니다.
+kernel의 사이즈는 양수이면서 홀수로 지정을 해야 합니다. 이미지의 <a class="reference external" href="https://en.wikipedia.org/wiki/Gaussian_noise">Gaussian Noise</a> (전체적으로 밀도가 동일한 노이즈, 백색노이즈)를  제거하는 데 가장 효과적입니다.</p>
+<dl class="function">
+<dt id="cv2.GaussianBlur">
+<code class="descclassname">cv2.</code><code class="descname">GaussianBlur</code><span class="sig-paren">(</span><em>img</em>, <em>ksize</em>, <em>sigmaX</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.GaussianBlur" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; Chennel수는 상관없으나, depth(Data Type)은 CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.</li>
+<li><strong>ksize</strong> &#8211; (width, height) 형태의 kernel size. width와 height는 서로 다를 수 있지만, 양수의 홀수로 지정해야 함.</li>
+<li><strong>sigmaX</strong> &#8211; Gaussian kernel standard deviation in X direction.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="median-filtering">
+<h3>Median Filtering<a class="headerlink" href="#median-filtering" title="Permalink to this headline">¶</a></h3>
+<p>kernel window와 pixel의 값들을 정렬한 후에 중간값을 선택하여 적용합니다. <a class="reference external" href="https://ko.wikipedia.org/wiki/%EC%A0%90%EC%9E%A1%EC%9D%8C">salt-and-pepper noise</a> 제거에 가장 효과적입니다.
+예를 들면 아래와 같이 kernel window을 적용시킨 결과가 다음과 같다면</p>
+<div class="figure align-center">
+<img alt="../../_images/image1.jpg" src="../../_images/image1.jpg" />
+</div>
+<p>크기순으로 정렬을 하면 33,54,67,84,102,163,189,212,224입니다. 이중에 중간값인 102가 중앙값으로 결정이 됩니다.(중앙에 있는 189가 102로 변경됨.)</p>
+<dl class="function">
+<dt id="cv2.medianBlur">
+<code class="descclassname">cv2.</code><code class="descname">medianBlur</code><span class="sig-paren">(</span><em>src</em>, <em>ksize</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.medianBlur" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; 1,3,4 channel image. depth가 CV_8U, CV_16U, or CV_32F 이면 ksize는 3또는5,  CV_8U이면 더 큰 ksize가능</li>
+<li><strong>ksize</strong> &#8211; 1보다 큰 홀수</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="bilateral-filtering">
+<h3>Bilateral Filtering<a class="headerlink" href="#bilateral-filtering" title="Permalink to this headline">¶</a></h3>
+<p>지금까지의 Blur처리는 경계선까지 Blur처리가 되어, 경계선이 흐려지게 됩니다.
+Bilateral Filtering(양방향 필터)은 경계선을 유지하면서 Gaussian Blur처리를 해주는 방법입니다.</p>
+<p>Gaussian 필터를 적용하고, 또 하나의 Gaussian 필터를 주변 pixel까지 고려하여 적용하는 방식입니다.</p>
+<dl class="function">
+<dt id="cv2.bilateralFilter">
+<code class="descclassname">cv2.</code><code class="descname">bilateralFilter</code><span class="sig-paren">(</span><em>src</em>, <em>d</em>, <em>sigmaColor</em>, <em>sigmaSpace</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.bilateralFilter" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; 8-bit, 1 or 3 Channel image</li>
+<li><strong>d</strong> &#8211; filtering시 고려할 주변 pixel 지름</li>
+<li><strong>sigmaColor</strong> &#8211; Color를 고려할 공간. 숫자가 크면 멀리 있는 색도 고려함.</li>
+<li><strong>sigmaSpace</strong> &#8211; 숫자가 크면 멀리 있는 pixel도 고려함.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>아래 지금까지 설명한 Blur처리 방법을 적용한 예제입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/lena.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># pyplot를 사용하기 위해서 BGR을 RGB로 변환.</span>
+<span class="n">b</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
+
+
+<span class="c1"># 일반 Blur</span>
+<span class="n">dst1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">blur</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="c1"># GaussianBlur</span>
+<span class="n">dst2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Median Blur</span>
+<span class="n">dst3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">medianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># Bilateral Filtering</span>
+<span class="n">dst4</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bilateralFilter</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="p">,</span><span class="n">dst1</span><span class="p">,</span><span class="n">dst2</span><span class="p">,</span><span class="n">dst3</span><span class="p">,</span><span class="n">dst4</span><span class="p">]</span>
+<span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Original&#39;</span><span class="p">,</span><span class="s1">&#39;Blur(7X7)&#39;</span><span class="p">,</span><span class="s1">&#39;Gaussian Blur(5X5)&#39;</span><span class="p">,</span><span class="s1">&#39;Median Blur&#39;</span><span class="p">,</span><span class="s1">&#39;Bilateral&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result023.jpg" src="../../_images/result023.jpg" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../10.imageTransformation/imageTransformation.html" class="btn btn-neutral" title="이미지의 기하학적 변형" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

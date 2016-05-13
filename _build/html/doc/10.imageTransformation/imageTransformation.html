@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="Image Smoothing" href="../11.imageSmoothing/imageSmoothing.html"/>
         <link rel="prev" title="이미지 임계처리" href="../09.imageThresholding/imageThresholding.html"/> 
 
   
@@ -102,6 +103,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
 </ul>
 
             
@@ -341,7 +343,8 @@ numpy array입니다.</p>
 </div>
 <div class="section" id="rotation">
 <h3>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline">¶</a></h3>
-<p>이미지를 𝜃 만큼 회전하는 변환 입니다. 역시 변환 행렬이 필요한데, 변환 행렬을 생성하는 함수가 <code class="docutils literal"><span class="pre">cv2.getRotationMatrix2D()</span></code> 함수입니다.</p>
+<p>물체를 평면상의 한 점을 중심으로 𝜃 만큼 회전하는 변환 입니다. 양의 각도는 시계반대방향으로 회전을 합니다.
+역시 변환 행렬이 필요한데, 변환 행렬을 생성하는 함수가 <code class="docutils literal"><span class="pre">cv2.getRotationMatrix2D()</span></code> 함수입니다.</p>
 <dl class="function">
 <dt id="cv2.getRotationMatrix2D">
 <code class="descclassname">cv2.</code><code class="descname">getRotationMatrix2D</code><span class="sig-paren">(</span><em>center</em>, <em>angle</em>, <em>scale</em><span class="sig-paren">)</span> &rarr; M<a class="headerlink" href="#cv2.getRotationMatrix2D" title="Permalink to this definition">¶</a></dt>
@@ -461,6 +464,70 @@ Affine 변환을 위해서는 3개의 Match가 되는 점이 있으면 변환행
 </div>
 <div class="section" id="perspective-transformation">
 <h3>Perspective Transformation<a class="headerlink" href="#perspective-transformation" title="Permalink to this headline">¶</a></h3>
+<p>Perspective(원근법) 변환은 직선의 성질만 유지가 되고, 선의 평행성은 유지가 되지 않는 변환입니다. 기차길은 서로 평행하지만
+원근변환을 거치면 평행성은 유지 되지 못하고 하나의 점에서 만나는 것 처럼 보입니다.(반대의 변환도 가능)</p>
+<p>4개의 Point의 Input값과이동할 output Point 가 필요합니다.</p>
+<p>변환 행렬을 구하기 위해서는 <code class="docutils literal"><span class="pre">cv2.getPerspectiveTransform()</span></code> 함수가 필요하며, <code class="docutils literal"><span class="pre">cv2.warpPerspective()</span></code> 함수에 변환행렬값을 적용하여
+최종 결과 이미지를 얻을 수 있습니다.</p>
+<p>아래의 예는 원근법이 적용된 효과를 제거하는 예제입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/perspective.jpg&#39;</span><span class="p">)</span>
+<span class="c1"># [x,y] 좌표점을 4x2의 행렬로 작성</span>
+<span class="c1"># 좌표점은 좌상-&gt;좌하-&gt;우상-&gt;우하</span>
+<span class="n">pts1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">504</span><span class="p">,</span><span class="mi">1003</span><span class="p">],[</span><span class="mi">243</span><span class="p">,</span><span class="mi">1525</span><span class="p">],[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">],[</span><span class="mi">1280</span><span class="p">,</span><span class="mi">1685</span><span class="p">]])</span>
+
+<span class="c1"># 좌표의 이동점</span>
+<span class="n">pts2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">],[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">]])</span>
+
+<span class="c1"># pts1의 좌표에 표시. perspective 변환 후 이동 점 확인.</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">504</span><span class="p">,</span><span class="mi">1003</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">243</span><span class="p">,</span><span class="mi">1524</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">1280</span><span class="p">,</span><span class="mi">1685</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getPerspectiveTransform</span><span class="p">(</span><span class="n">pts1</span><span class="p">,</span> <span class="n">pts2</span><span class="p">)</span>
+
+<span class="n">dst</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpPerspective</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="p">(</span><span class="mi">1100</span><span class="p">,</span><span class="mi">1100</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dst</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Perspective&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result07.jpg" src="../../_images/result07.jpg" />
+</div>
 </div>
 </div>
 </div>
@@ -471,6 +538,8 @@ Affine 변환을 위해서는 3개의 Match가 되는 점이 있으면 변환행
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../11.imageSmoothing/imageSmoothing.html" class="btn btn-neutral float-right" title="Image Smoothing" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../09.imageThresholding/imageThresholding.html" class="btn btn-neutral" title="이미지 임계처리" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -513,6 +582,7 @@ Affine 변환을 위해서는 3개의 Match가 되는 점이 있으면 변환행
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

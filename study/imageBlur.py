@@ -3,12 +3,14 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt 
 
-img = cv2.imread('lena.jpg')
+img = cv2.imread('images/lena.jpg')
+
+# pyplot를 사용하기 위해서 BGR을 RGB로 변환.
 b,g,r = cv2.split(img)
 img = cv2.merge([r,g,b])
 
 """
-# filter2D에 (5,5) kernel적용과 동일로 추정.
+# 일반 Blur
 """
 dst1 = cv2.blur(img,(7,7))
 
@@ -44,15 +46,3 @@ for i in xrange(5):
 	plt.xticks([]),plt.yticks([])
 
 plt.show()	
-
-# plt.subplot(121),plt.title('Original'),plt.imshow(img)
-# plt.xticks([]),plt.yticks([])
-
-
-# plt.subplot(121),plt.title('Blur'),plt.imshow(dst)
-# plt.xticks([]),plt.yticks([])
-
-# plt.subplot(122),plt.title('GaussianBlur'),plt.imshow(dst2)
-# plt.xticks([]),plt.yticks([])
-
-# plt.show()

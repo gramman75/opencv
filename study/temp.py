@@ -1,27 +1,32 @@
-#-*- coding:utf-8 -*-
+#-*-coding:utf-8 -*-
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread('images/perspective.jpg')
-rows, cols, ch = img.shape
+img = cv2.imread('images/lena.jpg')
 
-pts1 = np.float32([[455,725],[1698,183],[488,785],[1685,1280]])
-# pts1 = np.float32([[725,455],[183,1698],[785,488],[1280,1685]])
-pts2 = np.float32([[0,0],[1000,0],[0,1000],[1000,1000]])
+# pyplot를 사용하기 위해서 BGR을 RGB로 변환.
+b,g,r = cv2.split(img)
+img = cv2.merge([r,g,b])
 
-# pts1의 좌표에 표시. Affine 변환 후 이동 점 확인.
-# cv2.circle(img, (200,100), 10, (255,0,0),-1)
-# cv2.circle(img, (400,100), 10, (0,255,0),-1)
-# cv2.circle(img, (200,200), 10, (0,0,255),-1)
 
-M = cv2.getPerspectiveTransform(pts1, pts2)
+# 일반 Blur
+dst1 = cv2.blur(img,(7,7))
 
-dst = cv2.warpPerspective(img, M, (1000,1000))
+# GaussianBlur
+dst2 = cv2.GaussianBlur(img,(5,5),0)
 
-plt.subplot(121),plt.imshow(img),plt.title('image')
-plt.subplot(122),plt.imshow(dst),plt.title('Affine')
+# Median Blur
+dst3 = cv2.medianBlur(img,9)
+
+# Bilateral Filtering
+dst4 = cv2.bilateralFilter(img,9,75,75)
+
+images = [img,dst1,dst2,dst3,dst4]
+titles=['Original','Blur(7X7)','Gaussian Blur(5X5)','Median Blur','Bilateral']
+
+for i in xrange(5):
+	plt.subplot(3,2,i+1),plt.imshow(images[i]),plt.title(titles[i])
+	plt.xticks([]),plt.yticks([])
+
 plt.show()
-
-
-

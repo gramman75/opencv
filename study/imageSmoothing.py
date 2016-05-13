@@ -3,7 +3,7 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt 
 
-img = cv2.imread('copy.png')
+img = cv2.imread('images/lena.jpg')
 
 # 1행렬을 만들어서 행렬 원소로 갯수 나눈 Kernel matrix을 
 # filter2D를 이용하여 적용

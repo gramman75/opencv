@@ -106,6 +106,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
 </ul>
 
             
@@ -173,7 +174,7 @@
 <div class="line">각 pixel의 위치는 2가지 형태로 표현을 할 수가 있는데. 영상좌표와 행렬 위치로 표현이 됩니다.</div>
 <div class="line">영상 좌표는 좌측 상단의 꼭지점을 중심으로 (x,y)로 표현을 합니다. 행렬 위치는 (r,c)로 표현을 합니다. OpenCV에서 영상좌표와 행렬 위치 2가지 형태가 사용되기 때문에 유의해야 합니다.</div>
 </div>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img alt="../../_images/image1.png" src="../../_images/image1.png" />
 <p class="caption"><span class="caption-text">Pixel 표현 방법</span></p>
 </div>
@@ -183,7 +184,7 @@
 <div class="section" id="binary-image">
 <h3>Binary Image<a class="headerlink" href="#binary-image" title="Permalink to this headline">¶</a></h3>
 <p>Binary Image는 pixel당 1bit로 표현하는 영상을 의미합니다. 즉 흰색과 검은색으로만 표현이 되는 영상입니다.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id5">
 <img alt="../../_images/image2.png" src="../../_images/image2.png" />
 <p class="caption"><span class="caption-text">Binary Image</span></p>
 </div>
@@ -194,20 +195,46 @@
 <div class="section" id="grayscale-image">
 <h3>Grayscale Image<a class="headerlink" href="#grayscale-image" title="Permalink to this headline">¶</a></h3>
 <p>Grayscale Image는 Pixel당 8bit, 즉 256단계의 명암(빛의 세기)을 표현할 수 있는 이미지입니다.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id6">
 <img alt="../../_images/image3.png" src="../../_images/image3.png" />
 <p class="caption"><span class="caption-text">Grayscale Image(출처 <a class="reference external" href="https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%BC">위키피디아</a>)</span></p>
 </div>
 </div>
 <div class="section" id="color-image">
 <h3>Color Image<a class="headerlink" href="#color-image" title="Permalink to this headline">¶</a></h3>
-<p>Color</p>
+<p>Color 이미지는 pixel의 색을 표현하기 위해서 pixel당 24bit를 사용합니다. 총 16,777,216 가지의 색을 표현할 수 있습니다.
+이것을 일반적으로 True color image라고 합니다. pixel은 RGB 각각을 위해서 8bit를 사용하게 됩니다.
+OpenCV에서는 BGR로 표현을 하기 때문에 Blue-&gt;(255,0,0), Green-&gt;(0,255,0), Red-&gt;(0,0,255), White-&gt;(255,255,255), Black-&gt;(0,0,0)으로
+표현할 수 있습니다.</p>
+<p>각 pixel당 3Byte를 사용하기 때문에 용량이 큽니다. 이를 해결하기 위해서 lookup table을 사용하여, 해당 pixel에는 index만 을 저장하기도 합니다.</p>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/image4.png" src="../../_images/image4.png" />
+<p class="caption"><span class="caption-text">Indexed Color Image</span></p>
+</div>
 </div>
 <div class="section" id="rgb-color-space">
 <h3>RGB Color-space<a class="headerlink" href="#rgb-color-space" title="Permalink to this headline">¶</a></h3>
+<p>RGB 모델은 빛의 삼원색인 빨간색, 초록색, 파란색을 기본 색으로 사용을 합니다. 정육면체 모델 형태로 표현할 수 있습니다.</p>
+<div class="figure align-center">
+<img alt="../../_images/image5.png" src="../../_images/image5.png" />
+</div>
 </div>
 <div class="section" id="hsv-color-space">
 <h3>HSV Color-space<a class="headerlink" href="#hsv-color-space" title="Permalink to this headline">¶</a></h3>
+<p>이미지 처리에서 가장 많이 사용되는 형태의 Color 모델입니다. 하나의 모델에서 색과 채도, 명도를 모두 알 수 있습니다.
+원뿔 형태의 모델로 표현이 됩니다.</p>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/image6.png" src="../../_images/image6.png" />
+<p class="caption"><span class="caption-text">HSV 모델</span></p>
+</div>
+<p>HSV의 의미는 다음과 같습니다.</p>
+<blockquote>
+<div><ul class="simple">
+<li>H(ue) : 색상. 일반적인 색을 의미함. 원추모형에서 각도로 표현이 됨.(0: Red, 120도 : Green, 240: Blue)</li>
+<li>S(aturation) : 채도. 색읜 순수성을 의미하며 일반적으로 짙다, 흐리다로 표현이 됨. 중심에서 바깥쪽으로 이동하면 채도가 높음.</li>
+<li>V(alue) : 명도. 색의 밝고 어두운 정도. 수직축의 깊이로 표현. 어둡다 밝다로 표현이 됨.</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="color-space">
@@ -395,6 +422,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

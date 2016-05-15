@@ -1,0 +1,6 @@
+.. imageMorphological
+
+=============================
+Morphological Transformations
+=============================
+

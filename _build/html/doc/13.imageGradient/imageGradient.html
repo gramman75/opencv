@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Image Gradients &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="Image Pyramids" href="../14.imagePyramid/imagePyramid.html"/>
+        <link rel="prev" title="Morphological Transformations" href="../12.imageMorphological/imageMorphological.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Gradients</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sobel-scharr-filter">Sobel &amp; Scharr Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#laplacian">Laplacian 함수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#canddy-edge-detection">Canddy Edge Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../14.imagePyramid/imagePyramid.html">Image Pyramids</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Image Gradients</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/13.imageGradient/imageGradient.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-gradients">
+<h1>Image Gradients<a class="headerlink" href="#image-gradients" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Edge Detection에 대해서 알 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sobel-scharr-filter">
+<h2>Sobel &amp; Scharr Filter<a class="headerlink" href="#sobel-scharr-filter" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian smoothing과 미분을 이용한 방법입니다. 그래서 노이즈가 있는 이미지에 적용하면 좋습니다. X축과 Y축을 미분하여 경계값을 계산합니다.
+X축 미분은 수평선, Y축 미분은 수직선을 미분하여 경계가 사라지는 효과가 있습니다. 미분시 소실되는 표본의 정보가 많을 수 있어 <code class="docutils literal"><span class="pre">aperture_size</span></code> 값을 이용하여 소실되는 정도를 조절할 수 있습니다.
+만약 ksize가 -1이면 3x3 Scharr filter가 적용이 되어 Sobel의 3x3보다 좀 더 나은 결과를 보여 줍니다.</p>
+<p>#todo#</p>
+<dl class="function">
+<dt id="cv2.Sobel">
+<code class="descclassname">cv2.</code><code class="descname">Sobel</code><span class="sig-paren">(</span><em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#cv2.Sobel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="laplacian">
+<h2>Laplacian 함수<a class="headerlink" href="#laplacian" title="Permalink to this headline">¶</a></h2>
+<p>이미지의 가로와 세로에 대한 Gradient를 2차 미분한 값입니다. Sobel filter에 미분의 정도가 더해진 것과 비슷합니다. blob(주위의 pixel과 확연한 pixel차이를 나타내는 덩어리)검출에 많이 사용됩니다.</p>
+</div>
+<div class="section" id="canddy-edge-detection">
+<h2>Canddy Edge Detection<a class="headerlink" href="#canddy-edge-detection" title="Permalink to this headline">¶</a></h2>
+<p>가장 유명한 Edge Detection방법입니다. 여러 단계의 Algorithm을 통해서 경계를 찾아 냅니다.</p>
+<blockquote>
+<div><p># Noise Reduction</p>
+<p>이미지의 Noise를 제거합니다. 이때 5x5의 Gaussian filter를 이용합니다.</p>
+<p># Edge Gradient Detection
+이미지에서 Gradient의 방향과 강도를 확인합니다. 경계값에서는 주변과 색이 다르기 때문에 미분값이 급속도로 변하게 됩니다. 이를 통해 경계값 후보군을 선별합니다.</p>
+<p># Non-maximum Suppression
+이미지의 pixel을 Full scan하여 Edge가 아닌 pixel은 제거합니다.</p>
+<p># Hysteresis Thresholding
+이제 지금까지 Edge로 판단된 pixel이 진짜 edge인지 판별하는 작업을 합니다. max val과 minVal(임계값)을 설정하여 maxVal 이상은 강한 Edge, min과 max사이는 약한 edge로 설정합니다.
+이제 약한 edge가 진짜 edge인지 확인하기 위해서 강한 edge와 연결이 되어 있으면 edge로 판단하고, 그러지 않으면 제거합니다.</p>
+</div></blockquote>
+<p>이와 같은 일련의 작업을 통해서 경계값만을 남겨두고 제거합니다. 글로 설명하면 위과 같지만 실제로는 수학적인 부분이 대부분입니다.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../14.imagePyramid/imagePyramid.html" class="btn btn-neutral float-right" title="Image Pyramids" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../12.imageMorphological/imageMorphological.html" class="btn btn-neutral" title="Morphological Transformations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

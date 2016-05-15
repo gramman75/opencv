@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Image Pyramids &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="Image Gradients" href="../13.imageGradient/imageGradient.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Pyramids</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theory">Theory</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Image Pyramids</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/14.imagePyramid/imagePyramid.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-pyramids">
+<h1>Image Pyramids<a class="headerlink" href="#image-pyramids" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Image Pyramid에 대해서 알 수 있다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.pyrUp()</span></code> 와 <code class="docutils literal"><span class="pre">cv2.pyrDown()</span></code> 에 대해서 알 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>일반적으로는 고정된 이미지 사이즈를 작업을 하지만, 때때로 동일한 이미지에 대해서 다양한 사이즈를 가지고 작업을 해야 하는 경우가 있습니다.
+만일, 이미지에서 얼굴을 찾을 경우에 얼굴의 사이즈를 확신할 수 없습니다.
+이럴 경우에는 원본 이미지에 대한 다양한 사이즈에서 얼굴을 찾는다면 좀더 정확하고 확실한 이미지를 찾을 수 있습니다.
+이 처럼 동일 이미지의 서로 다른 사이즈의 set을 Image Pyramids라고 합니다(가장 아래에 가장 큰 해상도를 놓고 점점 줄여가면서 쌓아가는 형태입니다.)</p>
+<p>Image Pyramid의 종류는 1) Gaussian Pyramids 와 2) Laplacian Pyramids 가 있습니다.</p>
+<p>Gaussian Pyramid의 High Level(낮은 해상도. Pyramid의 상단)은 Lower level에서 row와 column을 연속적으로 제거하면서 생성됩니다.
+M x N 사이지의 이미지는 M/2 X N/2 가 적용되연 1/4사이즈로 줄어들게 됩니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/lena.jpg&#39;</span><span class="p">)</span>
+
+
+<span class="n">lower_reso</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrDown</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="c1"># 원본 이미지의 1/4 사이즈</span>
+<span class="n">higher_reso</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrUp</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="c1">#원본 이미지의 4배 사이즈</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">lower_reso</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;higher&#39;</span><span class="p">,</span> <span class="n">higher_reso</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result014.jpg" src="../../_images/result014.jpg" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../13.imageGradient/imageGradient.html" class="btn btn-neutral" title="Image Gradients" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

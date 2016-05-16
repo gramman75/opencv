@@ -15,20 +15,6 @@ Contents:
    :maxdepth: 1
 
    doc/01.imageStart/imageStart.rst
-   doc/02.˜art/videoStart.rst
-   doc/03.drawShape/drawShape.rst
-   doc/04.drawWithMouse/drawWithMouse.rst
-   doc/05.trackBar/trackBar.rst
-   doc/06.basicOperation/basicOperation.rst
-   doc/07.imageArithmetic/imageArithmetic.rst
-   doc/08.imageProcessing/imageProcessing.rst
-   doc/09.imageThresholding/imageThresholding.rst
-   doc/10.imageTransformation/imageTransformation.rst
-   doc/11.imageSmoothing/imageSmoothing.rst
-   doc/12.imageMorphological/imageMorphological.rst
-   doc/13.imageGradient/imageGradient.rst
-   doc/14.imagePyramid/imagePyramid.rst
-   doc/15.imageContours/imageContours.rst
 
 Indices and tables
 ==================

@@ -4,3 +4,98 @@
 Morphological Transformations
 =============================
 
+    * Morphological 방법인 Erosion, Dilation, Opening, Closing 에 대해서 알 수 있다.
+    * ``cv2.erod()`` , ``cv2.dilate()`` , ``cv2.morphologyEx()`` 함수에 대해서 알 수 있다.
+
+Theory
+======
+
+Morphologicla Transformation은 이미지를 Segmentation하여 단순화, 제거, 보정을 통해서 형태를 파악하는 목적으로 사용이 됩니다.
+일반적으로 binary나 grayscale image에 사용이 됩니다. 사용하는 방법으로는 Dilation(팽창), Erosion(침식), 그리고 2개를 조합한 Opening과 Closing이 있습니다.
+여기에는 2가지 Input값이 있는데, 하나는 원본 이미지이고 또 다른 하나는 structuring element입니다.
+
+.. note:: structuring element는 원본 이미지에 적용되는 kernel입니다. 중심을 원점으로 사용할 수도 있고, 원점을 변경할 수도 있습니다. 일반적으로 꽉찬 사각형, 타원형, 십자형을 많이 사용합니다.
+
+Erosion
+=======
+
+각 Pixel에 structuring element를 적용하여 하나라도 0이 있으면 대상 pixel을 제거하는 방법입니다. 아래 그림은 대상 이미지에 십자형 structuring element를 적용한 결과 입니다.
+
+.. figure:: ../../_static/12.imageMorphological/image01.png
+    :align: center
+
+    Erosion(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+
+위 그림에서 가운데 있는 십자형 Structuring Element를 Original Image에 적용을 합니다. 원본의 각 pixel에 적용을 하여 겹치는 부분이 없는 부분이 하나라도 있으면
+그 중심 pixel을 제거하는 방식입니다. 최종적으로 우측의 분홍색 영역만 남게 됩니다. **이 방법은 작은 Object를 제거하는 효과가 있습니다**.
+
+.. figure:: ../../_static/12.imageMorphological/image02.png
+    :align: center
+
+    Erosion Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+
+
+.. py:function:: cv2.erode(src, kernel, dst, anchor, iterations, borderType, borderValue)
+
+    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F` or ``CV_64F.
+    :param kernel: structuring element. ``cv2.getStructuringElemet()`` 함수로 만들 수 있음.
+    :param anchor: structuring element의 중심. default  (-1,-1)로 중심점.
+    :param iterations: erosion 적용 반복 횟수
+
+Dilation
+========
+
+Erosion과 반대로 대상을 확장한 후 작은 구멍을 채우는 방법입니다. Erosion과 마찬가지로 각 pixel에 structuring element를 적용합니다. 대상 pixel에 대해서 OR 연산을 수행합니다.
+즉 겹치는 부분이 하나라도 있으면 이미지를 확장합니다.
+
+.. figure:: ../../_static/12.imageMorphological/image03.png
+    :align: center
+
+    Dilation(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+
+위 그림은 십자형 structuring element를 원본이미지에 OR 연산을 적용합니다. 최종적으로 확장된 이미지를 얻을 수 있습니다. **결과적으로 경계가 부드러워 지고, 구멍이 메꿔지는 효과를 얻을 수 있습니다.**
+
+.. figure:: ../../_static/12.imageMorphological/image04.png
+    :align: center
+
+    Dilation Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+
+.. py:function:: cv2.dilation(src, kernel, dst, anchor, iterations, borderType, borderValue)
+
+    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F` or ``CV_64F.
+    :param kernel: structuring element. ``cv2.getStructuringElemet()`` 함수로 만들 수 있음.
+    :param anchor: structuring element의 중심. default  (-1,-1)로 중심점.
+    :param iterations: dilation 적용 반복 횟수
+
+Opening & Closing
+=================
+
+Opening과 Closing은 Erosion과 Dilation의 조합 결과 입니다. 차이는 어느 것을 먼저 적용을 하는 차이 입니다.
+
+    * Opeing : Erosion적용 후 Dilation 적용. 작은 Object나 돌기 제거에 적합
+    * Closing : Dilation적용 후 Erosion 적용. 전체적인 윤곽 파악에 적합
+
+.. figure:: ../../_static/12.imageMorphological/image05.png
+    :align: center
+
+    Opening & Closing(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+
+.. py:function:: cv2.morphologyEx(src, op, kernel[, dst[, anchor[, iterations[, borderType[, borderValue]]]]]) -> dst
+
+    :param src: Source image. The number of channels can be arbitrary. The depth should be one of ``CV_8U``, ``CV_16U``, ``CV_16S``,  ``CV_32F` or ``CV_64F``.
+    :param op: Type of a morphological operation that can be one of the following:
+
+            * **MORPH_OPEN** - an opening operation
+            * **MORPH_CLOSE** - a closing operation
+            * **MORPH_GRADIENT** - a morphological gradient. Dilation과 erosion의 차이.
+            * **MORPH_TOPHAT** - "top hat". Opeining과 원본 이미지의 차이
+            * **MORPH_BLACKHAT** - "black hat". Closing과 원본 이미지의 차이
+    :param kernel: structuring element. ``cv2.getStructuringElemet()`` 함수로 만들 수 있음.
+    :param anchor: structuring element의 중심. default  (-1,-1)로 중심점.
+    :param iterations: erosion and dilation 적용 횟수
+    :param borderType: Pixel extrapolation method. See  ``borderInterpolate`` for details.
+    :param borderValue: Border value in case of a constant border. The default value has a special meaning.
+
+Structuring Element
+===================
+

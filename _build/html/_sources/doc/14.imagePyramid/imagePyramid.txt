@@ -51,3 +51,4 @@ M x N 사이지의 이미지는 M/2 X N/2 가 적용되연 1/4사이즈로 줄�
 .. figure:: ../../_static/14.imagePyramid/result01.jpg
     :align: center
 
+`todo`

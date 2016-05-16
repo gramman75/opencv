@@ -11,6 +11,6 @@ cv2.imshow('img', img)
 cv2.imshow('lower', lower_reso)
 cv2.imshow('higher', higher_reso)
 
-cv2.waitKey(0)
+cv2.erode(src, kernel, dst, anchor, iterations, borderType, borderValue)
 
 cv2.destroyAllWindows()

@@ -5,27 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result014.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/14.imagePyramid/result01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/14.imagePyramid/result01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/doctrees/doc/13.imageGradient/imageGradient.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/doctrees/doc/14.imagePyramid/imagePyramid.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/12.imageMorphological/imageMorphological.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/13.imageGradient/imageGradient.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/14.imagePyramid/imagePyramid.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/doc/13.imageGradient/imageGradient.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/doc/14.imagePyramid/imagePyramid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/opencv.iml" afterPath="$PROJECT_DIR$/.idea/opencv.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/doctrees/doc/15.imageContours/imageContours.doctree" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/12.imageMorphological/image01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/12.imageMorphological/image02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/12.imageMorphological/image03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/12.imageMorphological/image04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/12.imageMorphological/image05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/12.imageMorphological/image01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/12.imageMorphological/image02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/12.imageMorphological/image03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/12.imageMorphological/image04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/12.imageMorphological/image05.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/15.imageContours/imageContours.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/doc/15.imageContours/imageContours.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index_bu.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" />
@@ -37,10 +35,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/11.imageSmoothing/imageSmoothing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/11.imageSmoothing/imageSmoothing.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/13.imageGradient/imageGradient.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/13.imageGradient/imageGradient.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/14.imagePyramid/imagePyramid.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/14.imagePyramid/imagePyramid.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/opencv.iml" afterPath="$PROJECT_DIR$/.idea/opencv.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/.buildinfo" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/11.imageSmoothing/imageSmoothing.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/11.imageSmoothing/imageSmoothing.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/12.imageMorphological/imageMorphological.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/12.imageMorphological/imageMorphological.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/14.imagePyramid/imagePyramid.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/14.imagePyramid/imagePyramid.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" />
@@ -53,13 +60,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" afterPath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" afterPath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/11.imageSmoothing/imageSmoothing.html" afterPath="$PROJECT_DIR$/_build/html/doc/11.imageSmoothing/imageSmoothing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" afterPath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/13.imageGradient/imageGradient.html" afterPath="$PROJECT_DIR$/_build/html/doc/13.imageGradient/imageGradient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/14.imagePyramid/imagePyramid.html" afterPath="$PROJECT_DIR$/_build/html/doc/14.imagePyramid/imagePyramid.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/imageRead.html" afterPath="$PROJECT_DIR$/_build/html/imageRead.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/search.html" afterPath="$PROJECT_DIR$/_build/html/search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" afterPath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.rst" afterPath="$PROJECT_DIR$/index.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/imageEdge.py" afterPath="$PROJECT_DIR$/study/imageEdge.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/temp.py" afterPath="$PROJECT_DIR$/study/temp.py" />
     </list>
     <ignored path="opencv.iws" />
@@ -74,25 +84,25 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/opencv$imageBlur.coverage" NAME="imageBlur Coverage Results" MODIFIED="1463126023481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$videoCamshift.coverage" NAME="videoCamshift Coverage Results" MODIFIED="1461162144103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageThreshold__1_.coverage" NAME="imageThreshold (1) Coverage Results" MODIFIED="1462515055019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/09.imageThresholding" />
+    <SUITE FILE_PATH="coverage/opencv$video.coverage" NAME="video Coverage Results" MODIFIED="1460819842074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageEdge.coverage" NAME="imageEdge Coverage Results" MODIFIED="1463297139648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageContours.coverage" NAME="imageContours Coverage Results" MODIFIED="1463301656059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageFeaturesFAST.coverage" NAME="imageFeaturesFAST Coverage Results" MODIFIED="1460768926962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$cameraCalibration.coverage" NAME="cameraCalibration Coverage Results" MODIFIED="1461163389282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageWatershed.coverage" NAME="imageWatershed Coverage Results" MODIFIED="1460794026676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$temp.coverage" NAME="temp Coverage Results" MODIFIED="1463126306617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageThreshold.coverage" NAME="imageThreshold Coverage Results" MODIFIED="1462425108031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageFeaturesORB.coverage" NAME="imageFeaturesORB Coverage Results" MODIFIED="1460778280434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageThreshold__1_.coverage" NAME="imageThreshold (1) Coverage Results" MODIFIED="1462515055019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/09.imageThresholding" />
-    <SUITE FILE_PATH="coverage/opencv$imageRead.coverage" NAME="imageRead Coverage Results" MODIFIED="1461998039301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Learning/01" />
-    <SUITE FILE_PATH="coverage/opencv$video.coverage" NAME="video Coverage Results" MODIFIED="1460819842074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoPoseEstimation.coverage" NAME="videoPoseEstimation Coverage Results" MODIFIED="1461380831999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$objectTracking.coverage" NAME="objectTracking Coverage Results" MODIFIED="1462515019967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/08.imageProcessing" />
-    <SUITE FILE_PATH="coverage/opencv$imageEdge.coverage" NAME="imageEdge Coverage Results" MODIFIED="1463297139648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageBlur.coverage" NAME="imageBlur Coverage Results" MODIFIED="1463126023481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$matchDigits.coverage" NAME="matchDigits Coverage Results" MODIFIED="1461380916219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageRead.coverage" NAME="imageRead Coverage Results" MODIFIED="1461998039301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study/Learning/01" />
+    <SUITE FILE_PATH="coverage/opencv$videoPoseEstimation.coverage" NAME="videoPoseEstimation Coverage Results" MODIFIED="1461380831999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageThreshold.coverage" NAME="imageThreshold Coverage Results" MODIFIED="1462425108031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$imageWatershed.coverage" NAME="imageWatershed Coverage Results" MODIFIED="1460794026676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageFeatureMacthBFM.coverage" NAME="imageFeatureMacthBFM Coverage Results" MODIFIED="1460794045280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoMeanshift.coverage" NAME="videoMeanshift Coverage Results" MODIFIED="1460819861675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$videoCamshift.coverage" NAME="videoCamshift Coverage Results" MODIFIED="1461162144103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
-    <SUITE FILE_PATH="coverage/opencv$imageContours.coverage" NAME="imageContours Coverage Results" MODIFIED="1463301656059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$imageAdaptiveThreshold.coverage" NAME="imageAdaptiveThreshold Coverage Results" MODIFIED="1462515616668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$objectTracking.coverage" NAME="objectTracking Coverage Results" MODIFIED="1462515019967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doc/08.imageProcessing" />
+    <SUITE FILE_PATH="coverage/opencv$imageFeaturesORB.coverage" NAME="imageFeaturesORB Coverage Results" MODIFIED="1460778280434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$videoMeanshift.coverage" NAME="videoMeanshift Coverage Results" MODIFIED="1460819861675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
+    <SUITE FILE_PATH="coverage/opencv$temp.coverage" NAME="temp Coverage Results" MODIFIED="1463126306617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
     <SUITE FILE_PATH="coverage/opencv$Harr_cascade.coverage" NAME="Harr-cascade Coverage Results" MODIFIED="1461995508368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/study" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -110,116 +120,66 @@
     <favorites_list name="opencv" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="imageBlur.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/imageBlur.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-              <folding>
-                <element signature="e#21#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageSmoothing.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2715">
-              <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageGradient.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageEdge.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/imageEdge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding>
-                <element signature="e#1046#1056#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imagePyramid.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageContours.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/imageContours.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageContours.rst" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doc/15.imageContours/imageContours.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="temp.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/temp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="e#21#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Harr-cascade.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/Harr-cascade.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.64099216">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="imageSmoothing.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3439">
+                  <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="imageMorphological.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="428">
+                  <caret line="84" column="85" selection-start-line="84" selection-start-column="85" selection-end-line="84" selection-end-column="85" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index_bu.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index_bu.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="611">
+                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/index.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="304">
+                  <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="imageMorphology.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/study/imageMorphology.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="19">
+                  <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -269,10 +229,14 @@
         <option value="$PROJECT_DIR$/study/imageBlur.py" />
         <option value="$PROJECT_DIR$/study/imageEdge.py" />
         <option value="$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst" />
-        <option value="$PROJECT_DIR$/study/temp.py" />
         <option value="$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst" />
-        <option value="$PROJECT_DIR$/index.rst" />
         <option value="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
+        <option value="$PROJECT_DIR$/.idea/opencv.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/study/temp.py" />
+        <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
+        <option value="$PROJECT_DIR$/index_bu.rst" />
+        <option value="$PROJECT_DIR$/index.rst" />
       </list>
     </option>
   </component>
@@ -283,8 +247,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="476" />
-    <option name="height" value="800" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -338,6 +304,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -350,8 +326,7 @@
     <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="con&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageContours.py&#10;temp&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/temp.py&#10;indexr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;tem&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;temp.&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;conf&#9;FILE&#9;file://D:/GitHub/opencv/conf.py&#10;te&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;temp.py&#9;FILE&#9;file://D:/GitHub/opevcv/study/temp.py&#10;rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/03.drawShape/drawShape.rst&#10;imageTra&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;imageTr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;index.rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;index&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;imageproc&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/08.imageProcessing/imageProcessing.rst&#10;trackbar&#9;null&#9;null&#10;ari&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/07.imageArithmetic/imageArithmetic.rst&#10;drawl&#9;null&#9;null&#10;basic&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/06.BasicOperation/basicOperation.rst&#10;cam&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/cameraCalibration.py&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
-    <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="tem&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;conf&#9;FILE&#9;file://D:/GitHub/opencv/conf.py&#10;temp&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;con&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageContours.py&#10;indexr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;temp.&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;te&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;temp.py&#9;FILE&#9;file://D:/GitHub/opevcv/study/temp.py&#10;rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/03.drawShape/drawShape.rst&#10;imageTra&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;imageTr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;index.rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;index&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;imageproc&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/08.imageProcessing/imageProcessing.rst&#10;trackbar&#9;null&#9;null&#10;ari&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/07.imageArithmetic/imageArithmetic.rst&#10;drawl&#9;null&#9;null&#10;basic&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/06.BasicOperation/basicOperation.rst&#10;cam&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/cameraCalibration.py&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -815,29 +790,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="476" height="800" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18550107" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252841" sideWeight="0.4838013" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3409091" sideWeight="0.34101382" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25330397" sideWeight="0.5506396" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24229075" sideWeight="0.4914712" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2471591" sideWeight="0.5853132" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3409091" sideWeight="0.65898615" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25426137" sideWeight="0.45356372" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1797235" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25330397" sideWeight="0.44936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15751211" sideWeight="0.51643836" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39647576" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3407935" sideWeight="0.65618336" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39647576" sideWeight="0.49573562" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -915,55 +890,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_static/08.imageProcessing/tracking.tiff" />
-    <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/objectTracking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/imageThreshold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/09.imageThresholding/imageThreshold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/09.imageThresholding/imageAdaptiveThreshold.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/numpy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/opencv.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study/images/logo.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1117,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,73 +1057,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="e#22#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/imageMorphology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/study/Harr-cascade.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="437">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/study/imageBlur.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="437">
           <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding>
-            <element signature="e#21#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
-          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/study/imageEdge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="760">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="e#1046#1056#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/temp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#21#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1207,46 +1088,137 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="760">
           <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/study/imageContours.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="57">
           <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/15.imageContours/imageContours.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="190">
+          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3439">
+          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/opevcv.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="98" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="477" column="42" selection-start-line="477" selection-start-column="37" selection-end-line="477" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/opencv.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="10" column="1" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#420#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/imageMorphology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="84" column="85" selection-start-line="84" selection-start-column="85" selection-end-line="84" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_bu.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>

@@ -8,16 +8,40 @@ Goal
 ====
 	* Edge Detection에 대해서 알 수 있다.
 
+Gradient(기울기)는 스칼라장(즉, 공간)에서 최대의 증가율을 나타내는 벡터장(방향과 힘)을 뜻합니다.
+
+어렵죠? 영상처리에서 gradient는 영상의 edge 및 그 방향을 찾는 용도로 활용이 되는데요. 이미지 (x,y)에서의
+벡터값(크기와 방향, 즉 밝기와 밝기의 변화하는 방향)을 구해서 해당 pixel이 edge에 얼마나 가까운지, 그리고 그 방향이
+어디인지 쉽게 알수 있게 합니다.
+(일반적으로 이미지의 Gradient를 생각해보시면 밝기의 변화와 그 방향을 알 수 있습니다.)
+
+아래 설명할 방법들은 Gradient를 이용해서 이미지의 edge를 검출하는 방법입니다.
+
 Sobel & Scharr Filter
 =====================
 
-Gaussian smoothing과 미분을 이용한 방법입니다. 그래서 노이즈가 있는 이미지에 적용하면 좋습니다. X축과 Y축을 미분하여 경계값을 계산합니다.
-X축 미분은 수평선, Y축 미분은 수직선을 미분하여 경계가 사라지는 효과가 있습니다. 미분시 소실되는 표본의 정보가 많을 수 있어 ``aperture_size`` 값을 이용하여 소실되는 정도를 조절할 수 있습니다.
+Gaussian smoothing과 미분을 이용한 방법입니다. 그래서 노이즈가 있는 이미지에 적용하면 좋습니다. X축과 Y축을 미분하는 방법으로 경계값을 계산합니다.
+
+직선을 미분하면 상수, 곡선을 미분하면 또 다른 방정식이 나오는 성질을 이용하여 edge에 대한 선을 그려주는 기능을 합니다.
+X축 미분은 수평선(수직선이 남음), Y축 미분은 수직선(수평선이 남음)을 미분하여 경계가 사라지는 효과가 있습니다.
+미분시 소실되는 표본의 정보가 많을 수 있어 ``aperture_size`` 값을 이용하여 소실되는 정도를 조절할 수 있습니다.
+
 만약 ksize가 -1이면 3x3 Scharr filter가 적용이 되어 Sobel의 3x3보다 좀 더 나은 결과를 보여 줍니다.
 
-#todo#
+.. py:function:: cv2.Sobel(src, ddepth, dx, dy[, dst[, ksize[, scale[, delta[, borderType]]]]]) → dst
 
-.. py:function:: cv2.Sobel(src, )
+    :param src: input image
+    :param ddepth: output image의 depth, -1이면 input image와 동일.
+    :param dx: x축 미분 차수.
+    :param dy: y축 미분 차수.
+    :param ksize: kernel size(ksize x ksize)
+
+.. py:function:: cv2.Scharr(src, ddepth, dx, dy[, dst[, scale[, delta[, borderType]]]]) → dst
+
+    ``cv2.Sobel()`` 함수와 동일하나 ksize가 sobel의 3x3 보다 좀더 정확하게 적용이 됩니다.
+
+
+
 
 Laplacian 함수
 =============

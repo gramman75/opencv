@@ -15,6 +15,7 @@ Contents:
    :maxdepth: 1
 
    doc/01.imageStart/imageStart.rst
+   doc/02.videoStart/videoStart.rst
 
 Indices and tables
 ==================

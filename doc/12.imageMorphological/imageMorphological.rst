@@ -99,3 +99,78 @@ Opening과 Closing은 Erosion과 Dilation의 조합 결과 입니다. 차이는 
 Structuring Element
 ===================
 
+사각형 모양의 structuring element는 numpy를 이용해서 만들 수 있습니다.
+
+>>> import numpy as np
+>>> kernel = np.ones((5,5), np.uini8)
+
+하지만 원, 타원모양이 필요한 경우에는 OpenCV에서 제공하는 ``cv2.getStructuringElement()`` 함수를 이용해서 만들 수 있습니다.
+
+>>> cv2.getStructuringElement(cv2.MORPH_REC,(5,5))
+array([ [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1]], dtype=uint8)
+
+>>> cv2.getStructuringElement(cv2.MORP_ELLIPSE,(5,5))
+array([[0, 0, 1, 0, 0],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [1, 1, 1, 1, 1],
+       [0, 0, 1, 0, 0]], dtype=uint8)
+
+.. py:function:: cv2.getStructuringElement(shape, ksize[,anchor]) -> retval
+
+    :param shape: Element의 모양.
+
+        * **MORPH_RET** : 사각형 모양
+        * **MORPH_ELLIPSE** : 타원형 모양
+        * **MORPH_CROSS** : 십자 모양
+
+    :param ksize: structuring element 사이즈
+
+아래 지금까지 배운 Morphological 변환에 대한 예제입니다.
+
+**Sample Code**
+
+.. code-block:: python
+
+    #-*- coding:utf-8 -*-
+
+    import cv2
+    import numpy as np
+    from matplotlib import pyplot as plt
+
+    dotImage = cv2.imread('images/dot_image.png')
+    holeImage = cv2.imread('images/hole_image.png')
+    orig = cv2.imread('images/morph_origin.png')
+
+
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(5,5))
+    # kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5))
+    # kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+
+    erosion = cv2.erode(dotImage,kernel,iterations = 1)
+    dilation = cv2.dilate(holeImage,kernel,iterations = 1)
+
+    opening = cv2.morphologyEx(dotImage, cv2.MORPH_OPEN, kernel)
+    closing = cv2.morphologyEx(holeImage, cv2.MORPH_CLOSE,kernel)
+    gradient = cv2.morphologyEx(orig, cv2.MORPH_GRADIENT, kernel)
+    tophat = cv2.morphologyEx(orig, cv2.MORPH_TOPHAT, kernel)
+    blackhat = cv2.morphologyEx(orig, cv2.MORPH_BLACKHAT, kernel)
+
+    images =[dotImage, erosion, opening, holeImage, dilation, closing, gradient, tophat, blackhat]
+    titles =['Dot Image','Erosion','Opening','Hole Image', 'Dilation','Closing', 'Gradient', 'Tophat','Blackhot']
+
+    for i in xrange(9):
+        plt.subplot(3,3,i+1),plt.imshow(images[i]),plt.title(titles[i])
+        plt.xticks([]),plt.yticks([])
+
+    plt.show()
+
+**Result**
+
+.. figure:: ../../_static/12.imageMorphological/result01.jpg
+    :align: center
+

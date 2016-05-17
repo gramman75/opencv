@@ -172,4 +172,4 @@ Matplotlib는 다양한 plot기능을 가진 Python Plot Library입니다. 이�
 .. figure:: ../../_static/01.imageStart/5.jpg
     :align: center
 
-    RGB값은 변경한 결과
+    RGB값으로 변경한 결과

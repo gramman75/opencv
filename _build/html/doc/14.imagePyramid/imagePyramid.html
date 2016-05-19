@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
-        <link rel="next" title="Image Contours" href="../15.imageContours/imageContours.html"/>
-        <link rel="prev" title="Image Gradients" href="../13.imageGradient/imageGradient.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -81,25 +79,10 @@
           
             
             
-                <ul class="current">
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Pyramids</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#theory">Theory</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../15.imageContours/imageContours.html">Image Contours</a></li>
 </ul>
 
             
@@ -202,7 +185,31 @@ M x N 사이지의 이미지는 M/2 X N/2 가 적용되연 1/4사이즈로 줄�
 <div class="figure align-center">
 <img alt="../../_images/result014.jpg" src="../../_images/result014.jpg" />
 </div>
-<p><cite>todo</cite></p>
+<p>Laplacian Pyramid는 Gaussian Pyramid에서 만들어 집니다. <code class="docutils literal"><span class="pre">cv2.pyrDown()</span></code> 과 <code class="docutils literal"><span class="pre">cv2.pyrUp()</span></code> 함수를 사용하여 축소, 확장을 하면 원본과 동일한
+이미지를 얻을 수 없습니다.(계산하면서 약간의 차이가 발생합니다.)</p>
+<p>예를 들면 원본 이미지의 shape가 (225,400,3)을 <code class="docutils literal"><span class="pre">cv2.pyrDown()</span></code> 을 적용하면 행과 열이 2배씩 줄게 되고 소수점은 반올림이 되어 (113,200,3)이 됩니다.
+이것을 다시 <code class="docutils literal"><span class="pre">cv2.pyrUp()</span></code> 을 시키면 (226,400,3) 이 되어 원본 이미지와 1row차이가 발생합니다. 이것을 resize를 통해서 동일한 shape로 만든 후에 2 배열을 차이를 구하면
+아래와 같이 외곽선이 남게 됩니다.(짝수 해상도도 동일한 결과가 나옵니다.)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(225, 400, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GAD</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrDown</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GAD</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(113, 200, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GAU</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrUp</span><span class="p">(</span><span class="n">GAD</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">GAU</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(226, 400, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">GAU</span><span class="p">,</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result024.jpg" src="../../_images/result024.jpg" />
+</div>
 </div>
 </div>
 
@@ -210,15 +217,6 @@ M x N 사이지의 이미지는 M/2 X N/2 가 적용되연 1/4사이즈로 줄�
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../15.imageContours/imageContours.html" class="btn btn-neutral float-right" title="Image Contours" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../13.imageGradient/imageGradient.html" class="btn btn-neutral" title="Image Gradients" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
-        <link rel="next" title="Image Pyramids" href="../14.imagePyramid/imagePyramid.html"/>
-        <link rel="prev" title="Morphological Transformations" href="../12.imageMorphological/imageMorphological.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -81,27 +79,9 @@
           
             
             
-                <ul class="current">
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Gradients</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sobel-scharr-filter">Sobel &amp; Scharr Filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#laplacian">Laplacian 함수</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#canddy-edge-detection">Canddy Edge Detection</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../14.imagePyramid/imagePyramid.html">Image Pyramids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15.imageContours/imageContours.html">Image Contours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 </ul>
 
             
@@ -198,23 +178,119 @@ X축 미분은 수평선(수직선이 남음), Y축 미분은 수직선(수평�
 </div>
 <div class="section" id="laplacian">
 <h2>Laplacian 함수<a class="headerlink" href="#laplacian" title="Permalink to this headline">¶</a></h2>
-<p>이미지의 가로와 세로에 대한 Gradient를 2차 미분한 값입니다. Sobel filter에 미분의 정도가 더해진 것과 비슷합니다. blob(주위의 pixel과 확연한 pixel차이를 나타내는 덩어리)검출에 많이 사용됩니다.</p>
+<p>이미지의 가로와 세로에 대한 Gradient를 2차 미분한 값입니다. Sobel filter에 미분의 정도가 더해진 것과 비슷합니다.(dx와 dy가 2인 경우)
+blob(주위의 pixel과 확연한 picel차이를 나타내는 덩어리)검출에 많이 사용됩니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.Laplacian(src, ddepth[, dst[, ksize[, scale[, delta[, borderType]]]]]) → dst</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>src</strong> &#8211; source image</li>
+<li><strong>ddepth</strong> &#8211; output iamge의  depth.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
-<div class="section" id="canddy-edge-detection">
-<h2>Canddy Edge Detection<a class="headerlink" href="#canddy-edge-detection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="canny-edge-detection">
+<h2>Canny Edge Detection<a class="headerlink" href="#canny-edge-detection" title="Permalink to this headline">¶</a></h2>
 <p>가장 유명한 Edge Detection방법입니다. 여러 단계의 Algorithm을 통해서 경계를 찾아 냅니다.</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Noise Reduction</dt>
+<dd><p class="first last">이미지의 Noise를 제거합니다. 이때 5x5의 Gaussian filter를 이용합니다.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Edge Gradient Detection</p>
 <blockquote>
-<div><p># Noise Reduction</p>
-<p>이미지의 Noise를 제거합니다. 이때 5x5의 Gaussian filter를 이용합니다.</p>
-<p># Edge Gradient Detection
-이미지에서 Gradient의 방향과 강도를 확인합니다. 경계값에서는 주변과 색이 다르기 때문에 미분값이 급속도로 변하게 됩니다. 이를 통해 경계값 후보군을 선별합니다.</p>
-<p># Non-maximum Suppression
-이미지의 pixel을 Full scan하여 Edge가 아닌 pixel은 제거합니다.</p>
-<p># Hysteresis Thresholding
-이제 지금까지 Edge로 판단된 pixel이 진짜 edge인지 판별하는 작업을 합니다. max val과 minVal(임계값)을 설정하여 maxVal 이상은 강한 Edge, min과 max사이는 약한 edge로 설정합니다.
+<div><p>이미지에서 Gradient의 방향과 강도를 확인합니다. 경계값에서는 주변과 색이 다르기 때문에 미분값이 급속도로 변하게 됩니다. 이를 통해 경계값 후보군을 선별합니다.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Non-maximum Suppression</p>
+<blockquote>
+<div><p>이미지의 pixel을 Full scan하여 Edge가 아닌 pixel은 제거합니다.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Hysteresis Thresholding</p>
+<blockquote>
+<div><p>이제 지금까지 Edge로 판단된 pixel이 진짜 edge인지 판별하는 작업을 합니다. max val과 minVal(임계값)을 설정하여 maxVal 이상은 강한 Edge, min과 max사이는 약한 edge로 설정합니다.
 이제 약한 edge가 진짜 edge인지 확인하기 위해서 강한 edge와 연결이 되어 있으면 edge로 판단하고, 그러지 않으면 제거합니다.</p>
 </div></blockquote>
-<p>이와 같은 일련의 작업을 통해서 경계값만을 남겨두고 제거합니다. 글로 설명하면 위과 같지만 실제로는 수학적인 부분이 대부분입니다.</p>
+</li>
+</ol>
+<p>이와 같은 일련의 작업을 통해서 경계값만을 남겨두고 제거합니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]]) → edges</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> &#8211; 8-bit input image</li>
+<li><strong>threshold1</strong> &#8211; Hysteresis Thredsholding 작업에서의 min 값</li>
+<li><strong>threshold2</strong> &#8211; Hysteresis Thredsholding 작업에서의 max 값</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>아래는 지금까지 설명한 edge detection방법에 대한 예제입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/dave.png&#39;</span><span class="p">)</span>
+<span class="n">canny</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="n">laplacian</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Laplacian</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CV_8U</span><span class="p">)</span>
+<span class="n">sobelx</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Sobel</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CV_8U</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sobely</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Sobel</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CV_8U</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">ksize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="p">,</span><span class="n">laplacian</span><span class="p">,</span> <span class="n">sobelx</span><span class="p">,</span> <span class="n">sobely</span><span class="p">,</span> <span class="n">canny</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Origianl&#39;</span><span class="p">,</span> <span class="s1">&#39;Laplacian&#39;</span><span class="p">,</span> <span class="s1">&#39;Sobel X&#39;</span><span class="p">,</span> <span class="s1">&#39;Sobel Y&#39;</span><span class="p">,</span><span class="s1">&#39;Canny&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">([</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result016.jpg" src="../../_images/result016.jpg" />
+</div>
 </div>
 </div>
 
@@ -222,15 +298,6 @@ X축 미분은 수평선(수직선이 남음), Y축 미분은 수직선(수평�
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../14.imagePyramid/imagePyramid.html" class="btn btn-neutral float-right" title="Image Pyramids" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../12.imageMorphological/imageMorphological.html" class="btn btn-neutral" title="Morphological Transformations" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -1,32 +1,60 @@
 #-*- coding:utf-8 -*-
-
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-dotImage = cv2.imread('images/dot_image.png')
-holeImage = cv2.imread('images/hole_image.png')
-orig = cv2.imread('images/morph_origin.png')
+A = cv2.imread('images/apple.jpg')
+B = cv2.imread('images/orange.jpg')
 
+# generate Gaussian pyramid for A
+G = A.copy()
+gpA = [G]
+for i in xrange(6):
+    G = cv2.pyrDown(G)
+    gpA.append(G)
 
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(5,5))
-# kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(5,5))
-# kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+# generate Gaussian pyramid for B
+G = B.copy()
+gpB = [G]
+for i in xrange(6):
+    G = cv2.pyrDown(G)
+    gpB.append(G)
 
-erosion = cv2.erode(dotImage,kernel,iterations = 1)
-dilation = cv2.dilate(holeImage,kernel,iterations = 1)
+# generate Laplacian Pyramid for A
+lpA = [gpA[5]]
+for i in xrange(5,0,-1):
+    GE = cv2.pyrUp(gpA[i])
+    temp = cv2.resize(gpA[i-1], (GE.shape[:2][1], GE.shape[:2][0]))
+    L = cv2.subtract(temp,GE)
+    lpA.append(L)
 
-opening = cv2.morphologyEx(dotImage, cv2.MORPH_OPEN, kernel)
-closing = cv2.morphologyEx(holeImage, cv2.MORPH_CLOSE,kernel)
-gradient = cv2.morphologyEx(orig, cv2.MORPH_GRADIENT, kernel)
-tophat = cv2.morphologyEx(orig, cv2.MORPH_TOPHAT, kernel)
-blackhat = cv2.morphologyEx(orig, cv2.MORPH_BLACKHAT, kernel)
+# generate Laplacian Pyramid for B
+lpB = [gpB[5]]
+for i in xrange(5,0,-1):
+    GE = cv2.pyrUp(gpB[i])
+    temp = cv2.resize(gpB[i - 1], (GE.shape[:2][1], GE.shape[:2][0]))
+    L = cv2.subtract(temp, GE)
+    # L = cv2.subtract(gpB[i-1],GE)
+    lpB.append(L)
 
-images =[dotImage, erosion, opening, holeImage, dilation, closing, gradient, tophat, blackhat]
-titles =['Dot Image','Erosion','Opening','Hole Image', 'Dilation','Closing', 'Gradient', 'Tophat','Blackhot']
+# Now add left and right halves of images in each level
+LS = []
+for la,lb in zip(lpA,lpB):
+    rows,cols,dpt = la.shape
+    ls = np.hstack((la[:,0:cols/2], lb[:,cols/2:]))
+    LS.append(ls)
 
-for i in xrange(9):
-	plt.subplot(3,3,i+1),plt.imshow(images[i]),plt.title(titles[i])
-	plt.xticks([]),plt.yticks([])
+# now reconstruct
+ls_ = LS[0]
+for i in xrange(1,6):
+    ls_ = cv2.pyrUp(ls_)
+    temp = cv2.resize(LS[i],(ls_.shape[:2][1], ls_.shape[:2][0]))
+    ls_ = cv2.add(ls_, temp)
 
-plt.show()
+# image with direct connecting each half
+real = np.hstack((A[:,:cols/2],B[:,cols/2:]))
+
+cv2.imshow('real', real)
+cv2.imshow('blending', ls_)
+cv2.waitKey(0)
+cv2.destroyAllWindows()

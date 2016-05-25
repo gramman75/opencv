@@ -78,3 +78,110 @@ Laplacian Pyramid는 Gaussian Pyramid에서 만들어 집니다. ``cv2.pyrDown()
 
 .. figure:: ../../_static/14.imagePyramid/result02.jpg
     :align: center
+
+이미지 Pyramid를 이용하면 이미지 결합을 자연스럽게 처리할 수 있습니다. 작업 순서는 아래와 같습니다.
+
+    #. 2개의 이미지를 각각 Load함.
+    #. 각 이미지에 대해서 적당한 Gaussian Pyramid를 생성함.
+    #. Gaussian Pyramid를 이용하여 Laplacian Pyramid를 생성함.
+    #. 각 단계의 Laplicain Pyramid를 이용하여 각 이미지의 좌측과 우측을 결함.
+    #. 결함한 결과중 가장 작은 이미지를 확대하면서 동일 사이즈의 결합결과와 Add하여 외곽선을 선명하게 처리함.
+
+위 작업단계 순서대로 2개의 이미지를 결함한 예제입니다.
+
+.. code-block:: python
+
+    #-*- coding:utf-8 -*-
+    import cv2
+    import numpy as np
+    from matplotlib import pyplot as plt
+    # 1단계
+    A = cv2.imread('images/apple.jpg')
+    B = cv2.imread('images/orange.jpg')
+
+    # 2단계
+    # A 이미지에 대한 Gaussian Pyramid를 생성
+    # 점점 작아지는 Pyramid
+    G = A.copy()
+    gpA = [G]
+    for i in xrange(6):
+        G = cv2.pyrDown(G)
+        gpA.append(G)
+
+    # B 이미지에 대한 Gaussian Pyramid 생성
+    # 점점 작아지는 Pyramid
+    G = B.copy()
+    gpB = [G]
+    for i in xrange(6):
+        G = cv2.pyrDown(G)
+        gpB.append(G)
+
+    # 3단계
+    # A 이미지에 대한 Laplacian Pyramid 생성
+    lpA = [gpA[5]] # n번째 추가된 Gaussian Image
+    for i in xrange(5,0,-1):
+        GE = cv2.pyrUp(gpA[i]) #n번째 추가된 Gaussian Image를 Up Scale함.
+        temp = cv2.resize(gpA[i-1], (GE.shape[:2][1], GE.shape[:2][0])) # 행렬의 크기를 동일하게 만듬.
+        L = cv2.subtract(temp,GE) # n-1번째 이미지에서 n번째 Up Sacle한 이미지 차이 -> Laplacian Pyramid
+        lpA.append(L)
+
+    # A 이미지와 동일하게 B 이미지도 Laplacian Pyramid 생성
+    lpB = [gpB[5]]
+    for i in xrange(5,0,-1):
+        GE = cv2.pyrUp(gpB[i])
+        temp = cv2.resize(gpB[i - 1], (GE.shape[:2][1], GE.shape[:2][0]))
+        L = cv2.subtract(temp, GE)
+        # L = cv2.subtract(gpB[i-1],GE)
+        lpB.append(L)
+
+    # 4단계
+    # Laplician Pyramid를 누적으로 좌측과 우측으로 재결함
+    LS = []
+    for la,lb in zip(lpA,lpB):
+        rows,cols,dpt = la.shape
+        ls = np.hstack((la[:,0:cols/2], lb[:,cols/2:]))
+        LS.append(ls)
+
+
+    # 5단계
+    ls_ = LS[0] # 좌측과 우측이 결합된 가장 작은 이미지
+    for i in xrange(1,6):
+        ls_ = cv2.pyrUp(ls_) # Up Sacle
+        temp = cv2.resize(LS[i],(ls_.shape[:2][1], ls_.shape[:2][0])) # 외곽선만 있는 이미지
+        ls_ = cv2.add(ls_, temp) # UP Sacle된 이미지에 외곽선을 추가하여 선명한 이미지로 생성
+
+    # 원본 이미지를 그대로 붙인 경우
+    real = np.hstack((A[:,:cols/2],B[:,cols/2:]))
+
+    cv2.imshow('real', real)
+    cv2.imshow('blending', ls_)
+    cv2.destroyAllWindows()
+
+위 예제에서 5단계의 역할에 대해서 알아보기 위하여 마지막 i = 5 일경우의 각 이미지의 결과는 아래와 같습니다.
+
+ .. figure:: ../../_static/14.imagePyramid/result03.jpg
+    :align: center
+
+    ``cv2.pyUp(ls_)`` 수행 전의 ``_ls`` 이미지
+
+ .. figure:: ../../_static/14.imagePyramid/result04.jpg
+    :align: center
+
+    ``cv2.pyUp(ls_)`` 수행 후의 ``_ls`` 이미지
+
+ .. figure:: ../../_static/14.imagePyramid/result05.jpg
+    :align: center
+
+    ``temp`` 이미지. 잘 보이지 않지만 외곽선만 남아 있는 결과.
+
+ .. figure:: ../../_static/14.imagePyramid/result06.jpg
+    :align: center
+
+    Up Sacle된 결과와 외곽선 이미지가 결함한 최종 결과
+
+위와 같은 단계를 거쳐 부드럽게 2개의 이미지가 결합이 되었습니다. 단순하게 원본이미지를 결합한 결과는 아래와 같습니다.
+
+ .. figure:: ../../_static/14.imagePyramid/result07.jpg
+    :align: center
+
+    단순 결합 결과

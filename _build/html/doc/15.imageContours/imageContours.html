@@ -30,8 +30,7 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
-        <link rel="prev" title="Image Pyramids" href="../14.imagePyramid/imagePyramid.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -80,24 +79,11 @@
           
             
             
-                <ul class="current">
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14.imagePyramid/imagePyramid.html">Image Pyramids</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Image Contours</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
-</ul>
-</li>
 </ul>
 
             
@@ -153,19 +139,146 @@
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="contours">
+<h2>Contours<a class="headerlink" href="#contours" title="Permalink to this headline">¶</a></h2>
+<p>Contours란 동일한 색 또는 동일한 강도를 가지고 있는 영역의 경계선을 연결한 선입니다. 우리가 자주 보는 것으로는 등고선이나 일기예보에서 볼 수 있습니다.</p>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/image01.jpg" src="../../_images/image01.jpg" />
+<p class="caption"><span class="caption-text">등고선(Contours Line)(출처 <a href="#id1"><span class="problematic" id="id2">``</span></a>위키피디아&lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Contour_line">https://en.wikipedia.org/wiki/Contour_line</a>&gt;``_)</span></p>
+<div class="legend">
+</div>
+</div>
+<p>대상의 외형을 파악하는데 유용하게 사용이 됩니다.</p>
+<blockquote>
+<div><ul class="simple">
+<li>정확도를 높히기 위해서 Binary Image를 사용합니다. threshold나 canny edge를 선처리로 수행합니다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.findContours()</span></code> 함수는 원본 이미지를 직접 수정하기 때문에, 원본 이미지를 보존 하려면 Copy해서 사용해야 합니다.</li>
+<li>OpenCV에서는 contours를 찾는 것은 검은색 배경에서 하얀색 대상을 찾는 것과 비슷합니다. 그래서 대상은 흰색, 배경은 검은색으로 해야 합니다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="find-draw-contours">
+<h2>Find &amp; Draw Contours<a class="headerlink" href="#find-draw-contours" title="Permalink to this headline">¶</a></h2>
+<p>OpenCV에서 contours를 찾고, 그리기 위해서 아래 2개의 함수를 사용합니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.findContours(image, mode, method[, contours[, hierarchy[, offset]]]) → image, contours, hierarchy</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> &#8211; 8-bit single-channel image. binary image.</li>
+<li><strong>mode</strong> &#8211; <p>contours를 찾는 방법</p>
+<ul>
+<li><code class="docutils literal"><span class="pre">cv2.RETR_EXTERNAL</span></code> : contours line중 가장 바같쪽 Line만 찾음.</li>
+<li><code class="docutils literal"><span class="pre">cv2.RETR_LIST</span></code> : 모든 contours line을 찾지만, hierachy 관계를 구성하지 않음.</li>
+<li><code class="docutils literal"><span class="pre">cv2.RETR_CCOMP</span></code> : 모든 contours line을 찾으며, hieracy관계는 2-level로 구성함.</li>
+<li><code class="docutils literal"><span class="pre">cv2.RETR_TREE</span></code> : 모든 contours line을 찾으며, 모든 hieracy관계를 구성함.</li>
+</ul>
+</li>
+<li><strong>method</strong> &#8211; <p>contours를 찾을 때 사용하는 근사치 방법</p>
+<ul>
+<li><code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_NONE</span></code> : 모든 contours point를 저장.</li>
+<li><code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_SIMPLE</span></code> :  contours line을 그릴 수 있는 point 만 저장. (ex; 사각형이면 4개 point)</li>
+<li><code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_TC89_L1</span></code> : contours point를 찾는 algorithm</li>
+<li><code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_TC89_KCOS</span></code> : contours point를 찾는 algorithm</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image, contours , hierachy</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>Method에 대해서 설명을 하면 아래 예제의 결과에서 처럼 사각형의 contours line을 그릴 때, <code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_NONE</span></code> 는 모든 point를 저장하고
+<code class="docutils literal"><span class="pre">cv2.CHAIN_APPROX_SIMPLE</span></code> 는 4개의 point만을 저장하여 메모리를 절약합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">contours</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#cv2.CHAIN_APPROX_SIMPLE(4 point)</span>
+<span class="go">(4, 1, 2)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">contours</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#cv2.CHAIN_APPROX_NONE(750 point)</span>
+<span class="go">(750, 1, 2)</span>
+</pre></div>
+</div>
+<p>mode에 대해서는 Hierachy를 설명할 때 같이 설명하도록 하겠습니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.drawContours(image, contours, contourIdx, color[, thickness[, lineType[, hierarchy[, maxLevel[, offset]]]]]) → dst</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> &#8211; 원본 이미지</li>
+<li><strong>contours</strong> &#8211; contours정보.</li>
+<li><strong>contourIdx</strong> &#8211; contours list type에서 몇번째 contours line을 그릴 것인지. -1 이면 전체</li>
+<li><strong>color</strong> &#8211; contours line color</li>
+<li><strong>thickness</strong> &#8211; contours line의 두께. 음수이면 contours line의 내부를 채움.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">image에 contours가 그려진 결과</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>아래는 예제와 결과입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/rectangle.jpg&#39;</span><span class="p">)</span>
+<span class="n">imgray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<span class="c1">#threshold를 이용하여 binary image로 변환</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">imgray</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#contours는 point의 list형태. 예제에서는 사각형이 하나의 contours line을 구성하기 때문에 len(contours) = 1. 값은 사각형의 꼭지점 좌표.</span>
+<span class="c1">#hierachy는 contours line의 계층 구조</span>
+<span class="n">image</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">hierachy</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_TREE</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawContours</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result017.jpg" src="../../_images/result017.jpg" />
+</div>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../14.imagePyramid/imagePyramid.html" class="btn btn-neutral" title="Image Pyramids" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

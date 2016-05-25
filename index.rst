@@ -17,6 +17,7 @@ Contents:
    doc/01.imageStart/imageStart.rst
    doc/02.videoStart/videoStart.rst
    doc/03.drawShape/drawShape.rst
+   doc/04.drawWithMouse/drawWithMouse.rst
 
 Indices and tables
 ==================

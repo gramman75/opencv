@@ -29,6 +29,7 @@ Contents:
    doc/13.imageGradient/imageGradient.rst
    doc/14.imagePyramid/imagePyramid.rst
    doc/15.imageContours/imageContours.rst
+   doc/16.imageContourFeature/imageContourFeature.rst
 
 Indices and tables
 ==================

@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
 </ul>
 
             
@@ -210,6 +211,110 @@ M x N 사이지의 이미지는 M/2 X N/2 가 적용되연 1/4사이즈로 줄�
 <div class="figure align-center">
 <img alt="../../_images/result024.jpg" src="../../_images/result024.jpg" />
 </div>
+<p>이미지 Pyramid를 이용하면 이미지 결합을 자연스럽게 처리할 수 있습니다. 작업 순서는 아래와 같습니다.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>2개의 이미지를 각각 Load함.</li>
+<li>각 이미지에 대해서 적당한 Gaussian Pyramid를 생성함.</li>
+<li>Gaussian Pyramid를 이용하여 Laplacian Pyramid를 생성함.</li>
+<li>각 단계의 Laplicain Pyramid를 이용하여 각 이미지의 좌측과 우측을 결함.</li>
+<li>결함한 결과중 가장 작은 이미지를 확대하면서 동일 사이즈의 결합결과와 Add하여 외곽선을 선명하게 처리함.</li>
+</ol>
+</div></blockquote>
+<p>위 작업단계 순서대로 2개의 이미지를 결함한 예제입니다.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="c1"># 1단계</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/apple.jpg&#39;</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/orange.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2단계</span>
+<span class="c1"># A 이미지에 대한 Gaussian Pyramid를 생성</span>
+<span class="c1"># 점점 작아지는 Pyramid</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">gpA</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrDown</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">gpA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># B 이미지에 대한 Gaussian Pyramid 생성</span>
+<span class="c1"># 점점 작아지는 Pyramid</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">gpB</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrDown</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">gpB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># 3단계</span>
+<span class="c1"># A 이미지에 대한 Laplacian Pyramid 생성</span>
+<span class="n">lpA</span> <span class="o">=</span> <span class="p">[</span><span class="n">gpA</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span> <span class="c1"># n번째 추가된 Gaussian Image</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">GE</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrUp</span><span class="p">(</span><span class="n">gpA</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">#n번째 추가된 Gaussian Image를 Up Scale함.</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">gpA</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">GE</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">GE</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># 행렬의 크기를 동일하게 만듬.</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="n">GE</span><span class="p">)</span> <span class="c1"># n-1번째 이미지에서 n번째 Up Sacle한 이미지 차이 -&gt; Laplacian Pyramid</span>
+    <span class="n">lpA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="c1"># A 이미지와 동일하게 B 이미지도 Laplacian Pyramid 생성</span>
+<span class="n">lpB</span> <span class="o">=</span> <span class="p">[</span><span class="n">gpB</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">GE</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrUp</span><span class="p">(</span><span class="n">gpB</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">gpB</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">GE</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">GE</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">GE</span><span class="p">)</span>
+    <span class="c1"># L = cv2.subtract(gpB[i-1],GE)</span>
+    <span class="n">lpB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="c1"># 4단계</span>
+<span class="c1"># Laplician Pyramid를 누적으로 좌측과 우측으로 재결함</span>
+<span class="n">LS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">la</span><span class="p">,</span><span class="n">lb</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lpA</span><span class="p">,</span><span class="n">lpB</span><span class="p">):</span>
+    <span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">,</span><span class="n">dpt</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">ls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">la</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="n">lb</span><span class="p">[:,</span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">:]))</span>
+    <span class="n">LS</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+
+
+<span class="c1"># 5단계</span>
+<span class="n">ls_</span> <span class="o">=</span> <span class="n">LS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 좌측과 우측이 결합된 가장 작은 이미지</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">ls_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">pyrUp</span><span class="p">(</span><span class="n">ls_</span><span class="p">)</span> <span class="c1"># Up Sacle</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">LS</span><span class="p">[</span><span class="n">i</span><span class="p">],(</span><span class="n">ls_</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">ls_</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span> <span class="c1"># 외곽선만 있는 이미지</span>
+    <span class="n">ls_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ls_</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span> <span class="c1"># UP Sacle된 이미지에 외곽선을 추가하여 선명한 이미지로 생성</span>
+
+<span class="c1"># 원본 이미지를 그대로 붙인 경우</span>
+<span class="n">real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">A</span><span class="p">[:,:</span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span><span class="n">B</span><span class="p">[:,</span><span class="n">cols</span><span class="o">/</span><span class="mi">2</span><span class="p">:]))</span>
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;real&#39;</span><span class="p">,</span> <span class="n">real</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;blending&#39;</span><span class="p">,</span> <span class="n">ls_</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>위 예제에서 5단계의 역할에 대해서 알아보기 위하여 마지막 i = 5 일경우의 각 이미지의 결과는 아래와 같습니다.</p>
+<blockquote>
+<div><div class="figure align-center" id="id1">
+<img alt="../../_images/result031.jpg" src="../../_images/result031.jpg" />
+<p class="caption"><span class="caption-text"><code class="docutils literal"><span class="pre">cv2.pyUp(ls_)</span></code> 수행 전의 <code class="docutils literal"><span class="pre">_ls</span></code> 이미지</span></p>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/result041.jpg" src="../../_images/result041.jpg" />
+<p class="caption"><span class="caption-text"><code class="docutils literal"><span class="pre">cv2.pyUp(ls_)</span></code> 수행 후의 <code class="docutils literal"><span class="pre">_ls</span></code> 이미지</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/result051.jpg" src="../../_images/result051.jpg" />
+<p class="caption"><span class="caption-text"><code class="docutils literal"><span class="pre">temp</span></code> 이미지. 잘 보이지 않지만 외곽선만 남아 있는 결과.</span></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="../../_images/result061.jpg" src="../../_images/result061.jpg" />
+<p class="caption"><span class="caption-text">Up Sacle된 결과와 외곽선 이미지가 결함한 최종 결과</span></p>
+</div>
+</div></blockquote>
+<p>위와 같은 단계를 거쳐 부드럽게 2개의 이미지가 결합이 되었습니다. 단순하게 원본이미지를 결합한 결과는 아래와 같습니다.</p>
+<blockquote>
+<div><div class="figure align-center" id="id5">
+<img alt="../../_images/result071.jpg" src="../../_images/result071.jpg" />
+<p class="caption"><span class="caption-text">단순 결합 결과</span></p>
+</div>
+</div></blockquote>
 </div>
 </div>
 

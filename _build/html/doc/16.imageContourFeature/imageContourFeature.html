@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contour Feature &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Contour Feature</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/16.imageContourFeature/imageContourFeature.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contour-feature">
+<h1>Contour Feature<a class="headerlink" href="#contour-feature" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Contours의 특징(영역, 중심점, bounding box 등)을 찾을 수 있습니다.</li>
+<li>Contours 특징을 찾는 다양한 함수에 대해서 알 수 있습니다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="moments">
+<h2>Moments<a class="headerlink" href="#moments" title="Permalink to this headline">¶</a></h2>
+<p>Image Moment는 대상을 구분할 수 있는 특징을 의미합니다.. 특징으로는 Area, Perimeter, 중심점 등이 있습니다.
+Image Moments는 대상을 구분한 후, 다른 대상과 구분하기 위해 대상을 설명(describe)하는 자료로 사용됩니다.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/rectangle.jpg&#39;</span><span class="p">)</span>
+<span class="n">imgray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">imgray</span><span class="p">,</span><span class="mi">127</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">image</span><span class="p">,</span> <span class="n">contours</span><span class="p">,</span> <span class="n">hierachy</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_TREE</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+
+<span class="c1"># 첫번째 contours의 moment 특징 추출</span>
+<span class="n">cnt</span> <span class="o">=</span> <span class="n">contours</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">moments</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">M</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="s1">&#39;mu02&#39;</span><span class="p">,</span> <span class="mf">35950058.66666663</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu03&#39;</span><span class="p">,</span> <span class="mf">1.52587890625e-05</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m11&#39;</span><span class="p">,</span> <span class="mf">884446080.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu02&#39;</span><span class="p">,</span> <span class="mf">0.03873697916666662</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m12&#39;</span><span class="p">,</span> <span class="mf">113614624853.33333</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu21&#39;</span><span class="p">,</span> <span class="mf">1.9073486328125e-05</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu20&#39;</span><span class="p">,</span> <span class="mf">166374058.6666665</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu20&#39;</span><span class="p">,</span> <span class="mf">0.17927170868347322</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m30&#39;</span><span class="p">,</span> <span class="mf">570292325120.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu21&#39;</span><span class="p">,</span> <span class="mf">1.1775050154231546e-16</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu11&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu12&#39;</span><span class="p">,</span> <span class="mf">3.814697265625e-06</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu11&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu12&#39;</span><span class="p">,</span> <span class="mf">2.3550100308463093e-17</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m02&#39;</span><span class="p">,</span> <span class="mf">463733162.6666666</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m03&#39;</span><span class="p">,</span> <span class="mf">63472543680.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m00&#39;</span><span class="p">,</span> <span class="mf">30464.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m01&#39;</span><span class="p">,</span> <span class="mf">3609984.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;mu30&#39;</span><span class="p">,</span> <span class="mf">0.0001220703125</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu30&#39;</span><span class="p">,</span> <span class="mf">7.53603209870819e-16</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;nu03&#39;</span><span class="p">,</span> <span class="mf">9.420040123385237e-17</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m10&#39;</span><span class="p">,</span> <span class="mf">7463680.0</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m20&#39;</span><span class="p">,</span> <span class="mf">1994975658.6666665</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;m21&#39;</span><span class="p">,</span> <span class="mf">236404615552.0</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>위 Dictionary Data에는 contours의 특징을 찾을 수 있는 기본 정보들이 있습니다(총 24개). 예를 들면 Contour의 중심값을 찾기 위해서는 아래 값을 사용하면 됩니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;m10&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;m00&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cy</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;m01&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;m00&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="section" id="contour-area">
+<h3>Contour Area<a class="headerlink" href="#contour-area" title="Permalink to this headline">¶</a></h3>
+<p>Contour면적은 moments의 <code class="docutils literal"><span class="pre">m00</span></code> 값이거나 <code class="docutils literal"><span class="pre">cv2.contourArea()</span></code> 함수로 구할 수 있다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+<span class="go">30464.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contour-perimeter">
+<h3>Contour Perimeter<a class="headerlink" href="#contour-perimeter" title="Permalink to this headline">¶</a></h3>
+<p>Contour의 둘레 길이를 구할 수 있습니다. 사각형의 경우는 둘레길이의 합이 됩니다. 아래 함수의 2번째 argument가 true이면 폐곡선 도형을 만들어
+둘레길이를 구하고, False이면 시작점과 끝점을 연결하지 않고 둘레 길이를 구합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">arcLength</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="go">750.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">arcLength</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="go">494.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contour-approximation">
+<h3>Contour Approximation<a class="headerlink" href="#contour-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="convex-hull">
+<h3>Convex Hull<a class="headerlink" href="#convex-hull" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="checking-convexity">
+<h3>Checking Convexity<a class="headerlink" href="#checking-convexity" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bounding-rectangle">
+<h3>Bounding Rectangle<a class="headerlink" href="#bounding-rectangle" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="minumum-enclosing-circle">
+<h3>Minumum Enclosing Circle<a class="headerlink" href="#minumum-enclosing-circle" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="fitting-an-ellipse">
+<h3>Fitting an Ellipse<a class="headerlink" href="#fitting-an-ellipse" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="fitting-a-line">
+<h3>Fitting a Line<a class="headerlink" href="#fitting-a-line" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

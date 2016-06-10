@@ -11,7 +11,14 @@ Goal
 Aspect Ratio
 ------------
 
-Contours Line의 가로 세로 비율 속성입니다. ``cv2.boundingRect()`` 함수를 이용하여 가로/세로 크기를 구한 후에 사용합니다.::
+Contours Line의 가로 세로 비율 속성입니다.
+
+.. math::
+
+    Aspect Ratio = \frac { Width }{ Height }
+
+``cv2.boundingRect()`` 함수를 이용하여 가로/세로 크기를 구한 후에 사용합니다.::
+
 
     x, y, w, h = cv2.boundingRect(cnt)
     aspect_ratio = float(w)/h
@@ -19,7 +26,13 @@ Contours Line의 가로 세로 비율 속성입니다. ``cv2.boundingRect()`` �
 Extend
 ------
 
-Contour Line을 포함하는 사각형 면적대비 Contour의 면적 비율입니다.::
+Contour Line을 포함하는 사각형 면적대비 Contour의 면적 비율입니다.
+
+.. math::
+
+    Extend=\frac { Object\quad Area }{ Bounding\quad Rectagle\quad Area }
+
+::
 
     area = cv2.contourArea(cnt) # Contour Line의 면적
     x, y, w, h = cv2.boundingRect(cnt)
@@ -30,6 +43,12 @@ Solidity
 --------
 
 Solidity Ratio(고형비)는 Convex hull 면적 대비 Contour의 면적 비율입니다.
+
+.. math::
+
+    Solidity=\frac { Contour Area  }{ Convex Hull Area }
+
+::
 
     area = cv2.contourArea(cnt) # Contour Line면적
     hull = cv2.convexHull(cnt) # Convex hull line

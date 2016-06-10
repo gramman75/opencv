@@ -140,7 +140,10 @@
 </div></blockquote>
 <div class="section" id="aspect-ratio">
 <h3>Aspect Ratio<a class="headerlink" href="#aspect-ratio" title="Permalink to this headline">¶</a></h3>
-<p>Contours Line의 가로 세로 비율 속성입니다. <code class="docutils literal"><span class="pre">cv2.boundingRect()</span></code> 함수를 이용하여 가로/세로 크기를 구한 후에 사용합니다.:</p>
+<p>Contours Line의 가로 세로 비율 속성입니다.</p>
+<div class="math">
+\[Aspect Ratio = \frac { Width }{ Height }\]</div>
+<p><code class="docutils literal"><span class="pre">cv2.boundingRect()</span></code> 함수를 이용하여 가로/세로 크기를 구한 후에 사용합니다.:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
 <span class="n">aspect_ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
 </pre></div>
@@ -148,7 +151,9 @@
 </div>
 <div class="section" id="extend">
 <h3>Extend<a class="headerlink" href="#extend" title="Permalink to this headline">¶</a></h3>
-<p>Contour Line을 포함하는 사각형 면적대비 Contour의 면적 비율입니다.:</p>
+<p>Contour Line을 포함하는 사각형 면적대비 Contour의 면적 비율입니다.</p>
+<div class="math">
+\[Extend=\frac { Object\quad Area }{ Bounding\quad Rectagle\quad Area }\]</div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="c1"># Contour Line의 면적</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
 <span class="n">rect_area</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span>  <span class="c1"># 사각형 면적</span>
@@ -159,11 +164,14 @@
 <div class="section" id="solidity">
 <h3>Solidity<a class="headerlink" href="#solidity" title="Permalink to this headline">¶</a></h3>
 <p>Solidity Ratio(고형비)는 Convex hull 면적 대비 Contour의 면적 비율입니다.</p>
-<blockquote>
-<div>area = cv2.contourArea(cnt) # Contour Line면적
-hull = cv2.convexHull(cnt) # Convex hull line
-hull_area = cv2.contourArea(hull) # Convex hull 면적
-solidity = float(area) / hull_area</div></blockquote>
+<div class="math">
+\[Solidity=\frac { Contour Area  }{ Convex Hull Area }\]</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="c1"># Contour Line면적</span>
+<span class="n">hull</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">convexHull</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="c1"># Convex hull line</span>
+<span class="n">hull_area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">hull</span><span class="p">)</span> <span class="c1"># Convex hull 면적</span>
+<span class="n">solidity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="o">/</span> <span class="n">hull_area</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="extream-points">
 <h3>Extream Points<a class="headerlink" href="#extream-points" title="Permalink to this headline">¶</a></h3>

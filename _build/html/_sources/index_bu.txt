@@ -30,6 +30,8 @@ Contents:
    doc/14.imagePyramid/imagePyramid.rst
    doc/15.imageContours/imageContours.rst
    doc/16.imageContourFeature/imageContourFeature.rst
+   doc/17.imageContourProperty/imageContourProperty.rst
+   doc/18.imageContourHierarchy/imageContourHierarchy.rst
 
 Indices and tables
 ==================

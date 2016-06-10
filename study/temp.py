@@ -1,37 +1,31 @@
 #-*- coding:utf-8 -*-
 import cv2
 import numpy as np
+import random
 from matplotlib import pyplot as plt
 
-img = cv2.imread('images/UK.jpg')
-img1 = img.copy()
+img = cv2.imread('images/imageHierarchy.png')
 
 imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret, thresh = cv2.threshold(imgray,125,255,0)
 
 image, contours, hierachy = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
-cnt = contours[14] # 14번째가 지도의 contour line
 
-# 끝점 좌표 찾기
-leftmost = tuple(cnt[cnt[:,:,0].argmin()][0])
-rightmost = tuple(cnt[cnt[:,:,0].argmax()][0])
-topmost = tuple(cnt[cnt[:,:,1].argmin()][0])
-bottommost = tuple(cnt[cnt[:,:,1].argmax()][0])
+for i in xrange(len(contours)):
+    #각 Contour Line을 구분하기 위해서 Color Random생성
+    b = random.randrange(1,255)
+    g = random.randrange(1,255)
+    r = random.randrange(1,255)
 
-# 좌표 표시하기
-cv2.circle(img1,leftmost,20,(0,0,255),-1)
-cv2.circle(img1,rightmost,20,(0,0,255),-1)
-cv2.circle(img1,topmost,20,(0,0,255),-1)
-cv2.circle(img1,bottommost,20,(0,0,255),-1)
+    cnt = contours[i]
+    img = cv2.drawContours(img, [cnt], -1,(b,g,r), 2)
 
-img1 = cv2.drawContours(img1, cnt, -1, (255,0,0), 5)
+titles = ['Result']
+images = [img]
 
-titles = ['Original','Result']
-images = [img, img1]
-
-for i in xrange(2):
-    plt.subplot(1,2,i+1), plt.title(titles[i]), plt.imshow(images[i])
+for i in xrange(1):
+    plt.subplot(1,1,i+1), plt.title(titles[i]), plt.imshow(images[i])
     plt.xticks([]), plt.yticks([])
 
 plt.show()

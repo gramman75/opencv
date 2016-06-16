@@ -25,7 +25,7 @@ Hierarchy
 
     원본 이미지
 .. code-block:: python
-    :lineons:
+    :linenos:
 
     #-*- coding:utf-8 -*-
     import cv2

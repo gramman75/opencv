@@ -71,7 +71,7 @@ Point의 수를 줄이는데 사용되는 방식은 `Douglas-Peucker algorithm <
 
 근사치를 찾는데 사용되는 함수는 ``cv2.approxPolyDP()`` 입니다.
 
-.. py:funciton:: cv2.approxPolyDP(curve, epsilon, closed[, approxCurve]) → approxCurve
+.. py:function:: cv2.approxPolyDP(curve, epsilon, closed[, approxCurve]) → approxCurve
 
     :param curve: contours point array
     :param epsilon: original cuve와 근사치의 최대거리. 최대거리가 클 수록 더 먼 곳의 Point까지 고려하기 때문에 Point수가 줄어듬.

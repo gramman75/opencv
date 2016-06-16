@@ -72,7 +72,7 @@ RGB 모델은 빛의 삼원색인 빨간색, 초록색, 파란색을 기본 색�
 .. figure:: ../../_static/08.imageProcessing/image5.png
     :align: center
 
-    RGB 모델(출처 : `위키피디아 <https://ko.wikipedia.org/wiki/RGB_%EA%B0%80%EC%82%B0%ED%98%BC%ED%95%A9>`_)
+    RGB 모델(출처 : `위키피디아 <https://ko.wikipedia.org/wiki/RGB_%EA%B0%80%EC%82%B0%ED%98%BC%ED%95%A9>`_ )
 
 HSV Color-space
 ---------------

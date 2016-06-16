@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst" afterPath="$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" afterPath="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" afterPath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst" afterPath="$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst" />
     </list>
     <ignored path="opencv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,28 +60,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="imageContours.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/imageContours.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-              <folding>
-                <marker date="1464153970187" expanded="true" signature="894:981" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageEdge.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/imageEdge.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="temp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/study/temp.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,11 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imageContourHierarchy.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="imageContourHierarchy.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imageProcessing.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="74" column="98" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -132,11 +122,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basicOperation.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
+      <file leaf-file-name="imageMorphological.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="538">
+              <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imageContourFeature.rst" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="imageStart.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1045">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -194,7 +204,6 @@
         <option value="$PROJECT_DIR$/doc/09.imageThresholding/imageThreshold.py" />
         <option value="$PROJECT_DIR$/study/imageAdaptiveThreshold.py" />
         <option value="$PROJECT_DIR$/doc/09.imageThresholding/imageThresholding.rst" />
-        <option value="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" />
         <option value="$PROJECT_DIR$/doc/10.imageTransformation/imageTransformation.rst" />
         <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/study/imageSmoothing.py" />
@@ -205,16 +214,17 @@
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/doc/01.imageStart/imageStart.rst" />
         <option value="$PROJECT_DIR$/study/imageMorphology.py" />
-        <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
         <option value="$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst" />
         <option value="$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst" />
         <option value="$PROJECT_DIR$/study/imageContours.py" />
         <option value="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
         <option value="$PROJECT_DIR$/index_bu.rst" />
-        <option value="$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst" />
         <option value="$PROJECT_DIR$/study/temp.py" />
         <option value="$PROJECT_DIR$/index.rst" />
         <option value="$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst" />
+        <option value="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" />
+        <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
+        <option value="$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst" />
       </list>
     </option>
   </component>
@@ -280,6 +290,102 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="opencv" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="16.imageContourFeature" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="12.imageMorphological" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="08.imageProcessing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="01.imageStart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -816,7 +922,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466064839259</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="20160615-01">
+      <created>1466065155433</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1466065155433</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -832,7 +945,7 @@
     <frame x="-8" y="1072" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31823027" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31663114" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.47974414" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3526971" sideWeight="0.5676972" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -917,27 +1030,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/imageMorphology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="29" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2717">
-          <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study/images/chessboard01.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1106,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/15.imageContours/imageContours.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1240,6 +1325,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="74" column="98" selection-start-line="74" selection-start-column="98" selection-end-line="74" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1045">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
           <folding />
         </state>
       </provider>

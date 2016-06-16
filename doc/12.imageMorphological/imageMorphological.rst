@@ -32,7 +32,7 @@ Erosion
 .. figure:: ../../_static/12.imageMorphological/image02.png
     :align: center
 
-    Erosion Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+    Erosion Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_ )
 
 
 .. py:function:: cv2.erode(src, kernel, dst, anchor, iterations, borderType, borderValue)
@@ -51,14 +51,14 @@ Erosion과 반대로 대상을 확장한 후 작은 구멍을 채우는 방법�
 .. figure:: ../../_static/12.imageMorphological/image03.png
     :align: center
 
-    Dilation(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+    Dilation(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_ )
 
 위 그림은 십자형 structuring element를 원본이미지에 OR 연산을 적용합니다. 최종적으로 확장된 이미지를 얻을 수 있습니다. **결과적으로 경계가 부드러워 지고, 구멍이 메꿔지는 효과를 얻을 수 있습니다.**
 
 .. figure:: ../../_static/12.imageMorphological/image04.png
     :align: center
 
-    Dilation Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+    Dilation Result(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_ )
 
 .. py:function:: cv2.dilation(src, kernel, dst, anchor, iterations, borderType, borderValue)
 
@@ -78,7 +78,7 @@ Opening과 Closing은 Erosion과 Dilation의 조합 결과 입니다. 차이는 
 .. figure:: ../../_static/12.imageMorphological/image05.png
     :align: center
 
-    Opening & Closing(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+    Opening & Closing(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_ )
 
 .. py:function:: cv2.morphologyEx(src, op, kernel[, dst[, anchor[, iterations[, borderType[, borderValue]]]]]) -> dst
 

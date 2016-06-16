@@ -7,7 +7,7 @@
 Goal
 ====
     * 이미지 이진화의 방법인 Simple thresholding, Adaptive thresholding, Otsu’s thresholding에 대해서 알 수 있다.
-    * ``cv2.thresh()`` , ``cv2.adaptiveThreshold()`` 함수에 대해서 알 수 있다.
+    * ``cv2.threshold()`` , ``cv2.adaptiveThreshold()`` 함수에 대해서 알 수 있다.
 
 기본 임계처리
 ==========
@@ -16,9 +16,9 @@ Goal
 이때 기준이 되는 임계값을 어떻게 결정할 것인지가 중요한 문제가 됩니다.
 기본 임계처리는 사용자가 고정된 임계값을 결정하고 그 결과를 보여주는 단순한 형태입니다.
 
-이때 사용하는 함수가 ``cv2.thresh()`` 입니다.
+이때 사용하는 함수가 ``cv2.threshold()`` 입니다.
 
-.. py:function:: cv2.thresh(src, thresh, maxval, type) -> retval, dst
+.. py:function:: cv2.threshold(src, thresh, maxval, type) -> retval, dst
 
     :param src: input image로 single-channel 이미지.(grayscale 이미지)
     :param thresh: 임계값

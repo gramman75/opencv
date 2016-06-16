@@ -9,7 +9,7 @@ img = cv2.imread('images/imageHierarchy.png')
 imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 ret, thresh = cv2.threshold(imgray,125,255,0)
 
-image, contours, hierachy = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
 
 
 for i in xrange(len(contours)):

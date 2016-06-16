@@ -18,7 +18,7 @@ Contours란 동일한 색 또는 동일한 강도를 가지고 있는 영역의 
 .. figure:: ../../_static/15.imageContours/image01.jpg
     :align: center
 
-    등고선(Contours Line)(출처 ``위키피디아<https://en.wikipedia.org/wiki/Contour_line>``_)
+    등고선(Contours Line)(출처 `위키피디아 <https://en.wikipedia.org/wiki/Contour_line>`_ )
 
 대상의 외형을 파악하는데 유용하게 사용이 됩니다.
 

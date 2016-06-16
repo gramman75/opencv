@@ -24,7 +24,7 @@ Erosion
 .. figure:: ../../_static/12.imageMorphological/image01.png
     :align: center
 
-    Erosion(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_)
+    Erosion(출처: `KOCW <http://www.kocw.net/home/search/kemView.do?kemId=1127905&ar=relateCourse>`_ )
 
 위 그림에서 가운데 있는 십자형 Structuring Element를 Original Image에 적용을 합니다. 원본의 각 pixel에 적용을 하여 겹치는 부분이 없는 부분이 하나라도 있으면
 그 중심 pixel을 제거하는 방식입니다. 최종적으로 우측의 분홍색 영역만 남게 됩니다. **이 방법은 작은 Object를 제거하는 효과가 있습니다**.

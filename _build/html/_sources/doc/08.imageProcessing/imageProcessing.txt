@@ -48,7 +48,7 @@ Grayscale Image는 Pixel당 8bit, 즉 256단계의 명암(빛의 세기)을 표�
 .. figure:: ../../_static/08.imageProcessing/image3.png
     :align: center
 
-    Grayscale Image(출처 `위키피디아 <https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%BC>`_)
+    Grayscale Image(출처 `위키피디아 <https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%BC>`_ )
 
 
 Color Image
@@ -72,7 +72,7 @@ RGB 모델은 빛의 삼원색인 빨간색, 초록색, 파란색을 기본 색�
 .. figure:: ../../_static/08.imageProcessing/image5.png
     :align: center
 
-    RGB 모델(출처 : `위키피디아 <https://ko.wikipedia.org/wiki/RGB_%EA%B0%80%EC%82%B0%ED%98%BC%ED%95%A9>`_)
+    RGB 모델(출처 : `위키피디아 <https://ko.wikipedia.org/wiki/RGB_%EA%B0%80%EC%82%B0%ED%98%BC%ED%95%A9>`_ )
 
 HSV Color-space
 ---------------

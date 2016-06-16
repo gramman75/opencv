@@ -84,6 +84,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
 </ul>
 
             
@@ -207,6 +209,27 @@ Image Moments는 대상을 구분한 후, 다른 대상과 구분하기 위해 �
 이때 이 point의 수를 줄여 근사한 line을 그릴 때 사용되는 방법입니다.</p>
 <p>Point의 수를 줄이는데 사용되는 방식은 <a class="reference external" href="https://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm">Douglas-Peucker algorithm</a> 입니다.</p>
 <p>근사치를 찾는데 사용되는 함수는 <code class="docutils literal"><span class="pre">cv2.approxPolyDP()</span></code> 입니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.approxPolyDP(curve, epsilon, closed[, approxCurve]) → approxCurve</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>curve</strong> &#8211; contours point array</li>
+<li><strong>epsilon</strong> &#8211; original cuve와 근사치의 최대거리. 최대거리가 클 수록 더 먼 곳의 Point까지 고려하기 때문에 Point수가 줄어듬.</li>
+<li><strong>closed</strong> &#8211; 폐곡선 여부</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">근사치가 적용된 contours point array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <p>아래 예제는 epsilon의 크기를 다르게 한 결과 입니다.</p>
 <p><strong>Sample Code</strong></p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1

@@ -48,7 +48,7 @@ Grayscale Image는 Pixel당 8bit, 즉 256단계의 명암(빛의 세기)을 표�
 .. figure:: ../../_static/08.imageProcessing/image3.png
     :align: center
 
-    Grayscale Image(출처 `위키피디아 <https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%BC>`_)
+    Grayscale Image(출처 `위키피디아 <https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%BC>`_ )
 
 
 Color Image

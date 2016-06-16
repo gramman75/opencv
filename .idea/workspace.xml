@@ -7,29 +7,18 @@
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/15.imageContours/imageContours.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/15.imageContours/imageContours.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/16.imageContourFeature/imageContourFeature.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/16.imageContourFeature/imageContourFeature.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/18.imageContourHierarchy/imageContourHierarchy.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/18.imageContourHierarchy/imageContourHierarchy.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/06.BasicOperation/basicOperation.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/06.BasicOperation/basicOperation.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/08.imageProcessing/imageProcessing.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/08.imageProcessing/imageProcessing.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/12.imageMorphological/imageMorphological.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/12.imageMorphological/imageMorphological.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/15.imageContours/imageContours.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/15.imageContours/imageContours.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/16.imageContourFeature/imageContourFeature.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/16.imageContourFeature/imageContourFeature.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/18.imageContourHierarchy/imageContourHierarchy.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/18.imageContourHierarchy/imageContourHierarchy.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" afterPath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" afterPath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" afterPath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/15.imageContours/imageContours.html" afterPath="$PROJECT_DIR$/_build/html/doc/15.imageContours/imageContours.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/16.imageContourFeature/imageContourFeature.html" afterPath="$PROJECT_DIR$/_build/html/doc/16.imageContourFeature/imageContourFeature.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/18.imageContourHierarchy/imageContourHierarchy.html" afterPath="$PROJECT_DIR$/_build/html/doc/18.imageContourHierarchy/imageContourHierarchy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/06.BasicOperation/basicOperation.rst" afterPath="$PROJECT_DIR$/doc/06.BasicOperation/basicOperation.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" afterPath="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/imageRead.html" afterPath="$PROJECT_DIR$/_build/html/imageRead.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index_bu.html" afterPath="$PROJECT_DIR$/_build/html/index_bu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/search.html" afterPath="$PROJECT_DIR$/_build/html/search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" afterPath="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" afterPath="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.rst" afterPath="$PROJECT_DIR$/index.rst" />
     </list>
     <ignored path="opencv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,17 +70,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="imageContourHierarchy.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageProcessing.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="imageProcessing.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="218">
@@ -111,21 +90,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imageContourProperty.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/17.imageContourProperty/imageContourProperty.rst">
+      <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-266">
-              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="329">
+              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.rst">
+      <file leaf-file-name="index_bu.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index_bu.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
+            <state relative-caret-position="315">
+              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="230" column="12" selection-start-line="230" selection-start-column="10" selection-end-line="230" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -134,8 +123,18 @@
       <file leaf-file-name="imageMorphological.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
+            <state relative-caret-position="741">
+              <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="videoStart.rst" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/02.videoStart/videoStart.rst">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -154,8 +153,8 @@
       <file leaf-file-name="basicOperation.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-76">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="38">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,16 +165,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
               <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imageStart.rst" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1045">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -235,15 +224,15 @@
         <option value="$PROJECT_DIR$/doc/13.imageGradient/imageGradient.rst" />
         <option value="$PROJECT_DIR$/doc/14.imagePyramid/imagePyramid.rst" />
         <option value="$PROJECT_DIR$/study/imageContours.py" />
-        <option value="$PROJECT_DIR$/index_bu.rst" />
         <option value="$PROJECT_DIR$/study/temp.py" />
-        <option value="$PROJECT_DIR$/index.rst" />
         <option value="$PROJECT_DIR$/doc/18.imageContourHierarchy/imageContourHierarchy.rst" />
         <option value="$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst" />
-        <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
         <option value="$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst" />
-        <option value="$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst" />
         <option value="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
+        <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
+        <option value="$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst" />
+        <option value="$PROJECT_DIR$/index_bu.rst" />
+        <option value="$PROJECT_DIR$/index.rst" />
       </list>
     </option>
   </component>
@@ -255,9 +244,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="1072" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -367,6 +356,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="12.imageMorphological" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="08.imageProcessing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -399,79 +406,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="08.imageProcessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="opencv" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_build" />
+              <option name="myItemId" value="02.videoStart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +423,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="SearchEverywhereHistoryKey" value="temp&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;index.rst&#9;FILE&#9;file://D:/GitHub/opencv/index.rst&#10;indexrst&#9;FILE&#9;file://D:/GitHub/opencv/index_bu.rst&#10;imagest&#9;FILE&#9;file://D:/GitHub/opencv/doc/01.imageStart/imageStart.rst&#10;tem&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;conf&#9;FILE&#9;file://D:/GitHub/opencv/conf.py&#10;con&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageContours.py&#10;indexr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;temp.&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;te&#9;FILE&#9;file://D:/GitHub/opencv/study/temp.py&#10;temp.py&#9;FILE&#9;file://D:/GitHub/opevcv/study/temp.py&#10;rst&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/03.drawShape/drawShape.rst&#10;imageTra&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;imageTr&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/imageTranslation.py&#10;index&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/index.rst&#10;imageproc&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/08.imageProcessing/imageProcessing.rst&#10;trackbar&#9;null&#9;null&#10;ari&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/07.imageArithmetic/imageArithmetic.rst&#10;drawl&#9;null&#9;null&#10;basic&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/doc/06.BasicOperation/basicOperation.rst&#10;cam&#9;FILE&#9;file:///Volumes/Data/GitHub/opencv/study/cameraCalibration.py&#10;console&#9;ACTION&#9;com.jetbrains.python.console.RunPythonConsoleAction" />
@@ -1023,7 +962,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466065493153</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="20160615-01">
+      <created>1466066515324</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1466066515324</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1036,18 +982,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="1072" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31556502" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24253732" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.47974414" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3526971" sideWeight="0.5698294" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.5698294" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31863284" sideWeight="0.48507464" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24688797" sideWeight="0.5826226" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3526971" sideWeight="0.43017057" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.43017057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15751211" sideWeight="0.51643836" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1124,16 +1070,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/study/images/chessboard02.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/chessboard02.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study/images/hough_images.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1353,14 +1289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index_bu.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1939">
@@ -1403,14 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="80" column="109" selection-start-line="80" selection-start-column="109" selection-end-line="80" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/16.imageContourFeature/imageContourFeature.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1419,26 +1339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/15.imageContours/imageContours.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="87" selection-start-line="8" selection-start-column="87" selection-end-line="8" selection-end-column="87" />
           <folding />
         </state>
       </provider>
@@ -1455,6 +1359,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/02.videoStart/videoStart.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="230" column="12" selection-start-line="230" selection-start-column="10" selection-end-line="230" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_bu.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>

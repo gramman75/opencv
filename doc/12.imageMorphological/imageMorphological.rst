@@ -37,7 +37,7 @@ Erosion
 
 .. py:function:: cv2.erode(src, kernel, dst, anchor, iterations, borderType, borderValue)
 
-    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F` or ``CV_64F.
+    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
     :param kernel: structuring element. ``cv2.getStructuringElemet()`` 함수로 만들 수 있음.
     :param anchor: structuring element의 중심. default  (-1,-1)로 중심점.
     :param iterations: erosion 적용 반복 횟수
@@ -62,7 +62,7 @@ Erosion과 반대로 대상을 확장한 후 작은 구멍을 채우는 방법�
 
 .. py:function:: cv2.dilation(src, kernel, dst, anchor, iterations, borderType, borderValue)
 
-    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F` or ``CV_64F.
+    :param src: the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
     :param kernel: structuring element. ``cv2.getStructuringElemet()`` 함수로 만들 수 있음.
     :param anchor: structuring element의 중심. default  (-1,-1)로 중심점.
     :param iterations: dilation 적용 반복 횟수

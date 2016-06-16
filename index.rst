@@ -20,6 +20,7 @@ Contents:
    doc/04.drawWithMouse/drawWithMouse.rst
    doc/05.trackBar/trackBar.rst
    doc/06.basicOperation/basicOperation.rst
+   doc/07.imageArithmetic/imageArithmetic.rst
 
 Indices and tables
 ==================

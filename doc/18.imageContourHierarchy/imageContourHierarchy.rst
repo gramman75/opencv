@@ -21,7 +21,7 @@ Hierarchy
 아래 원본 이미지에 대해서 Contour Line을 적용한 결과 입니다.
 
 .. figure:: ../../_static/18.imageContourHierarchy/image01.jpg
-:align: center
+    :align: center
 
     원본 이미지
 .. code-block:: python
@@ -105,7 +105,6 @@ RETR_CCOMP
 ----------
 
 이 mode는
-
 
 >>> hierarchy
 array([[[ 3, -1,  1, -1],

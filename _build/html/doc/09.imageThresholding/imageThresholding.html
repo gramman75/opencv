@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
-        <link rel="next" title="이미지의 기하학적 변형" href="../10.imageTransformation/imageTransformation.html"/>
-        <link rel="prev" title="이미지 Processing" href="../08.imageProcessing/imageProcessing.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -81,27 +79,13 @@
           
             
             
-                <ul class="current">
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">이미지 임계처리</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">기본 임계처리</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">적응 임계처리</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#otsu">Otsu의 이진화</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../14.imagePyramid/imagePyramid.html">Image Pyramids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../15.imageContours/imageContours.html">Image Contours</a></li>
 </ul>
 
             
@@ -153,7 +137,7 @@
 <blockquote>
 <div><ul class="simple">
 <li>이미지 이진화의 방법인 Simple thresholding, Adaptive thresholding, Otsu’s thresholding에 대해서 알 수 있다.</li>
-<li><code class="docutils literal"><span class="pre">cv2.thresh()</span></code> , <code class="docutils literal"><span class="pre">cv2.adaptiveThreshold()</span></code> 함수에 대해서 알 수 있다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.threshold()</span></code> , <code class="docutils literal"><span class="pre">cv2.adaptiveThreshold()</span></code> 함수에 대해서 알 수 있다.</li>
 </ul>
 </div></blockquote>
 </div>
@@ -162,10 +146,10 @@
 <p>이진화 처리는 간단하지만, 쉽지 않은 문제를 가지고 있다. 이진화란 영상을 흑/백으로 분류하여 처리하는 것을 말합니다.
 이때 기준이 되는 임계값을 어떻게 결정할 것인지가 중요한 문제가 됩니다.
 기본 임계처리는 사용자가 고정된 임계값을 결정하고 그 결과를 보여주는 단순한 형태입니다.</p>
-<p>이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.thresh()</span></code> 입니다.</p>
+<p>이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.threshold()</span></code> 입니다.</p>
 <dl class="function">
-<dt id="cv2.thresh">
-<code class="descclassname">cv2.</code><code class="descname">thresh</code><span class="sig-paren">(</span><em>src</em>, <em>thresh</em>, <em>maxval</em>, <em>type</em><span class="sig-paren">)</span> &rarr; retval, dst<a class="headerlink" href="#cv2.thresh" title="Permalink to this definition">¶</a></dt>
+<dt id="cv2.threshold">
+<code class="descclassname">cv2.</code><code class="descname">threshold</code><span class="sig-paren">(</span><em>src</em>, <em>thresh</em>, <em>maxval</em>, <em>type</em><span class="sig-paren">)</span> &rarr; retval, dst<a class="headerlink" href="#cv2.threshold" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -413,15 +397,6 @@ for i in xrange(3):
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../10.imageTransformation/imageTransformation.html" class="btn btn-neutral float-right" title="이미지의 기하학적 변형" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../08.imageProcessing/imageProcessing.html" class="btn btn-neutral" title="이미지 Processing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -19,7 +19,7 @@ Contents:
    doc/03.drawShape/drawShape.rst
    doc/04.drawWithMouse/drawWithMouse.rst
    doc/05.trackBar/trackBar.rst
-
+   doc/06.basicOperation/basicOperation.rst
 Indices and tables
 ==================
 

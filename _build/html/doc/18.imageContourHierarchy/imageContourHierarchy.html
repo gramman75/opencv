@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
 </ul>
 
             
@@ -146,13 +147,73 @@
 <div class="section" id="hierarchy">
 <h2>Hierarchy<a class="headerlink" href="#hierarchy" title="Permalink to this headline">¶</a></h2>
 <p>아래 원본 이미지에 대해서 Contour Line을 적용한 결과 입니다.</p>
-<div class="figure align-center" id="id1">
+<div class="figure">
 <img alt="../../_images/image012.jpg" src="../../_images/image012.jpg" />
-<p class="caption"><span class="caption-text">원본 이미지</span></p>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">align:</th><td class="field-body"><p class="first">center</p>
+<p class="last">원본 이미지</p>
+</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Result</strong></p>
 <div class="figure align-center">
 <img alt="../../_images/result0110.jpg" src="../../_images/result0110.jpg" />
+</div>
+<p>위 결과는 총 9개의 contour line으로 구성이 되어 있습니다. 주의해서 봐야할 부분은 3,3a와 4,4a입니다. Hirerarchy 구성시 child의 child가 있을 경우
+바깥선과 안쪽선이 서로 분리가 되어  contour line을 구성합니다. 이는 포함 관계를 표현하기 위해서 입니다.(5의 경우는 child만 있기 때문에 contour line이 분리되지 않았습니다.)</p>
+<p>이제 contour retrival mode에 따라서 hirerarchy값이 어떻게 표현이 되는 지 확인해 보겠습니다.</p>
+<div class="section" id="retr-list">
+<h3>RETR_LIST<a class="headerlink" href="#retr-list" title="Permalink to this headline">¶</a></h3>
+<p>hierarchy의 shape는 (1, x, 4)의 형태입니다. 여기서 3번째 차원의 4개의 값이 hierarchy를 표현합니다. 각 값의 의미는 (next, prev, child, parent) 입니다.
+RETR_LIST는 선/후 관계만을 표현하고, parent/child관계를 표현하지 않는 mode입니다.
+먼저 위 예제에서 mode를 <code class="docutils literal"><span class="pre">cv2.RETR_LIST</span></code> 로 한 결과를 확인해 보겠습니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hierarchy</span>
+<span class="go">array([[[ 1, -1, -1, -1],</span>
+<span class="go">        [ 2,  0, -1, -1],</span>
+<span class="go">        [ 3,  1, -1, -1],</span>
+<span class="go">        [ 4,  2, -1, -1],</span>
+<span class="go">        [ 5,  3, -1, -1],</span>
+<span class="go">        [ 6,  4, -1, -1],</span>
+<span class="go">        [ 7,  5, -1, -1],</span>
+<span class="go">        [ 8,  6, -1, -1],</span>
+<span class="go">        [-1,  7, -1, -1]]])</span>
+</pre></div>
+</div>
+<p>mode의 특성대로 next와 prev는 값이 있지만, child와 parent는 모두 -1 입니다.(-1은 대상이 없음을 의미함.)
+예를 들으 보면 contour-0는 next가 contour-1이고, prev와 child, parent가 없다는 의미 입니다.
+contour-1은 next가 contour-2이고, prev가 contour-0이고, child와 parent는 해당 사항이 없습니다.
+Hierarchy를 구할 필요가 없을 때 사용하면 좋습니다.</p>
+</div>
+<div class="section" id="retr-external">
+<h3>RETR_EXTERNAL<a class="headerlink" href="#retr-external" title="Permalink to this headline">¶</a></h3>
+<p>이 mode는 가장 바깥쪽에 있는 contour만을 return합니다. 위 예에서는 1,2,3번 line입니다.(parent/child는 구성하지 않습니다.)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hierarchy</span>
+<span class="go">array([[[ 1, -1, -1, -1],</span>
+<span class="go">        [ 2,  0, -1, -1],</span>
+<span class="go">        [-1,  1, -1, -1]]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="retr-ccomp">
+<h3>RETR_CCOMP<a class="headerlink" href="#retr-ccomp" title="Permalink to this headline">¶</a></h3>
+<p>이 mode는</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hierarchy</span>
+<span class="go">array([[[ 3, -1,  1, -1],</span>
+<span class="go">        [ 2, -1, -1,  0],</span>
+<span class="go">        [-1,  1, -1,  0],</span>
+<span class="go">        [ 5,  0,  4, -1],</span>
+<span class="go">        [-1, -1, -1,  3],</span>
+<span class="go">        [ 7,  3,  6, -1],</span>
+<span class="go">        [-1, -1, -1,  5],</span>
+<span class="go">        [ 8,  5, -1, -1],</span>
+<span class="go">        [-1,  7, -1, -1]]])</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

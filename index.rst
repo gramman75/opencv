@@ -20,6 +20,18 @@ Contents:
    doc/04.drawWithMouse/drawWithMouse.rst
    doc/05.trackBar/trackBar.rst
    doc/06.basicOperation/basicOperation.rst
+   doc/07.imageArithmetic/imageArithmetic.rst
+   doc/08.imageProcessing/imageProcessing.rst
+   doc/09.imageThresholding/imageThresholding.rst
+   doc/10.imageTransformation/imageTransformation.rst
+   doc/11.imageSmoothing/imageSmoothing.rst
+   doc/12.imageMorphological/imageMorphological.rst
+   doc/13.imageGradient/imageGradient.rst
+   doc/14.imagePyramid/imagePyramid.rst
+   doc/15.imageContours/imageContours.rst
+   doc/16.imageContourFeature/imageContourFeature.rst
+   doc/17.imageContourProperty/imageContourProperty.rst
+   doc/18.imageContourHierarchy/imageContourHierarchy.rst
 
 Indices and tables
 ==================

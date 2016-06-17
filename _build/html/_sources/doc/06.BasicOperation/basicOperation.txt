@@ -1,8 +1,8 @@
 .. _basicOperation
 
-==================
-기본적인 Operation
-==================
+###############
+Basic Operation
+###############
 
 Goal
 ====
@@ -13,6 +13,7 @@ Goal
 
 Pixel Value
 ===========
+
 일반적으로 이미지를 Load하면 3차원 행렬형태로 생성이 됩니다. (100,300,3) 이러한 형태로 (행, 열, 색정보)를 의미합니다.
 
 >>> import cv2
@@ -109,7 +110,7 @@ Color Image는 3개의 채널 B,G,R로 구성이 되어 있습니다. 이것을 
 
 >>> b = img[:,:,0] # 0 : Blue, 1 : Green, 2 : Red
 
-.. Warning:: ``cv2.split()`` 함수는 비용이 많이 드는 함수입니다. 가능하다면 Numpy indexing방법을 사용하는 효율적입니다.
+.. warning:: ``cv2.split()`` 함수는 비용이 많이 드는 함수입니다. 가능하다면 Numpy indexing방법을 사용하는 효율적입니다.
 
 특정 Channel의 값을 변경하려면 아래와 같이 입력합니다.
 

@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/06.BasicOperation/basicOperation.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/06.BasicOperation/basicOperation.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/06.BasicOperation/basicOperation.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/doc/07.imageArithmetic/imageArithmetic.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/07.imageArithmetic/imageArithmetic.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" afterPath="$PROJECT_DIR$/_build/html/doc/06.BasicOperation/basicOperation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" afterPath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/imageRead.html" afterPath="$PROJECT_DIR$/_build/html/imageRead.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index_bu.html" afterPath="$PROJECT_DIR$/_build/html/index_bu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/search.html" afterPath="$PROJECT_DIR$/_build/html/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/06.BasicOperation/basicOperation.rst" afterPath="$PROJECT_DIR$/doc/06.BasicOperation/basicOperation.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.rst" afterPath="$PROJECT_DIR$/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst" afterPath="$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst" />
     </list>
     <ignored path="opencv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +80,7 @@
           <file leaf-file-name="imageProcessing.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
+                <state relative-caret-position="399">
                   <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
                   <folding />
                 </state>
@@ -81,21 +97,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="329">
-                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index_bu.rst" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index_bu.rst">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="45" />
+                <state relative-caret-position="310">
+                  <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
@@ -104,7 +110,7 @@
           <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/conf.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="178">
+                <state relative-caret-position="2831">
                   <caret line="151" column="26" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="26" />
                   <folding />
                 </state>
@@ -114,8 +120,8 @@
           <file leaf-file-name="imageMorphological.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="741">
-                  <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+                <state relative-caret-position="19">
+                  <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -131,31 +137,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="basicOperation.rst" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="videoStart.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/02.videoStart/videoStart.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="57">
-                  <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+                <state relative-caret-position="532">
+                  <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="imageContours.rst" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/doc/15.imageContours/imageContours.rst">
+          <file leaf-file-name="imageArithmetic.rst" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+                <state relative-caret-position="171">
+                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="drawShape.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/03.drawShape/drawShape.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -164,22 +170,22 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="basicOperation.rst" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="imageStart.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="703">
-                  <caret line="111" column="4" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
+                <state relative-caret-position="380">
+                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="imageStart.rst" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
+          <file leaf-file-name="basicOperation.rst" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+                <state relative-caret-position="-1444">
+                  <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -233,7 +239,6 @@
         <option value="$PROJECT_DIR$/doc/03.drawShape/drawLine.py" />
         <option value="$PROJECT_DIR$/doc/07.imageArithmetic/imageBitwise.py" />
         <option value="$PROJECT_DIR$/study/imageThreshold.py" />
-        <option value="$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst" />
         <option value="$PROJECT_DIR$/doc/08.imageProcessing/objectTracking.py" />
         <option value="$PROJECT_DIR$/doc/09.imageThresholding/imageThreshold.py" />
         <option value="$PROJECT_DIR$/study/imageAdaptiveThreshold.py" />
@@ -258,8 +263,9 @@
         <option value="$PROJECT_DIR$/doc/15.imageContours/imageContours.rst" />
         <option value="$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst" />
         <option value="$PROJECT_DIR$/index_bu.rst" />
-        <option value="$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst" />
         <option value="$PROJECT_DIR$/index.rst" />
+        <option value="$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst" />
+        <option value="$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst" />
       </list>
     </option>
   </component>
@@ -319,6 +325,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -419,6 +427,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="07.imageArithmetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="06.basicOperation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -455,7 +481,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="02.videoStart" />
+              <option name="myItemId" value="03.drawShape" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,14 +499,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="01.imageStart" />
+              <option name="myItemId" value="02.videoStart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1039,7 +1077,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466067401269</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="20160615-01">
+      <created>1466067869444</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1466067869444</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1055,15 +1100,14 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15511727" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15671642" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.47974414" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.5698294" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.5735608" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31863284" sideWeight="0.48507464" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24688797" sideWeight="0.5826226" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.43017057" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36402568" sideWeight="0.42643923" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15751211" sideWeight="0.51643836" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1073,6 +1117,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34587252" sideWeight="0.64300627" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780084" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40856844" sideWeight="0.49164927" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1140,16 +1185,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/study/images/imageHierarchy.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/study/images/newmask.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/study/images/chessboard/frame04.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1208,13 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_build/html/index_bu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1299,7 +1327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,9 +1356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
-          <folding>
-            <element signature="e#22#33#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1350,7 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,7 +1380,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1939">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1376,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-266">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1384,7 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1392,7 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,16 +1424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/08.imageProcessing/imageProcessing.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="399">
           <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_bu.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1428,26 +1438,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
+    <entry file="file://$PROJECT_DIR$/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="2831">
+          <caret line="151" column="26" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/02.videoStart/videoStart.rst">
+    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="19">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
+    <entry file="file://$PROJECT_DIR$/doc/03.drawShape/drawShape.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1460,26 +1470,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+    <entry file="file://$PROJECT_DIR$/index_bu.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="151" column="26" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="26" />
+        <state relative-caret-position="315">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="310">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/01.imageStart/imageStart.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/html/index_bu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/02.videoStart/videoStart.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/07.imageArithmetic/imageArithmetic.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/06.basicOperation/basicOperation.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1444">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basic Operation &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="이미지 연산" href="../07.imageArithmetic/imageArithmetic.html"/>
+        <link rel="prev" title="Trackbar" href="../05.trackBar/trackBar.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pixel-value">Pixel Value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">이미지의 기본 속성</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roi">이미지 ROI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#channels">이미지 Channels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Basic Operation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/06.operation/operation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-operation">
+<h1>Basic Operation<a class="headerlink" href="#basic-operation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>개별 Pixcel에 접근하고, 수정할 수 있다.</li>
+<li>이미지의 기본 속성을 확인 할 수 있다.</li>
+<li>이미지의 ROI(Region of Image)를 설정할 수 있다.</li>
+<li>이미지를 분리하고, 합칠 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="pixel-value">
+<h2>Pixel Value<a class="headerlink" href="#pixel-value" title="Permalink to this headline">¶</a></h2>
+<p>일반적으로 이미지를 Load하면 3차원 행렬형태로 생성이 됩니다. (100,300,3) 이러한 형태로 (행, 열, 색정보)를 의미합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;lena.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위와 같이 Load후에 특정 pixel을 값에 접근을 하려면 아래와 같이 접근할 수 있습니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">px</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">px</span>
+<span class="go">[157 100 190]</span>
+</pre></div>
+</div>
+<p>즉, 100(행), 200(열)을 색값이 157(B), 100(G), 190(R) 인 것을 확인 할 수 있습니다.
+만일 Blue값만을 확인하고 싶을 경우에는 아래와 같이 입력합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">b</span>
+<span class="go">157</span>
+</pre></div>
+</div>
+<p>세번째 Array값 중 0번째는 Blue, 1번째는 Green, 2번째는 Red를 의미합니다.
+위와 같은 방법으로 특정 pixel의 값을 변경할 수도 있습니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>위와 같이 입력을 하면 100,200의 색 값을 흰색으로 변경할 수 있습니다.</p>
+<p>일반적으로 특정 Pixel값을 변경하기 위해서는 아래와 같이 사용합니다.(Numpy 사용 방법)</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Red값</span>
+<span class="go">59</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">itemset</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span> <span class="c1">#Red값을 100으로 변경</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>이미지의 기본 속성<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>이미지를 Load한 후에 해당 이미지의 기본적인 정보를 확인해야 합니다. 행과 열의 갯수가 몇개인지, 몇개의 Channel로
+구성이되어 있는지가 기본입니다.
+이를 확인하기 위해서 <code class="docutils literal"><span class="pre">img.shape</span></code> 를 사용하면 tuple형태로 (행, 열, channel) 정보를 Return합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(206, 207, 3)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">이미지가 Grayscale의 경우에는 행과 열만 Return이 됩니다.</p>
+</div>
+<p>전체 pixcel수의 확인은 <code class="docutils literal"><span class="pre">img.size</span></code> 로 확인이 가능합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">size</span>
+<span class="go">42642</span>
+</pre></div>
+</div>
+<p>이미지의 Datatype은 <code class="docutils literal"><span class="pre">img.dtype</span></code> 으로 확인이 가능합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">dtype</span>
+<span class="go">dtype(&#39;uint8&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="roi">
+<h2>이미지 ROI<a class="headerlink" href="#roi" title="Permalink to this headline">¶</a></h2>
+<p>이미지 작업시에는 특정 pixel단위 보다는 특정 영역단위로 작업을 하게 됩니다. 이것을 Region of Image(ROI)라고 합니다.
+ROI 설정은 Numpy의 indexing방법을 사용합니다. 만일 아래와 같이 특정 영역에 어떤 물체가 있다는 것을 알고 있으면
+그 영역을 설정해서 Copy를 할 수도 있습니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;baseball-player.jpg&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ball</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="mi">409</span><span class="p">:</span><span class="mi">454</span><span class="p">,</span> <span class="mi">817</span><span class="p">:</span><span class="mi">884</span><span class="p">]</span> <span class="c1"># img[행의 시작점: 행의 끝점, 열의 시작점: 열의 끝점]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[</span><span class="mi">470</span><span class="p">:</span><span class="mi">515</span><span class="p">,</span><span class="mi">817</span><span class="p">:</span><span class="mi">884</span><span class="p">]</span> <span class="o">=</span> <span class="n">ball</span> <span class="c1"># 동일 영역에 Copy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/11.jpg" src="../../_images/11.jpg" />
+<p class="caption"><span class="caption-text">Original</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/21.jpg" src="../../_images/21.jpg" />
+<p class="caption"><span class="caption-text">Result</span></p>
+</div>
+</div>
+<div class="section" id="channels">
+<h2>이미지 Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
+<p>Color Image는 3개의 채널 B,G,R로 구성이 되어 있습니다. 이것을 각 채널별로 분리할 수 있습니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">((</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>또는 Numpy indexing 접근 방법으로 표현할 수도 있습니다</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 0 : Blue, 1 : Green, 2 : Red</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="docutils literal"><span class="pre">cv2.split()</span></code> 함수는 비용이 많이 드는 함수입니다. 가능하다면 Numpy indexing방법을 사용하는 효율적입니다.</p>
+</div>
+<p>특정 Channel의 값을 변경하려면 아래와 같이 입력합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Red Channel을 0으로 변경. Red 제거하는 효과.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../07.imageArithmetic/imageArithmetic.html" class="btn btn-neutral float-right" title="이미지 연산" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../05.trackBar/trackBar.html" class="btn btn-neutral" title="Trackbar" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

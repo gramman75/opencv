@@ -3,7 +3,7 @@ import cv2
 import numpy as np 
 from matplotlib import pyplot as plt 
 
-img = cv2.imread('hist_norm.jpg')
+img = cv2.imread('images/hist_norm.jpg')
 b,g,r = cv2.split(img)
 img = cv2.merge([r,g,b])
 
@@ -33,7 +33,7 @@ for i in xrange(12):
 	if ((i+1)%4) == 0:
 		plt.plot(images[i])
 	else:
-	plt.imshow(images[i])
+		plt.imshow(images[i])
 
 
 plt.show()

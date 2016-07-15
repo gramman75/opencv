@@ -1,31 +1,31 @@
-#-*- coding:utf-8 -*-
+#-*-coding:utf-8-*-
 import cv2
 import numpy as np
-import random
 from matplotlib import pyplot as plt
 
-img = cv2.imread('images/imageHierarchy.png')
 
-imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-ret, thresh = cv2.threshold(imgray,125,255,0)
+img = cv2.imread('images/lena.png');
 
-image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
+# mask생성
+mask = np.zeros(img.shape[:2],np.uint8)
+mask[100:300,100:400] = 255
 
+# 이미지에 mask가 적용된 결과
+masked_img = cv2.bitwise_and(img,img,mask=mask)
 
-for i in xrange(len(contours)):
-    #각 Contour Line을 구분하기 위해서 Color Random생성
-    b = random.randrange(1,255)
-    g = random.randrange(1,255)
-    r = random.randrange(1,255)
+# 원본 이미지의 히스토그램
+hist_full = cv2.calcHist([img],[1],None,[256],[0,256])
 
-    cnt = contours[i]
-    img = cv2.drawContours(img, [cnt], -1,(b,g,r), 2)
+# mask를 적용한 히스트로그램
+hist_mask = cv2.calcHist([img],[1],mask,[256],[0,256])
 
-titles = ['Result']
-images = [img]
+plt.subplot(221),plt.imshow(img,'gray'),plt.title('Origianl Image')
+plt.subplot(222),plt.imshow(mask,'gray'),plt.title('Mask')
+plt.subplot(223),plt.imshow(masked_img,'gray'),plt.title('Masked Image')
 
-for i in xrange(1):
-    plt.subplot(1,1,i+1), plt.title(titles[i]), plt.imshow(images[i])
-    plt.xticks([]), plt.yticks([])
+# red는 원본이미지 히스토그램, blue는 mask적용된 히스토그램
+plt.subplot(224),plt.title('Histogram')
+plt.plot(hist_full,color='r'),plt.plot(hist_mask,color='b')
+plt.xlim([0,256])
 
 plt.show()

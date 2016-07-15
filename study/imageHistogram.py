@@ -17,31 +17,31 @@ from matplotlib import pyplot as plt
         . ranges: x축의 from ~ to
 """
 
-img = cv2.imread('lena.png')
+img = cv2.imread('images/lena.png');
 
-# color = ('b','g','r')
-# for i, col in enumerate(color):
-# 	hist = cv2.calcHist([img],[i],None,[256],[0,256])
-# 	plt.plot(hist, color = col)
-# 	plt.xlim([0,256])
+color = ('b','g','r')
+for i, col in enumerate(color):
+	hist = cv2.calcHist([img],[i],None,[256],[0,256])
+	plt.plot(hist, color = col)
+	plt.xlim([0,256])
 
 """
 Histogram에 Mask적용 
 """
-
-
-mask = np.zeros(img.shape[:2],np.uint8)
-mask[100:300,100:400] = 255
-masked_img = cv2.bitwise_and(img,img,mask=mask)
-
-hist_full = cv2.calcHist([img],[0],None,[256],[0,256])
-hist_mask = cv2.calcHist([img],[0],mask,[256],[0,256])
-
-plt.subplot(221),plt.imshow(img,'gray')
-plt.subplot(222),plt.imshow(mask,'gray')
-plt.subplot(223),plt.imshow(masked_img,'gray')
-plt.subplot(224),plt.plot(hist_full,color='r'),plt.plot(hist_mask,color='b')
-plt.xlim([0,256])
+#
+#
+# mask = np.zeros(img.shape[:2],np.uint8)
+# mask[100:300,100:400] = 255
+# masked_img = cv2.bitwise_and(img,img,mask=mask)
+#
+# hist_full = cv2.calcHist([img],[1],None,[256],[0,256])
+# hist_mask = cv2.calcHist([img],[1],mask,[256],[0,256])
+#
+# plt.subplot(221),plt.imshow(img,'gray')
+# plt.subplot(222),plt.imshow(mask,'gray')
+# plt.subplot(223),plt.imshow(masked_img,'gray')
+# plt.subplot(224),plt.plot(hist_full,color='r'),plt.plot(hist_mask,color='b')
+# plt.xlim([0,256])
 
 
 plt.show()

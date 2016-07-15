@@ -60,7 +60,7 @@ Hierarchy
 
 **Result**
 
-.. figure:: ../../_static/18.imageContourHierarchy/result01.jpg
+.. figure:: ../../_static/18.imageContourHierarchy/image2.jpg
     :align: center
 
 위 결과는 총 9개의 contour line으로 구성이 되어 있습니다. 주의해서 봐야할 부분은 3,3a와 4,4a입니다. Hirerarchy 구성시 child의 child가 있을 경우
@@ -94,7 +94,7 @@ Hierarchy를 구할 필요가 없을 때 사용하면 좋습니다.
 RETR_EXTERNAL
 -------------
 
-이 mode는 가장 바깥쪽에 있는 contour만을 return합니다. 위 예에서는 1,2,3번 line입니다.(parent/child는 구성하지 않습니다.)
+이 mode는 가장 바깥쪽(다른 Contours Line에 포함되지 않는)에 있는 contour만을 return합니다. 위 예에서는 1,2,3번 line입니다.(parent/child는 구성하지 않습니다.)
 
 >>> hierarchy
 array([[[ 1, -1, -1, -1],
@@ -104,7 +104,21 @@ array([[[ 1, -1, -1, -1],
 RETR_CCOMP
 ----------
 
-이 mode는
+이 mode는 Hierarchy를 2-Level로 표현합니다. 바깥쪽(외곽선)은 모두 1-Level, 안에 포함된 것은 2-Level이 됩니다.
+
+.. figure:: ../../_static/18.imageContourHierarchy/image3.jpg
+    :align: center
+
+위 그림을 보면  괄호 밖 숫자는 contours의 순서이고, 괄호 안 숫자는 hierachy를 나타냅니다. 이전과 다른 점은 가장 안쪽에서 부터
+contour의 순서를 부여하게 됩니다.
+
+먼저 contour-0은 2개의 contour를 포함하기 때문에 hierarchy-1입니다. 동일 level의 next는 3이고, previous는 없습니다.
+child는 contour-1이고, parent는 없습니다. 그래서 결과적으로 [3,-1,1,-1]의 값을 갖게 됩니다.
+
+contour-1은 contour-0에 포함이 되기 때문에 hierachy-2가 됩니다. 동일 level의 next는 contour-2가 되고, previous와 child는 없으며,
+parent는 contour-0입니다. 그래서 [2,-1,-1,0]의 값을 갖게 됩니다.
+
+위와 같은 방식으로 나머지 contour 값을 찾으면 아래와 같습니다.
 
 >>> hierarchy
 array([[[ 3, -1,  1, -1],
@@ -117,3 +131,27 @@ array([[[ 3, -1,  1, -1],
         [ 8,  5, -1, -1],
         [-1,  7, -1, -1]]])
 
+RETR_TREE
+---------
+
+이 mode는 Hierarchy를 완전한게 표현합니다. 즉 누구에게도 포함되지 않은 contour는 hierarchy-0이 되고, 그 안쪽으로 포함되는 contours는
+순서대로 hierachy를 부여받습니다.
+
+.. figure:: ../../_static/18.imageContourHierarchy/image4.jpg
+    :align: center
+
+contour-0은 next는 contour-7, previous는 없으며, child는 contour-1, parent는 없습니다. 결과는 [7,-1,1,-1] 입니다.
+contour-1은 next는 없고, previous도 없고, child는 contour-2, parent는 contour-0입니다. 결과는 [-1,-1,2,0] 입니다.
+
+위와 같은 방식으로 나머지 contour 값을 찾으면 아래와 같습니다.
+
+>>> hierarchy
+array([[[ 7, -1,  1, -1],
+        [-1, -1,  2,  0],
+        [-1, -1,  3,  1],
+        [-1, -1,  4,  2],
+        [-1, -1,  5,  3],
+        [ 6, -1, -1,  4],
+        [-1,  5, -1,  4],
+        [ 8,  0, -1, -1],
+        [-1,  7, -1, -1]]])

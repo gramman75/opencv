@@ -21,6 +21,7 @@ Contents:
    doc/05.trackBar/trackBar.rst
    doc/06.operation/operation.rst
    doc/07.imageArithmetic/imageArithmetic.rst
+   doc/08.imageProcessing/imageProcessing.rst
 
 
 Indices and tables

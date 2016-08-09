@@ -85,7 +85,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06.basicOperation/basicOperation.html">기본적인 Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.operation/operation.html">Basic Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
 </ul>
 
             
@@ -144,7 +146,7 @@
 <div class="section" id="id2">
 <h2>기본 임계처리<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>이진화 처리는 간단하지만, 쉽지 않은 문제를 가지고 있다. 이진화란 영상을 흑/백으로 분류하여 처리하는 것을 말합니다.
-이때 기준이 되는 임계값을 어떻게 결정할 것인지가 중요한 문제가 됩니다.
+이때 기준이 되는 임계값을 어떻게 결정할 것인지가 중요한 문제가 됩니다. 임계값보다 크면 백, 작으면 흑이 됩니다.
 기본 임계처리는 사용자가 고정된 임계값을 결정하고 그 결과를 보여주는 단순한 형태입니다.</p>
 <p>이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.threshold()</span></code> 입니다.</p>
 <dl class="function">

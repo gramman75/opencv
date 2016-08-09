@@ -33,6 +33,8 @@ Contents:
    doc/17.imageContourProperty/imageContourProperty.rst
    doc/18.imageContourHierarchy/imageContourHierarchy.rst
    doc/19.imageHistograms/imageHistograms.rst
+   doc/20.imageHistogramEqualization/imageHistogramEqualization.rst
+   doc/21.image2DHistogram/image2DHistogram.rst
 
 Indices and tables
 ==================

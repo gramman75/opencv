@@ -86,7 +86,8 @@ res = cv2.bitwise_and(target,thresh)
 
 res = np.vstack((target,thresh,res))
 
-cv2.imwrite('rose_cat.png', res)
+# cv2.imwrite('rose_cat.png', res)
+res = cv2.resize(res,(500,500))
 
 cv2.imshow('dst',res)
 cv2.waitKey(0)

@@ -96,4 +96,5 @@ Otsu의 이진화
 
 **Result**
 
-
+.. figure:: ../../_static/09.imageThresholding/result03.jpg
+    :align: center

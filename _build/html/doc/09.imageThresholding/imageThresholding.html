@@ -30,7 +30,8 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="이미지 Processing" href="../08.imageProcessing/imageProcessing.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -79,7 +80,7 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
@@ -88,6 +89,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../06.operation/operation.html">Basic Operation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">이미지 임계처리</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">기본 임계처리</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">적응 임계처리</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#otsu">Otsu의 이진화</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -360,38 +368,41 @@
 26
 27
 28
-29</pre></div></td><td class="code"><div class="highlight"><pre><span></span>import cv2
-import numpy as np 
-from matplotlib import pyplot as plt 
+29</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
 
-img = cv2.imread(&#39;noise.png&#39;,0)
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/noise.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
 
-# global thresholding
-ret1, th1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+<span class="c1"># global thresholding</span>
+<span class="n">ret1</span><span class="p">,</span> <span class="n">th1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">)</span>
 
-ret2, th2 - cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+<span class="n">ret2</span><span class="p">,</span> <span class="n">th2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="o">+</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_OTSU</span><span class="p">)</span>
 
-blur = cv2.GaussianBlur(img,(5,5),0)
+<span class="n">blur</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
 
-ret3, th3 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+<span class="n">ret3</span><span class="p">,</span> <span class="n">th3</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="o">+</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_OTSU</span><span class="p">)</span>
 
-# plot all the images and their histograms
-images = [img, 0, th1, img, 0, th2, blur, 0, th3]
+<span class="c1"># plot all the images and their histograms</span>
+<span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th1</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th2</span><span class="p">,</span> <span class="n">blur</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th3</span><span class="p">]</span>
 
-titles = [&#39;Original Noisy Image&#39;,&#39;Histogram&#39;,&#39;Global Thresholding (v=127)&#39;, &#39;Original Noisy Image&#39;,&#39;Histogram&#39;,&quot;Otsu&#39;s Thresholding&quot;, &#39;Gaussian filtered Image&#39;,&#39;Histogram&#39;,&quot;Otsu&#39;s Thresholding&quot;]
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Original Noisy Image&#39;</span><span class="p">,</span><span class="s1">&#39;Histogram&#39;</span><span class="p">,</span><span class="s1">&#39;Global Thresholding (v=127)&#39;</span><span class="p">,</span> <span class="s1">&#39;Original Noisy Image&#39;</span><span class="p">,</span><span class="s1">&#39;Histogram&#39;</span><span class="p">,</span><span class="s2">&quot;Otsu&#39;s Thresholding&quot;</span><span class="p">,</span> <span class="s1">&#39;Gaussian filtered Image&#39;</span><span class="p">,</span><span class="s1">&#39;Histogram&#39;</span><span class="p">,</span><span class="s2">&quot;Otsu&#39;s Thresholding&quot;</span><span class="p">]</span>
 
-for i in xrange(3):
-	plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],&#39;gray&#39;)
-	plt.title(titles[i*3]), plt.xticks([]), plt.yticks([])
-	plt.subplot(3,3,i*3+2),plt.hist(images[i*3].ravel(),256)
-	plt.title(titles[i*3+1]), plt.xticks([]), plt.yticks([])
-	plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],&#39;gray&#39;)
-	plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="p">],</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="p">]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span><span class="mi">256</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+	<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
 
-™£plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result033.jpg" src="../../_images/result033.jpg" />
+</div>
 </div>
 </div>
 
@@ -399,6 +410,13 @@ for i in xrange(3):
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../08.imageProcessing/imageProcessing.html" class="btn btn-neutral" title="이미지 Processing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

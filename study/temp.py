@@ -1,19 +1,29 @@
-#-*-coding:utf-8-*-
 import cv2
-import numpy as np
-from matplotlib import pyplot as plt
+import numpy as np 
+from matplotlib import pyplot as plt 
 
+img = cv2.imread('images/noise.png',0)
 
-img = cv2.imread('images/clahe.png',0);
+# global thresholding
+ret1, th1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
 
-# contrast limit가 2이고 title의 size는 8X8
-clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
-img2 = clahe.apply(img)
+ret2, th2 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
-img = cv2.resize(img,(400,400))
-img2 = cv2.resize(img2,(400,400))
+blur = cv2.GaussianBlur(img,(5,5),0)
 
-dst = np.hstack((img, img2))
-cv2.imshow('img',dst)
-cv2.waitKey()
-cv2.destroyAllWindows()
+ret3, th3 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+# plot all the images and their histograms
+images = [img, 0, th1, img, 0, th2, blur, 0, th3]
+
+titles = ['Original Noisy Image','Histogram','Global Thresholding (v=127)', 'Original Noisy Image','Histogram',"Otsu's Thresholding", 'Gaussian filtered Image','Histogram',"Otsu's Thresholding"]
+
+for i in xrange(3):
+	plt.subplot(3,3,i*3+1),plt.imshow(images[i*3],'gray')
+	plt.title(titles[i*3]), plt.xticks([]), plt.yticks([])
+	plt.subplot(3,3,i*3+2),plt.hist(images[i*3].ravel(),256)
+	plt.title(titles[i*3+1]), plt.xticks([]), plt.yticks([])
+	plt.subplot(3,3,i*3+3),plt.imshow(images[i*3+2],'gray')
+	plt.title(titles[i*3+2]), plt.xticks([]), plt.yticks([])
+
+plt.show()

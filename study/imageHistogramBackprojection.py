@@ -13,7 +13,7 @@ import numpy as np
 # 1. roi를 선택하여 hsv로 변환. 찿고자하는 대상이 됨. 
 """
 
-roi = cv2.imread('images/rose_red.png')
+roi = cv2.imread('images/rose.jpg')
 hsv = cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
 
 """
@@ -26,7 +26,7 @@ hsvt = cv2.cvtColor(target,cv2.COLOR_BGR2HSV)
 """
 # 3. roi의 2D Histogram을 분석 
 """
-roihist = cv2.calcHist([roi],[0,1],None,[180,256],[0,180,0,256])
+roihist = cv2.calcHist([hsv],[0,1],None,[180,256],[0,180,0,256])
 
 """
 # 4. 정확한 값을 찿기 위해서 roi histogram에 대해서 Normalize수행. 

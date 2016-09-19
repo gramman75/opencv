@@ -64,3 +64,8 @@ Goal
     :align: center
 
 위 Histogram을 보면 X축은 Saturation, Y축은 Hue값을 나타냅니다.
+Y축을 보면 100근처에 값이 모여 있는 것을 알 수 있습니다. HSV모델에서 H가 100이면 하늘색입니다.
+그리고 25근처에도 값이 모여 있습니다. H값이 25이면 노란색입니다.
+즉 이 이미지는 하늘색과 노란색이 많이 분포되어 있다는 것을 2D Histogram을 통해서 알 수 있습니다.
+
+다음 장에서는 이 2D Histogram을 이용하여 Histogram Backprojection에 대해서 알아 보겠습니다.

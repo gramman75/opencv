@@ -24,6 +24,7 @@ Contents:
    doc/08.imageProcessing/imageProcessing.rst
    doc/09.imageThresholding/imageThresholding.rst
    doc/10.imageTransformation/imageTransformation.rst
+   doc/11.imageSmoothing/imageSmoothing.rst
 
 
 Indices and tables

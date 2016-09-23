@@ -35,6 +35,7 @@ Contents:
    doc/19.imageHistograms/imageHistograms.rst
    doc/20.imageHistogramEqualization/imageHistogramEqualization.rst
    doc/21.image2DHistogram/image2DHistogram.rst
+   doc/23.imageFourierTransform/imageFourierTransform.rst
 
 Indices and tables
 ==================

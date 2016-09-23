@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>푸리에 변환 &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.operation/operation.html">Basic Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>푸리에 변환</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/23.imageFourierTransform/imageFourierTransform.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>푸리에 변환<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Numpy와 OpenCV를 이용하여 푸리에 변환을 찾을 수 있다.</li>
+<li>푸리에 변환을 이용하여 이미지를 변환할 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>푸리에 변환<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>푸리에 변환은 주파수를 분석하는데 사용되는 방법입니다. 주파수는 시간의 흐름에 따른 진동하는 파동의 횟수를 의미합니다.
+이때 파동은 Sin, cos의 삼각함수로 표현할 수 있는데, 이렇게 되면 시간축을 제거하고 파동의 전체적인 모습을 한눈에 볼 수 있게 됩니다.</p>
+<p>즉, 무한대의 시간축이 제거가 되고 주파수의 관점에서 분석이 가능해집니다.
+아래 그래프를 보면 이해가 좀 쉽게 될 수 있습니다.</p>
+<div class="figure align-center">
+<img alt="../../_images/image012.png" src="../../_images/image012.png" />
+</div>
+<div class="figure align-center" id="id3">
+<img alt="../../_images/image021.png" src="../../_images/image021.png" />
+<p class="caption"><span class="caption-text">시간 도메인을 주파수 도메인으로 변환한 결과(출처 : <a class="reference external" href="http://www.incodom.kr/%ED%91%B8%EB%A6%AC%EC%97%90_%EB%B3%80%ED%99%98">Incodom</a> )</span></p>
+</div>
+<p>수학에서는 어떤 문제를 풀기가 어려운 경우, 다른 형태으로 변형하여 문제를 해결하는 경우가 많습니다.
+페르마의 정리를 증명할때 증명이 어려워, 해당 방정식을 타원방정식으로 변환하여 타원 방정식의 공식으로 증명을 한 경우도 있습니다.</p>
+<p>푸리에 변환도 마찬가지로 변환을 통해서 수학적으로 문제를 해결하는 방법입니다.</p>
+<p>그럼 이미지에 푸리에 변환이 어떻게 적용이 될까요. 이미지도 파동으로 변환을 할 수가 있는데, 주변 픽셀과의 밝기 변환가 많은 곳은 고주파로,
+변환이 적은 곳은 저주파로 표현이 가능합니다.</p>
+<p>즉, 이미지에서 고주파의 의미는 경계선을 의미하고, 저주파는 배경을 의미합니다. 그러므로 고주파를 제거하면 경계선이 사라지고,
+저주파를 제거하면 경계선만 남게 됩니다.</p>
+<p>이미지 -&gt; 푸리에 변환 -&gt; 고주파 또는 저주파 제거 -&gt; 다시 이미지 변환 과정을 거쳐 경계 또는 배경만 남게 할 수 있습니다.</p>
+</div>
+<div class="section" id="with-numpy">
+<h2>푸리에 변환 With Numpy<a class="headerlink" href="#with-numpy" title="Permalink to this headline">¶</a></h2>
+<p>아래는 Numpy를 이용한 푸리에 변환 결과 입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Fourier Transform(푸리에 변환)</span>
+<span class="sd">    . 시간 도메인(X축)에서 표현된 신호(일반적인 파형 도표)를 주파수 도메인으로 변환.</span>
+<span class="sd">    . 시간축이 제거되어 대상의 전체적인 특징을 파악할 수 있음.</span>
+<span class="sd">    . 이미지에 적용이 되어 중심이 저주파 영역, 주변이 고주파 영역을 나타냄.</span>
+<span class="sd">    . 푸리에 변환을 하여 저주파 또는 고주파를 제거하고 다시 역으로 이미지로 변환 함으로써</span>
+<span class="sd">      이미지가공을 할 수 있음.</span>
+<span class="sd">      (ex; 푸리에 변환 후 중심의 저주파를 제거하고 다시 Image로 전환 하면 이미지의 경계선만 남게 됨.</span>
+<span class="sd">           푸리에 변환 후 주변의 고주파를 제거하면 모아레 패턴(휴대폰으로 모니터를 찍었을 때 나타나는 현상)</span>
+<span class="sd">           을 제거할 수 있음.(모니터의 고주파를 제거함.)</span>
+<span class="sd">      )</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/lena.jpg&#39;</span><span class="p">)</span>
+<span class="n">b</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">r</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">])</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Fourier Transform을 적용.</span>
+<span class="sd"> 적용을 하면 0,0, 즉 화면 좌측상단점이 중심이고, 거기에 저주파가 모여 있음.</span>
+<span class="sd"> 분석을 용이하게 하기 위해 0,0을 이미지의 중심으로 이동 시키고 Log Scaling을 하여 분석이 용이한 결과값으로 변환</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="c1"># 이미지에 푸리에 변환 적용</span>
+<span class="n">fshift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1">#분석을 용이하게 하기 위해 주파수가 0인 부분을 중앙에 위치시킴. 중앙에 저주파가 모이게 됨.</span>
+<span class="n">magnitude_spectrum</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fshift</span><span class="p">))</span> <span class="c1">#spectrum 구하는 수학식.</span>
+
+<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">crow</span><span class="p">,</span> <span class="n">ccol</span> <span class="o">=</span> <span class="n">rows</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># 이미지의 중심 좌표</span>
+
+<span class="c1"># 중앙에서 10X10 사이즈의 사각형의 값을 1로 설정함. 중앙의 저주파를 모두 제거</span>
+<span class="c1"># 저주파를 제거하였기 때문에 배경이 사라지고 경계선만 남게 됨.</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fshift</span><span class="p">[</span><span class="n">crow</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">crow</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">ccol</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">ccol</span><span class="o">+</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1">#푸리에 변환결과를 다시 이미지로 변환</span>
+<span class="n">f_ishift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">fshift</span><span class="p">)</span>
+<span class="n">img_back</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">f_ishift</span><span class="p">)</span>
+<span class="n">img_back</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">img_back</span><span class="p">)</span>
+
+<span class="c1">#threshold를 적용하기 위해 float type을 int type으로 변환</span>
+<span class="n">img_new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">img_back</span><span class="p">);</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">thresh</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">img_new</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY_INV</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Input Image&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">magnitude_spectrum</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spectrum&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_back</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FT&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Threshold With FT&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id4">
+<img alt="../../_images/result0111.jpg" src="../../_images/result0111.jpg" />
+<p class="caption"><span class="caption-text">Numpy를 이용한 푸리에 변환 결과</span></p>
+</div>
+</div>
+<div class="section" id="with-opencv">
+<h2>푸리에 변환 with OpenCV<a class="headerlink" href="#with-opencv" title="Permalink to this headline">¶</a></h2>
+<p>이번 예제는 OpenCV를 통한 푸리에 변환입니다. 위 예제와는 다르게 고주파 영역을 제거하는 예제입니다.</p>
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/lena_gray.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">dft</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dft</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">img</span><span class="p">),</span><span class="n">flags</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">DFT_COMPLEX_OUTPUT</span><span class="p">)</span>
+
+<span class="n">dft_shift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span>
+<span class="n">magnitude_spectrum</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">magnitude</span><span class="p">(</span><span class="n">dft_shift</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">dft_shift</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">crow</span><span class="p">,</span><span class="n">ccol</span> <span class="o">=</span> <span class="n">rows</span><span class="o">/</span><span class="mi">2</span> <span class="p">,</span> <span class="n">cols</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># 아래는 d 사이지의 사각형을 생성한 후, 사각형 바깥쪽을 제거하는 형태임.</span>
+<span class="c1"># 즉, 고주파영역을 제거하게 됨.</span>
+<span class="c1"># d값이 작을수록 사각형이 작고, 바깥영역 즉, 고주파영역이  많이 제거되기 때문에 이미지가 뭉게지고</span>
+<span class="c1"># d값이 클수록 사각형이 크고, 바깥영역 즉, 고주파 영역이 적게 제거되기 때문에 원래 이미지와 가까워짐.</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">mask</span><span class="p">[</span><span class="n">crow</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">crow</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">ccol</span><span class="o">-</span><span class="n">d</span><span class="p">:</span><span class="n">ccol</span><span class="o">+</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># apply mask and inverse DFT</span>
+<span class="n">fshift</span> <span class="o">=</span> <span class="n">dft_shift</span><span class="o">*</span><span class="n">mask</span>
+<span class="n">f_ishift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftshift</span><span class="p">(</span><span class="n">fshift</span><span class="p">)</span>
+<span class="n">img_back</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">idft</span><span class="p">(</span><span class="n">f_ishift</span><span class="p">)</span>
+<span class="n">img_back</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">magnitude</span><span class="p">(</span><span class="n">img_back</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">img_back</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Input Image&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_back</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FT&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([]),</span> <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result027.jpg" src="../../_images/result027.jpg" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

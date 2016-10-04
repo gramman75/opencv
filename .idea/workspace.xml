@@ -5,36 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32d0048-891b-4671-a540-47728d1b00fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/doctrees/doc/23.imageFourierTransform/imageFourierTransform.doctree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image012.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/image021.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result0111.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_images/result027.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/22.imageFourierTransform/image01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/22.imageFourierTransform/image02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/22.imageFourierTransform/result01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/23.imageFourierTransform/image01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/23.imageFourierTransform/image02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/23.imageFourierTransform/result01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_static/23.imageFourierTransform/result02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/23.imageFourierTransform/image01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/23.imageFourierTransform/image02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/23.imageFourierTransform/result01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_static/23.imageFourierTransform/result02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/_sources/doc/23.imageFourierTransform/imageFourierTransform.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_build/html/doc/23.imageFourierTransform/imageFourierTransform.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/23.imageFourierTransform/imageFourierTransform.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/01.imageStart/imageStart.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/02.videoStart/videoStart.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/03.drawShape/drawShape.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/04.drawWithMouse/drawWithMouse.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/04.drawWithMouse/drawWithMouse.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/05.trackBar/trackBar.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/05.trackBar/trackBar.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/06.operation/operation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/06.operation/operation.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/07.imageArithmetic/imageArithmetic.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/08.imageProcessing/imageProcessing.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/09.imageThresholding/imageThresholding.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/10.imageTransformation/imageTransformation.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/11.imageSmoothing/imageSmoothing.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/11.imageSmoothing/imageSmoothing.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/12.imageMorphological/imageMorphological.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/13.imageGradient/imageGradient.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/13.imageGradient/imageGradient.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/14.imagePyramid/imagePyramid.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/14.imagePyramid/imagePyramid.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/15.imageContours/imageContours.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/15.imageContours/imageContours.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/16.imageContourFeature/imageContourFeature.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/16.imageContourFeature/imageContourFeature.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/17.imageContourProperty/imageContourProperty.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/17.imageContourProperty/imageContourProperty.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/18.imageContourHierarchy/imageContourHierarchy.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/18.imageContourHierarchy/imageContourHierarchy.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/19.imageHistograms/imageHistograms.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/19.imageHistograms/imageHistograms.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/20.imageHistogramEqualization/imageHistogramEqualization.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/20.imageHistogramEqualization/imageHistogramEqualization.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/21.image2DHistogram/image2DHistogram.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/21.image2DHistogram/image2DHistogram.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/22.imageHistogramBackprojection/imageHistogramBackprojection.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/22.imageHistogramBackprojection/imageHistogramBackprojection.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/doc/23.imageFourierTransform/imageFourierTransform.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/doc/23.imageFourierTransform/imageFourierTransform.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/imageRead.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/index_bu.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/index_bu.doctree" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/opencv.iml" afterPath="$PROJECT_DIR$/.idea/opencv.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_images/result03.jpg" afterPath="$PROJECT_DIR$/_build/html/_images/result03.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_images/result031.jpg" afterPath="$PROJECT_DIR$/_build/html/_images/result031.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_images/result032.jpg" afterPath="$PROJECT_DIR$/_build/html/_images/result032.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_images/result033.jpg" afterPath="$PROJECT_DIR$/_build/html/_images/result033.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index_bu.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index_bu.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/.buildinfo" afterPath="$PROJECT_DIR$/_build/html/.buildinfo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/index.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/01.imageStart/imageStart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" afterPath="$PROJECT_DIR$/_build/html/doc/02.videoStart/videoStart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/03.drawShape/drawShape.html" afterPath="$PROJECT_DIR$/_build/html/doc/03.drawShape/drawShape.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/04.drawWithMouse/drawWithMouse.html" afterPath="$PROJECT_DIR$/_build/html/doc/04.drawWithMouse/drawWithMouse.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/05.trackBar/trackBar.html" afterPath="$PROJECT_DIR$/_build/html/doc/05.trackBar/trackBar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/06.operation/operation.html" afterPath="$PROJECT_DIR$/_build/html/doc/06.operation/operation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" afterPath="$PROJECT_DIR$/_build/html/doc/07.imageArithmetic/imageArithmetic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" afterPath="$PROJECT_DIR$/_build/html/doc/08.imageProcessing/imageProcessing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" afterPath="$PROJECT_DIR$/_build/html/doc/09.imageThresholding/imageThresholding.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" afterPath="$PROJECT_DIR$/_build/html/doc/10.imageTransformation/imageTransformation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/11.imageSmoothing/imageSmoothing.html" afterPath="$PROJECT_DIR$/_build/html/doc/11.imageSmoothing/imageSmoothing.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" afterPath="$PROJECT_DIR$/_build/html/doc/12.imageMorphological/imageMorphological.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/13.imageGradient/imageGradient.html" afterPath="$PROJECT_DIR$/_build/html/doc/13.imageGradient/imageGradient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/14.imagePyramid/imagePyramid.html" afterPath="$PROJECT_DIR$/_build/html/doc/14.imagePyramid/imagePyramid.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/15.imageContours/imageContours.html" afterPath="$PROJECT_DIR$/_build/html/doc/15.imageContours/imageContours.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/16.imageContourFeature/imageContourFeature.html" afterPath="$PROJECT_DIR$/_build/html/doc/16.imageContourFeature/imageContourFeature.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/17.imageContourProperty/imageContourProperty.html" afterPath="$PROJECT_DIR$/_build/html/doc/17.imageContourProperty/imageContourProperty.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/18.imageContourHierarchy/imageContourHierarchy.html" afterPath="$PROJECT_DIR$/_build/html/doc/18.imageContourHierarchy/imageContourHierarchy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/19.imageHistograms/imageHistograms.html" afterPath="$PROJECT_DIR$/_build/html/doc/19.imageHistograms/imageHistograms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/20.imageHistogramEqualization/imageHistogramEqualization.html" afterPath="$PROJECT_DIR$/_build/html/doc/20.imageHistogramEqualization/imageHistogramEqualization.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/21.image2DHistogram/image2DHistogram.html" afterPath="$PROJECT_DIR$/_build/html/doc/21.image2DHistogram/image2DHistogram.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/22.imageHistogramBackprojection/imageHistogramBackprojection.html" afterPath="$PROJECT_DIR$/_build/html/doc/22.imageHistogramBackprojection/imageHistogramBackprojection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/doc/23.imageFourierTransform/imageFourierTransform.html" afterPath="$PROJECT_DIR$/_build/html/doc/23.imageFourierTransform/imageFourierTransform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/genindex.html" afterPath="$PROJECT_DIR$/_build/html/genindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/imageRead.html" afterPath="$PROJECT_DIR$/_build/html/imageRead.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index_bu.html" afterPath="$PROJECT_DIR$/_build/html/index_bu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/search.html" afterPath="$PROJECT_DIR$/_build/html/search.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index_bu.rst" afterPath="$PROJECT_DIR$/index_bu.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/imageFTwithCV.py" afterPath="$PROJECT_DIR$/study/imageFTwithCV.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/study/imageFTwithNP.py" afterPath="$PROJECT_DIR$/study/imageFTwithNP.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.rst" afterPath="$PROJECT_DIR$/index.rst" />
     </list>
     <ignored path="opencv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,24 +123,34 @@
     <favorites_list name="opencv" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3866077">
+    <splitter split-orientation="horizontal" split-proportion="0.5983658">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <state relative-caret-position="513">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="imageFourierTransform.rst" pinned="false" current-in-tab="true">
+          <file leaf-file-name="imageFourierTransform.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/23.imageFourierTransform/imageFourierTransform.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
+                <state relative-caret-position="344">
                   <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="imageMorphological.rst" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -165,8 +209,8 @@
           <file leaf-file-name="index_bu.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index_bu.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="494">
-                  <caret line="36" column="47" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="47" />
+                <state relative-caret-position="496">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -213,7 +257,7 @@
           <file leaf-file-name="imageSmoothing.rst" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="855">
+                <state relative-caret-position="1425">
                   <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
                   <folding />
                 </state>
@@ -283,8 +327,8 @@
           <file leaf-file-name="index_bu.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/_build/html/index_bu.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                <state relative-caret-position="323">
+                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -353,11 +397,11 @@
         <option value="$PROJECT_DIR$/study/temp.py" />
         <option value="$PROJECT_DIR$/doc/20.imageHistogramEqualization/imageHistogramEqualization.rst" />
         <option value="$PROJECT_DIR$/doc/09.imageThresholding/imageThresholding.rst" />
-        <option value="$PROJECT_DIR$/index.rst" />
         <option value="$PROJECT_DIR$/study/imageFTwithNP.py" />
         <option value="$PROJECT_DIR$/index_bu.rst" />
         <option value="$PROJECT_DIR$/study/imageFTwithCV.py" />
         <option value="$PROJECT_DIR$/doc/23.imageFourierTransform/imageFourierTransform.rst" />
+        <option value="$PROJECT_DIR$/index.rst" />
       </list>
     </option>
   </component>
@@ -368,10 +412,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="1" />
-    <option name="width" value="1918" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="y" value="1072" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -417,7 +461,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -426,9 +470,101 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="12.imageMorphological" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="11.imageSmoothing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,16 +584,16 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\opencv\study\images" />
+      <recent name="$PROJECT_DIR$/study/Learning/01/source" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\opencv\_static\15.imageContours" />
       <recent name="D:\GitHub\opencv\study\images" />
       <recent name="$PROJECT_DIR$/doc/09.imageThresholding" />
       <recent name="$PROJECT_DIR$/_static/09.imageThresholding" />
       <recent name="$PROJECT_DIR$/_static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GitHub\opencv\study\images" />
-      <recent name="$PROJECT_DIR$/study/Learning/01/source" />
     </key>
   </component>
   <component name="RunManager" selected="Python.imageFTwithCV">
@@ -1050,7 +1186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1474351089216</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="working">
+      <created>1474617205683</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1474617205683</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1063,30 +1206,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1918" height="1048" extended-state="0" />
+    <frame x="-8" y="1072" width="1936" height="1096" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15191898" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488987" sideWeight="0.47974414" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.50215286" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24688797" sideWeight="0.5826226" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31753033" sideWeight="0.48081023" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33770493" sideWeight="0.62163615" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26557377" sideWeight="0.40796554" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14800861" sideWeight="0.48356164" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32677597" sideWeight="0.49354145" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23779854" sideWeight="0.5826226" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31753033" sideWeight="0.48081023" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.49784714" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647975" sideWeight="0.40796554" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15751211" sideWeight="0.51643836" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17704917" sideWeight="0.48347548" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914772" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33770493" sideWeight="0.62163615" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32677597" sideWeight="0.49354145" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.49784714" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17704917" sideWeight="0.48347548" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1240,13 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/03.drawShape/drawShape.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1338,7 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1957">
           <caret line="103" column="18" selection-start-line="103" selection-start-column="18" selection-end-line="103" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,7 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,8 +1566,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_build/html/index_bu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1442,7 +1576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,17 +1587,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doc/11.imageSmoothing/imageSmoothing.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
+        <state relative-caret-position="1425">
           <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
           <folding />
         </state>
@@ -1477,14 +1602,6 @@
           <folding>
             <element signature="e#454#464#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_bu.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1508,8 +1625,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc/23.imageFourierTransform/imageFourierTransform.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
+        <state relative-caret-position="344">
           <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/12.imageMorphological/imageMorphological.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_bu.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -26,6 +26,7 @@ Contents:
    doc/10.imageTransformation/imageTransformation.rst
    doc/11.imageSmoothing/imageSmoothing.rst
    doc/12.imageMorphological/imageMorphological.rst
+   doc/13.imageGradient/imageGradient.rst
 
 
 Indices and tables

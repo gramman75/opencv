@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>템플릿 매칭 &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.operation/operation.html">Basic Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>템플릿 매칭</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/24.imageTemplateMatch/imageTemplateMatch.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>템플릿 매칭<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Template Matching을 이용하여 이미지를 찾을 수 있다.</li>
+<li><code class="docutils literal"><span class="pre">cv2.matchTemplate()</span></code> , <code class="docutils literal"><span class="pre">cv2.minMaxLoc()</span></code> 함수에 대해서 알 수 있다</li>
+</ul>
+</div></blockquote>
+<p>개요
+===</p>
+<p>템플릿 매칭은 원본 이미지에서 특정 이미지를 찾는 방법입니다. 이때 사용하는 함수가 <code class="docutils literal"><span class="pre">cv2.matchTemplate()</span></code> 함수입니다.
+원본 이미지에 템플릿 이미지를 좌측상단 부터 미끄러지듯이 우측으로 이동하면서 계속 비교를 하는 것입니다.</p>
+<p>Return되는 값은 Gray 이미지로, 원본의 픽셀이 템플릿 이미지와 유사한 정도를 표현합니다.
+이때 강도는 매칭 방법에 따라서 다릅니다.</p>
+<p>아래는 매칭 방법에 따라서 결과가 어떻게 나오는지 보여주는 예제입니다.
+<code class="docutils literal"><span class="pre">cv2.TM_SQDIFF</span></code> , <code class="docutils literal"><span class="pre">cv2.TM_SQDIFF_NORMED</span></code> 은 가장 어두운 곳이 매칭지점이고, 나머지는 가장 밝은 곳이 매칭 지정이 됩니다.</p>
+<p><strong>Sample Code</strong></p>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id2">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result01.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result01.jpg" />
+<p class="caption"><span class="caption-text">TM_CCOEFF Method</span></p>
+</div>
+<div class="figure align-center" id="id3">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result02.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result02.jpg" />
+<p class="caption"><span class="caption-text">TM_CCOEFF_NORMED Method</span></p>
+</div>
+<div class="figure align-center" id="id4">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result03.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result03.jpg" />
+<p class="caption"><span class="caption-text">TM_CCORR Method</span></p>
+</div>
+<div class="figure align-center" id="id5">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result04.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result04.jpg" />
+<p class="caption"><span class="caption-text">TM_CCORR_NORMED Method</span></p>
+</div>
+<div class="figure align-center" id="id6">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result05.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result05.jpg" />
+<p class="caption"><span class="caption-text">TM_SQDIFF Method</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result06.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result06.jpg" />
+<p class="caption"><span class="caption-text">TM_SQDIFF_NORMED Method</span></p>
+</div>
+<p>위 결과는 보면 좌측 이미지가 Matching결과 이고, 붉은 상자 부분이 Matching Method에 따라 템플릿 이미지를 찾은 영역입니다.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

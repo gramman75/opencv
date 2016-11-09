@@ -28,6 +28,7 @@ Contents:
    doc/12.imageMorphological/imageMorphological.rst
    doc/13.imageGradient/imageGradient.rst
    doc/14.imagePyramid/imagePyramid.rst
+   doc/15.imageContours/imageContours.rst
 
 
 Indices and tables

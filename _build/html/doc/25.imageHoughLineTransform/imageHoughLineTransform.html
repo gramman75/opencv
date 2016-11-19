@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; gramman 0.1 documentation</title>
+  <title>허프 변환 &mdash; gramman 0.1 documentation</title>
   
 
   
@@ -126,7 +126,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li>허프 변환</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -140,7 +140,159 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="id1">
+<h1>허프 변환<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>허프 변환에 대해서 알수 있다.</li>
+<li>허프 변환을 이용하여 이미지의 Line을 찾을 수 있다.</li>
+<li>허프 변환에서 사용하는 <code class="docutils literal"><span class="pre">cv2.HoughLines()</span></code> , <code class="docutils literal"><span class="pre">cv2.HoughLinesP()</span></code> 함수에 대해서 알 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>허프변환은 이미지에서 모양을 찾는 가장 유명한 방법입니다. 이 방법을 이용하면 이미지의 형태를 찾거나, 누락되거나 깨진 영역을 복원할 수 있습니다.</p>
+<p>기본적으로 허프변환의 직선의 방정식을 이용합니다. 하나의 점을 지나는 무수한 직선의 방적식은
+y=mx+c로 표현할 수 있으며, 이것을 삼각함수를 이용하여 변형하면 r = 𝑥 cos 𝜃 + 𝑦 sin 𝜃 으로 표현할 수 있습니다.</p>
+<p>그럼 아래 이미지를 보고 설명을 하겠습니다. 3개의 점이 있고, 그중 우리가 찾는 직선은 핑크색 직선 입니다.</p>
+<p>그럼 각 점(x,y)에 대해서 삼각함수를 이용하여 𝜃 값을 1 ~ 180까지 변화를 하면서 원점에서 (x,y)까지의 거리(r)을 구합니다. 그러면 (𝜃, r)로 구성된 180개의 2차원 배열을 구할 수 있습니다.</p>
+<p>동일한 방법으로 두번째 점에 대해서도 𝜃값을 변화해 가면서 2차원 배열을 구합니다.</p>
+<div class="figure align-center" id="id5">
+<img alt="../../_images/image013.png" src="../../_images/image013.png" />
+<p class="caption"><span class="caption-text">(출처: <a class="reference external" href="https://en.wikipedia.org/wiki/Hough_transform">위키 피디아</a> )</span></p>
+</div>
+<p>이렇게 해서 구해서 2차원 배열을 다시 그래프로 표현하면 아래와 같이 사인파 그래프로 표현이 됩니다.
+아래 3개의 방정식의 만나는 점이 바로 직선인 확율이 높은 점 입니다.
+즉, 𝜃가 60이고 거리가 80인 직선의 방정식을 구할 수 있는 것 입니다.</p>
+<div class="figure align-center">
+<img alt="../../_images/image022.png" src="../../_images/image022.png" />
+</div>
+</div>
+<div class="section" id="opencv">
+<h2>OpenCV를 이용한 허프변환<a class="headerlink" href="#opencv" title="Permalink to this headline">¶</a></h2>
+<p>OpenCV는 위에서 설명한 수학적 이론이 <code class="docutils literal"><span class="pre">cv2.HoughLines()</span></code> 함수에 구현이 되어 있습니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.HoughLines(image, rho, theta, threshold[, lines[, srn[, stn[, min_theta[, max_theta]]]]]) → lines</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> &#8211; 8bit, single-channel binary image, canny edge를 선 적용.</li>
+<li><strong>rho</strong> &#8211; r 값의 범위 (0 ~ 1 실수)</li>
+<li><strong>theta</strong> &#8211; 𝜃 값의 범위(0 ~ 180 정수)</li>
+<li><strong>threshold</strong> &#8211; 만나는 점의 기준, 숫자가 작으면 많은 선이 검출되지만 정확도가 떨어지고, 숫자가 크면 정확도가 올라감.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1">#-*- coding:utf-8-*-</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">r&#39;images\chessboard\frame01.jpg&#39;</span><span class="p">)</span>
+<span class="n">img_original</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">gray</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="n">apertureSize</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">HoughLines</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">rho</span><span class="p">,</span> <span class="n">theta</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">rho</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">rho</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">))</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y0</span><span class="o">+</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x0</span> <span class="o">-</span> <span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="p">))</span>
+        <span class="n">y2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">y0</span> <span class="o">-</span><span class="mi">1000</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">img_original</span><span class="p">,</span><span class="n">img</span><span class="p">))</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">,</span><span class="n">res</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/result0112.jpg" src="../../_images/result0112.jpg" />
+<p class="caption"><span class="caption-text">threshold가 100일 경우</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/result028.jpg" src="../../_images/result028.jpg" />
+<p class="caption"><span class="caption-text">threshold가 130일 경우</span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>확율 허프 변환<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>허프변환은 모든 점에 대해서 계산을 하기 때문에 시간이 많이 소요됩니다. 확율 허프변환(Probabilistic Hough Transform)은 이전 허프변환을 최적화 한 것 입니다. 모든 점을 대상으로 하는 것이 아니라 임의의 점을 이용하여 직선을 찾는 것입니다. 단 임계값을 작게 해야만 합니다.
+<code class="docutils literal"><span class="pre">cv2.HoughLinesP()</span></code> 함수를 이용하는데, 장점은 선의 시작점과 끝점을 Return해주기 때문에
+쉽게 화면에 표현할 수 있습니다.</p>
+<dl class="function">
+<dt>
+<code class="descname">cv2.HoughLinesP(image, rho, theta, threshold, minLineLength, maxLineGap) → lines</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>image</strong> &#8211; 8bit, single-channel binary image, canny edge를 선 적용.</li>
+<li><strong>rho</strong> &#8211; r 값의 범위 (0 ~ 1 실수)</li>
+<li><strong>theta</strong> &#8211; 𝜃 값의 범위(0 ~ 180 정수)</li>
+<li><strong>threshold</strong> &#8211; 만나는 점의 기준, 숫자가 작으면 많은 선이 검출되지만 정확도가 떨어지고, 숫자가 크면 정확도가 올라감.</li>
+<li><strong>minLineLength</strong> &#8211; 선의 최소 길이. 이 값보다 작으면 reject.</li>
+<li><strong>maxLineGap</strong> &#8211; 선과 선사이의 최대 허용간격. 이 값보다 작으며        reject.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Sample Code</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images\hough_images.jpg&#39;</span><span class="p">)</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="n">apertureSize</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
+<span class="n">minLineLength</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">maxLineGap</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">HoughLinesP</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">360</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">minLineLength</span><span class="p">,</span><span class="n">maxLineGap</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">),(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;img1&#39;</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/result034.jpg" src="../../_images/result034.jpg" />
+<p class="caption"><span class="caption-text">MinLineLength = 100, MaxLineGap = 10</span></p>
+</div>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/result042.jpg" src="../../_images/result042.jpg" />
+<p class="caption"><span class="caption-text">MinLineLength = 100, MaxLineGap = 0</span></p>
+</div>
+</div>
+</div>
+
 
            </div>
           </div>

@@ -159,29 +159,98 @@
 <p>아래는 매칭 방법에 따라서 결과가 어떻게 나오는지 보여주는 예제입니다.
 <code class="docutils literal"><span class="pre">cv2.TM_SQDIFF</span></code> , <code class="docutils literal"><span class="pre">cv2.TM_SQDIFF_NORMED</span></code> 은 가장 어두운 곳이 매칭지점이고, 나머지는 가장 밝은 곳이 매칭 지정이 됩니다.</p>
 <p><strong>Sample Code</strong></p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#-*-coding:utf-8-*-</span>
+
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/capture 0.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">img2</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/cap_template.png&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># template 이미지의 가로/세로</span>
+<span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">shape</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Template Match Method</span>
+<span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cv2.TM_CCOEFF&#39;</span><span class="p">,</span><span class="s1">&#39;cv2.TM_CCOEFF_NORMED&#39;</span><span class="p">,</span><span class="s1">&#39;cv2.TM_CCORR&#39;</span><span class="p">,</span><span class="s1">&#39;cv2.TM_CCORR_NORMED&#39;</span><span class="p">,</span><span class="s1">&#39;cv2.TM_SQDIFF&#39;</span><span class="p">,</span><span class="s1">&#39;cv2.TM_SQDIFF_NORMED&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">meth</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">img2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">meth</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">template</span><span class="p">,</span><span class="n">method</span><span class="p">)</span>
+    <span class="n">min_val</span><span class="p">,</span><span class="n">max_val</span><span class="p">,</span><span class="n">min_loc</span><span class="p">,</span> <span class="n">max_loc</span> <span class="o">=</span> <span class="n">cv3</span><span class="o">.</span><span class="n">minMaxLoc</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">TM_SQDIFF</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_SQDIFF_NORMED</span><span class="p">]:</span>
+        <span class="n">top_left</span> <span class="o">=</span> <span class="n">min_loc</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">top_left</span> <span class="o">=</span> <span class="n">max_loc</span>
+
+    <span class="n">bottom_right</span> <span class="o">=</span> <span class="p">(</span><span class="n">top_left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">w</span><span class="p">,</span><span class="n">top_left</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">top_left</span><span class="p">,</span><span class="n">bottom_right</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">meth</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([]),</span><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
 <p><strong>Result</strong></p>
 <div class="figure align-center" id="id2">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result01.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result01.jpg" />
+<img alt="../../_images/result012.png" src="../../_images/result012.png" />
 <p class="caption"><span class="caption-text">TM_CCOEFF Method</span></p>
 </div>
 <div class="figure align-center" id="id3">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result02.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result02.jpg" />
+<img alt="../../_images/result021.png" src="../../_images/result021.png" />
 <p class="caption"><span class="caption-text">TM_CCOEFF_NORMED Method</span></p>
 </div>
 <div class="figure align-center" id="id4">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result03.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result03.jpg" />
+<img alt="../../_images/result031.png" src="../../_images/result031.png" />
 <p class="caption"><span class="caption-text">TM_CCORR Method</span></p>
 </div>
 <div class="figure align-center" id="id5">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result04.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result04.jpg" />
+<img alt="../../_images/result041.png" src="../../_images/result041.png" />
 <p class="caption"><span class="caption-text">TM_CCORR_NORMED Method</span></p>
 </div>
 <div class="figure align-center" id="id6">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result05.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result05.jpg" />
+<img alt="../../_images/result05.png" src="../../_images/result05.png" />
 <p class="caption"><span class="caption-text">TM_SQDIFF Method</span></p>
 </div>
 <div class="figure align-center" id="id7">
-<img alt="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result06.jpg" src="doc\24.imageTemplateMatch\../../_static/24.imageTemplateMatch/result06.jpg" />
+<img alt="../../_images/result06.png" src="../../_images/result06.png" />
 <p class="caption"><span class="caption-text">TM_SQDIFF_NORMED Method</span></p>
 </div>
 <p>위 결과는 보면 좌측 이미지가 Matching결과 이고, 붉은 상자 부분이 Matching Method에 따라 템플릿 이미지를 찾은 영역입니다.</p>

@@ -27,7 +27,7 @@ Return되는 값은 Gray 이미지로, 원본의 픽셀이 템플릿 이미지�
 .. code-block:: python
     :linenos:
 
-   #-*-coding:utf-8-*-
+    #-*-coding:utf-8-*-
 
     import cv2
     import numpy as np
@@ -64,32 +64,32 @@ Return되는 값은 Gray 이미지로, 원본의 픽셀이 템플릿 이미지�
 
 **Result**
 
-.. figure:: ../../_static/24.imageTemplateMatch/result01.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result01.png
     :align: center
 
     TM_CCOEFF Method
 
-.. figure:: ../../_static/24.imageTemplateMatch/result02.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result02.png
     :align: center
 
     TM_CCOEFF_NORMED Method
 
-.. figure:: ../../_static/24.imageTemplateMatch/result03.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result03.png
     :align: center
 
     TM_CCORR Method
 
-.. figure:: ../../_static/24.imageTemplateMatch/result04.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result04.png
     :align: center
 
     TM_CCORR_NORMED Method
 
-.. figure:: ../../_static/24.imageTemplateMatch/result05.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result05.png
     :align: center
 
     TM_SQDIFF Method
 
-.. figure:: ../../_static/24.imageTemplateMatch/result06.jpg
+.. figure:: ../../_static/24.imageTemplateMatch/result06.png
     :align: center
 
     TM_SQDIFF_NORMED Method

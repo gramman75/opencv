@@ -20,7 +20,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('chessboard.jpg')
+img = cv2.imread('images\chessboard.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 gray = np.float32(gray)
 dst = cv2.cornerHarris(gray, 9, 3, 0.04)

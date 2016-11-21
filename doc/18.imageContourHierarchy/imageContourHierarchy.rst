@@ -21,6 +21,7 @@ Hierarchy
 아래 원본 이미지에 대해서 Contour Line을 적용한 결과 입니다.
 
 .. figure:: ../../_static/18.imageContourHierarchy/image01.jpg
+
     :align: center
 
     원본 이미지
@@ -59,9 +60,10 @@ Hierarchy
     plt.show()
 
 **Result**
-
-.. figure:: ../../_static/18.imageContourHierarchy/image2.jpg
+                          
+.. figure:: ../../_static/18.imageContourHierarchy/image02.jpg
     :align: center
+
 
 위 결과는 총 9개의 contour line으로 구성이 되어 있습니다. 주의해서 봐야할 부분은 3,3a와 4,4a입니다. Hirerarchy 구성시 child의 child가 있을 경우
 바깥선과 안쪽선이 서로 분리가 되어  contour line을 구성합니다. 이는 포함 관계를 표현하기 위해서 입니다.(5의 경우는 child만 있기 때문에 contour line이 분리되지 않았습니다.)
@@ -106,7 +108,7 @@ RETR_CCOMP
 
 이 mode는 Hierarchy를 2-Level로 표현합니다. 바깥쪽(외곽선)은 모두 1-Level, 안에 포함된 것은 2-Level이 됩니다.
 
-.. figure:: ../../_static/18.imageContourHierarchy/image3.jpg
+.. figure:: ../../_static/18.imageContourHierarchy/image03.jpg
     :align: center
 
 위 그림을 보면  괄호 밖 숫자는 contours의 순서이고, 괄호 안 숫자는 hierachy를 나타냅니다. 이전과 다른 점은 가장 안쪽에서 부터
@@ -137,7 +139,7 @@ RETR_TREE
 이 mode는 Hierarchy를 완전한게 표현합니다. 즉 누구에게도 포함되지 않은 contour는 hierarchy-0이 되고, 그 안쪽으로 포함되는 contours는
 순서대로 hierachy를 부여받습니다.
 
-.. figure:: ../../_static/18.imageContourHierarchy/image4.jpg
+.. figure:: ../../_static/18.imageContourHierarchy/image04.jpg
     :align: center
 
 contour-0은 next는 contour-7, previous는 없으며, child는 contour-1, parent는 없습니다. 결과는 [7,-1,1,-1] 입니다.

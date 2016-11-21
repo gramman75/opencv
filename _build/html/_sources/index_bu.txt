@@ -38,6 +38,9 @@ Contents:
    doc/23.imageFourierTransform/imageFourierTransform.rst
    doc/24.imageTemplateMatch/imageTemplateMatch.rst
    doc/25.imageHoughLineTransform/imageHoughLineTransform.rst
+   doc/26.imageHoughCircleTransform/imageHoughCircleTransform.rst
+   doc/27.imageWaterShed/imageWaterShed.rst
+
 
 Indices and tables
 ==================

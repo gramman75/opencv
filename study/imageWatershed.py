@@ -14,7 +14,7 @@ from matplotlib import pyplot as plt
 
 
 # img = cv2.imread('images/watershed.jpg')
-img = cv2.imread('images/water_coins.jpg')
+img = cv2.imread('images/watershed.jpg')
 
 # binaray image로 변환
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -47,8 +47,8 @@ markers = cv2.watershed(img,markers)
 img[markers == -1] = [255,0,0]
 
 
-images = [img,gray,thresh,sure_bg,  dist_transform, sure_fg, unknown, markers]
-titles = ['Original','Gray','Binary','Sure BG','Distance','Sure FG','Unknow','Markers']
+images = [gray,thresh,sure_bg,  dist_transform, sure_fg, unknown, markers, img]
+titles = ['Gray','Binary','Sure BG','Distance','Sure FG','Unknow','Markers','Result']
 
 for i in xrange(len(images)):
     plt.subplot(2,4,i+1),plt.imshow(images[i]),plt.title(titles[i]),plt.xticks([]),plt.yticks([])

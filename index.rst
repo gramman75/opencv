@@ -33,6 +33,13 @@ Contents:
    doc/17.imageContourProperty/imageContourProperty.rst
    doc/18.imageContourHierarchy/imageContourHierarchy.rst
    doc/19.imageHistograms/imageHistograms.rst
+   doc/20.imageHistogramEqualization/imageHistogramEqualization.rst
+   doc/21.image2DHistogram/image2DHistogram.rst
+   doc/23.imageFourierTransform/imageFourierTransform.rst
+   doc/24.imageTemplateMatch/imageTemplateMatch.rst
+   doc/25.imageHoughLineTransform/imageHoughLineTransform.rst
+   doc/26.imageHoughCircleTransform/imageHoughCircleTransform.rst
+   doc/27.imageWaterShed/imageWaterShed.rst
 
 
 Indices and tables

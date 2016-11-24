@@ -40,6 +40,9 @@ Contents:
    doc/25.imageHoughLineTransform/imageHoughLineTransform.rst
    doc/26.imageHoughCircleTransform/imageHoughCircleTransform.rst
    doc/27.imageWaterShed/imageWaterShed.rst
+   doc/28.mlKnn/mlKnn.rst
+   doc/29.matchDigits/matchDigits.rst
+   doc/99.demo/demo1.rst
 
 
 Indices and tables

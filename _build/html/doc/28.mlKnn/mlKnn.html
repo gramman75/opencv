@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>k-Nearest Neighbour(kNN) &mdash; gramman 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="Demo" href="../99.demo/demo1.html"/>
+        <link rel="prev" title="Watershed 알고리즘을 이용한 이미지 분할" href="../27.imageWaterShed/imageWaterShed.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> gramman
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04.drawWithMouse/drawWithMouse.html">Mouse로 그리기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05.trackBar/trackBar.html">Trackbar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06.operation/operation.html">Basic Operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07.imageArithmetic/imageArithmetic.html">이미지 연산</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08.imageProcessing/imageProcessing.html">이미지 Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.imageThresholding/imageThresholding.html">이미지 임계처리</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.imageTransformation/imageTransformation.html">이미지의 기하학적 변형</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11.imageSmoothing/imageSmoothing.html">Image Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.imageMorphological/imageMorphological.html">Morphological Transformations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13.imageGradient/imageGradient.html">Image Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.imagePyramid/imagePyramid.html">Image Pyramids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.imageContours/imageContours.html">Image Contours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../16.imageContourFeature/imageContourFeature.html">Contour Feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../17.imageContourProperty/imageContourProperty.html">Contour Property</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.imageContourHierarchy/imageContourHierarchy.html">Contours Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19.imageHistograms/imageHistograms.html">히스토그램</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20.imageHistogramEqualization/imageHistogramEqualization.html">히스토그램 균일화</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21.image2DHistogram/image2DHistogram.html">2D Histogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../23.imageFourierTransform/imageFourierTransform.html">푸리에 변환</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../24.imageTemplateMatch/imageTemplateMatch.html">템플릿 매칭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../25.imageHoughLineTransform/imageHoughLineTransform.html">허프 변환</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../26.imageHoughCircleTransform/imageHoughCircleTransform.html">Hough Circle Transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../27.imageWaterShed/imageWaterShed.html">Watershed 알고리즘을 이용한 이미지 분할</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">k-Nearest Neighbour(kNN)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../99.demo/demo1.html">Demo</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">gramman</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>k-Nearest Neighbour(kNN)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/doc/28.mlKnn/mlKnn.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="k-nearest-neighbour-knn">
+<h1>k-Nearest Neighbour(kNN)<a class="headerlink" href="#k-nearest-neighbour-knn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>k-Nearest Neighbour(kNN) 알고리즘에 대해서 알 수 있다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="theory">
+<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>Machine Learning에는 지도학습(Supervised Learning)과 비지도학습(Unsupervised Learning)가 있습니다.</p>
+<p>지도학습은 훈련용 Data를 만들고, 사람이 답을 알려 줍니다. 그러면 컴퓨터는 알고리즘을 이용하여 훈련용으로 제시되지 않은 Data에 대해서도 값을 찾아 냅니다.</p>
+<p>비지도학습은 훈련용 Data에 답을 제시하고 않고 컴퓨터가 스스로 답을 찾아내는 방법입니다.</p>
+<p>kNN은 지도학습 중 단순한 알고리즘을 이용한 방법입니다.</p>
+<div class="figure align-center">
+<img alt="../../_images/image014.png" src="../../_images/image014.png" />
+</div>
+<p>위 그림은 삼각형과 사각형이 있는 공간 입니다. 이 공간에 가운데 초록색 원이 있습니다. 이 원은 삼각형일까요 사각형일까요. 이것을 판단하는 방법은 여러가지가 있을 것 입니다.</p>
+<p>먼저 가장 가까운 점은 찾는 것 입니다. 위 이미지에서 보면 빨간색이 가까이에 있으니 초록색 원은 빨간색으로 판단할 수도 있습니다. 하지만 좀더 범위를 넓혀보면 오히려 파란색 점이 많이 있습니다.
+이때 범위를 몇단계까지 넓혀 판단할 것인지에 결정하게 되는데 이때 넗히는 단계를 k값으로 정합니다.</p>
+<p>위 그림에서 k가 3이면 빨간색 2개와 파란색 1개 이기 때문에 초록색원은 빨간색으로 판단할 수 있습니다. 만약 k값으 7로 하면 빨간색 2개와 파란색 5개가 있기 때문에 파란색으로 판단할 수 있습니다.</p>
+<p>또한 k값에 가중치를 줄 수 있는데, 가까운곳에 더 많은 가중치를 두어서 판단할 수도 있습니다.</p>
+<p>아래는  0 ~ 100의 좌표에 25개의 Random한 점을 생성합니다. Red는 0으로, Blue는 1로 분류를 한 후에 임의의 초록색 점을 생성하고, 그 값이 Red(0)인지 Blue(1)인지 판단하는 예제입니다.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">trainData</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,(</span><span class="mi">25</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,(</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">red</span> <span class="o">=</span> <span class="n">trainData</span><span class="p">[</span><span class="n">response</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="c1">#red는 0 class로 분류</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">red</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">red</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">80</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
+
+<span class="n">blue</span> <span class="o">=</span> <span class="n">trainData</span><span class="p">[</span><span class="n">response</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span> <span class="c1">#blue는 1 Class분류</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">blue</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">blue</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">80</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="n">newcomer</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">newcomer</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">newcomer</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="mi">80</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">KNearest_create</span><span class="p">()</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">trainData</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">ROW_SAMPLE</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="n">ret</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">neighbours</span><span class="p">,</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">findNearest</span><span class="p">(</span><span class="n">newcomer</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">#k 값을 3으로 설정</span>
+
+<span class="k">print</span> <span class="s2">&quot;result : &quot;</span><span class="p">,</span> <span class="n">results</span>
+<span class="k">print</span> <span class="s2">&quot;neighbours :&quot;</span><span class="p">,</span> <span class="n">neighbours</span>
+<span class="k">print</span> <span class="s2">&quot;distance: &quot;</span><span class="p">,</span> <span class="n">dist</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Result</strong></p>
+<div class="figure align-center">
+<img alt="../../_images/result0115.jpg" src="../../_images/result0115.jpg" />
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="p">:</span>  <span class="p">[[</span> <span class="mf">0.</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">neighbours</span> <span class="p">:</span> <span class="p">[[</span> <span class="mf">1.</span>  <span class="mf">0.</span>  <span class="mf">0.</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">distance</span><span class="p">:</span>  <span class="p">[[</span> <span class="mf">250.</span>  <span class="mf">293.</span>  <span class="mf">873.</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../99.demo/demo1.html" class="btn btn-neutral float-right" title="Demo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../27.imageWaterShed/imageWaterShed.html" class="btn btn-neutral" title="Watershed 알고리즘을 이용한 이미지 분할" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, gramman.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

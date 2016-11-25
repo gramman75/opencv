@@ -1,8 +1,8 @@
 .. demo.rst
 
-====
-Demo
-====
+==========
+Demo 준비1
+==========
 
 
 사전 준비 작업
@@ -99,47 +99,63 @@ Computer - Arduino
 	위 테스트틀 위해서 우선 아두이노에 LED를 연결하여 키보드를 눌렀을 때 정상적으로 아두이노로 명령이 전달이 되는지 확인해보겠습니다.
 
 	우선 아두이노에 LED와 저항을 연결해야 합니다.
-	아래는 Fritzing  툴을 이용하여 회로도를 그렸습니다.
+
+.. figure:: ../../_static/99.demo/image04.jpg
+    :align: center  
+
+	아래는 Fritzing  툴을 이용하여 그린 회로도입니다.
 
 .. figure:: ../../_static/99.demo/image02.jpg
     :align: center
 
 
-이제 아두이노와 PC를 USB 포트로 연결을 하고, 키보드로 상하좌우 버튼을 누릅니다.그르면 상단부터 순서대로 LED가 깜빡거리를 것을 확인할 수 있습니다.
-테스트 결과는  `여기 <https://www.youtube.com/watch?v=6afzjPchmwY>`_ 에서 확인할 수 있습니다. 
+이제 아두이노와 PC를 USB 포트로 연결을 하고 ``test/rc_control_test.py`` 파일을 아래와 같이 수행합니다.
 
+>>> python rc_control_test.py
+
+command 창에서 키보드로 상하좌우 버튼을 누릅니다.그러면 상단부터 순서대로 LED가 깜빡거리를 것을 확인할 수 있습니다.
+
+.. youtube:: 6afzjPchmwY
 
 Computer - Raspberry Pi
 -----------------------
 
 Computer와 Raspberry Pi에서 확인할 사항은 이미지 전송과 거리측정 센서 연결 상태입니다.
 
-우선 Computer에서 rc_driver.py를 실행합니다.
+우선 Computer에서 ``test/stream_server_test.py`` 를 실행합니다.
 
->>> python rc_driver.py
+>>> python stream_server_test.py
 
 그러면 Computer는 서버가 되어 Clinet의 요청을 기다리고 있습니다.
 
-다음으로 Raspberry Pi에 접속을 하여 2개의 터미널을 수행시키고 아래와 같이 입력합니다.
 
->>> python stream_clinet.py // 이미지 전송 Clinet
->>> sudo python ultrasonici_cinet.py // 거리 측정 Data전송 Client
+다음으로 Raspberry Pi에 접속을 하여 터미널에서 ``raspberryPi/stream_client.py`` 를 실행합니다.
 
-그러면 Computer에 카메라의 이미지가 전송이 되고, Computer의 Terminal에는 ultrasonic Sensor가 측정한 거리가 Cm단위로 보여지게 됩니다.
+>>> python stream_client.py // 이미지 전송 Clinet
+
+그러면 Computer에 카메라의 이미지가 전송이 됩니다.
+
+.. youtube:: JtBfuzLiPZQ
+
+위 동영상에서 왼쪽이 Computer이고 오른쪽이 SSH로 접속한 Raspberry Pi입니다. 
+
+
+다음은 거리측정 센서 테스트 입니다. 
+
+우선 Computer에서 ``test/ultrasonic_server_test.py`` 를 실행합니다.
+
+>>> python ultrasonic_server_test.py
+
+
+Raspberry Pi에서 ``raspberryPi/ultrasonic_client.py`` 를 수행합니다. 
+
+>>> sudo python ultrasonic_client.py // 거리 측정 Data전송 Client
+
+그러면 화면에 Cm단위로 측정된 거리가 보여집니다. 
+
+.. youtube:: 9ZSFDEVaJUU
 
 
 위와 같이 테스트가 완료가 되면 시스템 Setting은 완료가 된 상태입니다.
 
-다음은 이제 Open CV의 Machine Learning기능을 이용하여 학습을 시켜 보도록 하겠습니다.
-
-
-
-
-
-
-
-
-
-
-
-	
+다음은 이제 Open CV의 Machine Learning기능을 테스트를 진행해 보겠습니다.

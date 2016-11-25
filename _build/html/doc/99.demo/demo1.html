@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Demo &mdash; gramman 0.1 documentation</title>
+  <title>Demo 준비1 &mdash; gramman 0.1 documentation</title>
   
 
   
@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
-        <link rel="prev" title="Watershed 알고리즘을 이용한 이미지 분할" href="../27.imageWaterShed/imageWaterShed.html"/> 
+        <link rel="prev" title="kNN을 이용한 숫자 인식" href="../29.matchDigits/matchDigits.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -107,16 +107,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../25.imageHoughLineTransform/imageHoughLineTransform.html">허프 변환</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../26.imageHoughCircleTransform/imageHoughCircleTransform.html">Hough Circle Transform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../27.imageWaterShed/imageWaterShed.html">Watershed 알고리즘을 이용한 이미지 분할</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Demo</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../28.mlKnn/mlKnn.html">k-Nearest Neighbour(kNN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../29.matchDigits/matchDigits.html">kNN을 이용한 숫자 인식</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demo 준비1</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">사전 준비 작업</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Demo소스 다운로드</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">소스 수정</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">아두이노</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#demo">Demo소스 다운로드</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">소스 수정</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">아두이노</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#computer">Computer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#raspberry-pi">Raspberry Pi</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">테스트</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id4">테스트</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#computer-arduino">Computer - Arduino</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#computer-raspberry-pi">Computer - Raspberry Pi</a></li>
 </ul>
@@ -153,7 +155,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Demo</li>
+    <li>Demo 준비1</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -167,8 +169,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="demo">
-<h1>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="demo-1">
+<h1>Demo 준비1<a class="headerlink" href="#demo-1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>사전 준비 작업<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Demo를 위해서는 아래 프로그램이 설치가 되어 있어야 합니다.</p>
@@ -181,8 +183,8 @@
 </div></blockquote>
 <p>또한 Raspberry Pi에 Pi Camera와 거리 측정을 위한 ultrasonic Sensor가 연결되어 있어야 합니다.</p>
 </div>
-<div class="section" id="id2">
-<h2>Demo소스 다운로드<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="demo">
+<h2>Demo소스 다운로드<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p>Demo에 관련 소스는 <a class="reference external" href="https://github.com/hamuchiwa/AutoRCCar">Github</a> 에서 확인할 수 있습니다.</p>
 <p>git이 설치가 되어 있으면 terminal에서 아래와 같이 입력합니다.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">hamuchiwa</span><span class="o">/</span><span class="n">AutoRCCar</span><span class="o">.</span><span class="n">git</span>
@@ -194,11 +196,11 @@
 </div>
 <p>동일한 작업을 Computer와 Raspberry Pi에서 수행을 하여 소스를 다운 받습니다.</p>
 </div>
-<div class="section" id="id3">
-<h2>소스 수정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>소스 수정<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>다운 받은 소스에서 아래 부분을 Demo환경에 맞게 수정해야 합니다.</p>
-<div class="section" id="id4">
-<h3>아두이노<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>아두이노<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li>arduino/rc_keyboard_control.ino</li>
@@ -243,38 +245,56 @@
 <p>라즈베리파이 관련해서는 이미지를 전송하는 Client(<code class="docutils literal"><span class="pre">stream_clinet.py</span></code>)와 거리 측정을 위한 Client(<code class="docutils literal"><span class="pre">ultrasoni_clinet.py</span></code>)가 있습니다. 이 2개의 소스에서도 socket관련 부분을 컴퓨터의 IP로 변경을 해주면 됩니다.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>테스트<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>테스트<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>이제 각 연결이 제대로 되었는지 테스트를 해보겠습니다.</p>
 <div class="section" id="computer-arduino">
 <h3>Computer - Arduino<a class="headerlink" href="#computer-arduino" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>위 테스트틀 위해서 우선 아두이노에 LED를 연결하여 키보드를 눌렀을 때 정상적으로 아두이노로 명령이 전달이 되는지 확인해보겠습니다.</p>
-<p>우선 아두이노에 LED와 저항을 연결해야 합니다.
-아래는 Fritzing  툴을 이용하여 회로도를 그렸습니다.</p>
+<p>우선 아두이노에 LED와 저항을 연결해야 합니다.</p>
 </div></blockquote>
+<div class="figure align-center">
+<img alt="../../_images/image041.jpg" src="../../_images/image041.jpg" />
+</div>
 <div class="figure align-center">
 <img alt="../../_images/image022.jpg" src="../../_images/image022.jpg" />
 </div>
-<p>이제 아두이노와 PC를 USB 포트로 연결을 하고, 키보드로 상하좌우 버튼을 누릅니다.그르면 상단부터 순서대로 LED가 깜빡거리를 것을 확인할 수 있습니다.
-테스트 결과는  <a class="reference external" href="https://www.youtube.com/watch?v=6afzjPchmwY">여기</a> 에서 확인할 수 있습니다.</p>
+<p>이제 아두이노와 PC를 USB 포트로 연결을 하고 <code class="docutils literal"><span class="pre">test/rc_control_test.py</span></code> 파일을 아래와 같이 수행합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">rc_control_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
 </div>
+<p>command 창에서 키보드로 상하좌우 버튼을 누릅니다.그러면 상단부터 순서대로 LED가 깜빡거리를 것을 확인할 수 있습니다.</p>
+<iframe src="http://www.youtube.com/embed/6afzjPchmwY" style="border: 0; height: 345px; width: 560px">
+</iframe></div>
 <div class="section" id="computer-raspberry-pi">
 <h3>Computer - Raspberry Pi<a class="headerlink" href="#computer-raspberry-pi" title="Permalink to this headline">¶</a></h3>
 <p>Computer와 Raspberry Pi에서 확인할 사항은 이미지 전송과 거리측정 센서 연결 상태입니다.</p>
-<p>우선 Computer에서 rc_driver.py를 실행합니다.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">rc_driver</span><span class="o">.</span><span class="n">py</span>
+<p>우선 Computer에서 <code class="docutils literal"><span class="pre">test/stream_server_test.py</span></code> 를 실행합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">stream_server_test</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>그러면 Computer는 서버가 되어 Clinet의 요청을 기다리고 있습니다.</p>
-<p>다음으로 Raspberry Pi에 접속을 하여 2개의 터미널을 수행시키고 아래와 같이 입력합니다.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">stream_clinet</span><span class="o">.</span><span class="n">py</span> <span class="o">//</span> <span class="n">이미지</span> <span class="n">전송</span> <span class="n">Clinet</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sudo</span> <span class="n">python</span> <span class="n">ultrasonici_cinet</span><span class="o">.</span><span class="n">py</span> <span class="o">//</span> <span class="n">거리</span> <span class="n">측정</span> <span class="n">Data전송</span> <span class="n">Client</span>
+<p>다음으로 Raspberry Pi에 접속을 하여 터미널에서 <code class="docutils literal"><span class="pre">raspberryPi/stream_client.py</span></code> 를 실행합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">stream_client</span><span class="o">.</span><span class="n">py</span> <span class="o">//</span> <span class="n">이미지</span> <span class="n">전송</span> <span class="n">Clinet</span>
 </pre></div>
 </div>
-<p>그러면 Computer에 카메라의 이미지가 전송이 되고, Computer의 Terminal에는 ultrasonic Sensor가 측정한 거리가 Cm단위로 보여지게 됩니다.</p>
-<p>위와 같이 테스트가 완료가 되면 시스템 Setting은 완료가 된 상태입니다.</p>
-<p>다음은 이제 Open CV의 Machine Learning기능을 이용하여 학습을 시켜 보도록 하겠습니다.</p>
+<p>그러면 Computer에 카메라의 이미지가 전송이 됩니다.</p>
+<iframe src="http://www.youtube.com/embed/JtBfuzLiPZQ" style="border: 0; height: 345px; width: 560px">
+</iframe><p>위 동영상에서 왼쪽이 Computer이고 오른쪽이 SSH로 접속한 Raspberry Pi입니다.</p>
+<p>다음은 거리측정 센서 테스트 입니다.</p>
+<p>우선 Computer에서 <code class="docutils literal"><span class="pre">test/ultrasonic_server_test.py</span></code> 를 실행합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python</span> <span class="n">ultrasonic_server_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Raspberry Pi에서 <code class="docutils literal"><span class="pre">raspberryPi/ultrasonic_client.py</span></code> 를 수행합니다.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sudo</span> <span class="n">python</span> <span class="n">ultrasonic_client</span><span class="o">.</span><span class="n">py</span> <span class="o">//</span> <span class="n">거리</span> <span class="n">측정</span> <span class="n">Data전송</span> <span class="n">Client</span>
+</pre></div>
+</div>
+<p>그러면 화면에 Cm단위로 측정된 거리가 보여집니다.</p>
+<iframe src="http://www.youtube.com/embed/9ZSFDEVaJUU" style="border: 0; height: 345px; width: 560px">
+</iframe><p>위와 같이 테스트가 완료가 되면 시스템 Setting은 완료가 된 상태입니다.</p>
+<p>다음은 이제 Open CV의 Machine Learning기능을 테스트를 진행해 보겠습니다.</p>
 </div>
 </div>
 </div>
@@ -287,7 +307,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../27.imageWaterShed/imageWaterShed.html" class="btn btn-neutral" title="Watershed 알고리즘을 이용한 이미지 분할" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../29.matchDigits/matchDigits.html" class="btn btn-neutral" title="kNN을 이용한 숫자 인식" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

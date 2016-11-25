@@ -30,7 +30,9 @@
   
 
   
-    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/> 
+    <link rel="top" title="gramman 0.1 documentation" href="../../index.html"/>
+        <link rel="next" title="k-Nearest Neighbour(kNN)" href="../28.mlKnn/mlKnn.html"/>
+        <link rel="prev" title="Hough Circle Transform" href="../26.imageHoughCircleTransform/imageHoughCircleTransform.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -79,7 +81,7 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../01.imageStart/imageStart.html">이미지 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02.videoStart/videoStart.html">영상 다루기</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03.drawShape/drawShape.html">도형 그리기</a></li>
@@ -97,6 +99,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../15.imageContours/imageContours.html">Image Contours</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../16.imageContourFeature/imageContourFeature.html">Contour Feature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../17.imageContourProperty/imageContourProperty.html">Contour Property</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../18.imageContourHierarchy/imageContourHierarchy.html">Contours Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../19.imageHistograms/imageHistograms.html">히스토그램</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../20.imageHistogramEqualization/imageHistogramEqualization.html">히스토그램 균일화</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../21.image2DHistogram/image2DHistogram.html">2D Histogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../23.imageFourierTransform/imageFourierTransform.html">푸리에 변환</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../24.imageTemplateMatch/imageTemplateMatch.html">템플릿 매칭</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../25.imageHoughLineTransform/imageHoughLineTransform.html">허프 변환</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../26.imageHoughCircleTransform/imageHoughCircleTransform.html">Hough Circle Transform</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Watershed 알고리즘을 이용한 이미지 분할</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goal">Goal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theory">Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../28.mlKnn/mlKnn.html">k-Nearest Neighbour(kNN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../29.matchDigits/matchDigits.html">kNN을 이용한 숫자 인식</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../99.demo/demo1.html">Demo</a></li>
 </ul>
 
             
@@ -154,7 +173,7 @@
 </div>
 <div class="section" id="theory">
 <h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>이미지를 Grayscale로 변환하면 각 Pixel의 값(0 ~255)은 높고 낮음으로 구불할 수 있을 것입니다. 이것을 지형의 높낮이로 가정하고 높은 부분을 봉우리, 낮은 부분을 계곡이라고 표현할 수 있습니다.</p>
+<p>이미지를 Grayscale로 변환하면 각 Pixel의 값(0 ~255)은 높고 낮음으로 구분할 수 있을 것입니다. 이것을 지형의 높낮이로 가정하고 높은 부분을 봉우리, 낮은 부분을 계곡이라고 표현할 수 있습니다.</p>
 <p>그럼 그곳에 물을 붓는다고 생각하면 물이 섞이는 부분이 생길것입니다. 그 부분에 경계선을 만들어 서로 섞이지 않게 합니다.
 바로 그 경계선을 이미지의 구분지점으로 파악하여 이미지 분할을 하게 됩니다.</p>
 <p>아래 그림은 위 내용을 이미지로 표현한 것입니다.</p>
@@ -285,6 +304,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../28.mlKnn/mlKnn.html" class="btn btn-neutral float-right" title="k-Nearest Neighbour(kNN)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../26.imageHoughCircleTransform/imageHoughCircleTransform.html" class="btn btn-neutral" title="Hough Circle Transform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

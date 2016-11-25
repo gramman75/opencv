@@ -43,6 +43,7 @@ Contents:
    doc/28.mlKnn/mlKnn.rst
    doc/29.matchDigits/matchDigits.rst
    doc/99.demo/demo1.rst
+   doc/99.demo/demo2.rst
 
 
 Indices and tables

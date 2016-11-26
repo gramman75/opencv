@@ -115,7 +115,7 @@ Computer - Arduino
 
 command 창에서 키보드로 상하좌우 버튼을 누릅니다.그러면 상단부터 순서대로 LED가 깜빡거리를 것을 확인할 수 있습니다.
 
-.. youtube:: 6afzjPchmwY
+	* `동영상 확인 <https://www.youtube.com/watch?v=6afzjPchmwY>`_
 
 Computer - Raspberry Pi
 -----------------------
@@ -135,7 +135,7 @@ Computer와 Raspberry Pi에서 확인할 사항은 이미지 전송과 거리측
 
 그러면 Computer에 카메라의 이미지가 전송이 됩니다.
 
-.. youtube:: JtBfuzLiPZQ
+	* `동영상 확인 <https://www.youtube.com/watch?v=JtBfuzLiPZQ>`_	
 
 위 동영상에서 왼쪽이 Computer이고 오른쪽이 SSH로 접속한 Raspberry Pi입니다. 
 
@@ -153,7 +153,7 @@ Raspberry Pi에서 ``raspberryPi/ultrasonic_client.py`` 를 수행합니다.
 
 그러면 화면에 Cm단위로 측정된 거리가 보여집니다. 
 
-.. youtube:: 9ZSFDEVaJUU
+* `동영상 확인 <https://www.youtube.com/watch?v=9ZSFDEVaJUU>`_	
 
 
 위와 같이 테스트가 완료가 되면 시스템 Setting은 완료가 된 상태입니다.

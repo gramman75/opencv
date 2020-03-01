@@ -20,7 +20,7 @@ Transformations
 예로는 사이즈 변경(Scaling), 위치변경(Translation), 회전(Rotaion) 등이 있습니다.
 변환의 종류에는 몇가지 분류가 있습니다.
 
-    * 강체변환(Ridid-Body) : 크기 및 각도가 보존(ex; Translation, Rotation)
+    * 강체변환(Rigid-Body) : 크기 및 각도가 보존(ex; Translation, Rotation)
     * 유사변환(Similarity) : 크기는 변하고 각도는 보존(ex; Scaling)
     * 선형변환(Linear) : Vector 공간에서의 이동. 이동변환은 제외.
     * Affine : 선형변환과 이동변환까지 포함. 선의 수평성은 유지.(ex;사각형->평행사변형)

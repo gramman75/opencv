@@ -85,7 +85,7 @@ Otsu의 이진화
 
 지금까지 thresholding처리를 하면서 임계값을 사용자가 결정하여 parameter로 전달하였습니다. 그렇다면 그 임계값을 어떻게 정의해야 할까요? 가장 일반적인 방법은 trial and error방식으로 결정했습니다. 그러나 **bimodal image** (히스토그램으로 분석하면 2개의 peak가 있는 이미지)의 경우는 히스토그램에서 임계값을 어느정도 정확히 계산 할 수 있습니다. Otsu의 이진화(Otsu’s Binarization)란 bimodal image에서 임계값을 자동으로 계산해주는 것을 말합니다.
 
-적용 방법은 ``cv2.threshold()`` 함수의 flag에 추가로 ``cv2.THRESH_STSU`` 를 적용하면 됩니다. 이때 임계값은 0으로 전달하면 됩니다.
+적용 방법은 ``cv2.threshold()`` 함수의 flag에 추가로 ``cv2.THRESH_OTSU`` 를 적용하면 됩니다. 이때 임계값은 0으로 전달하면 됩니다.
 
 아래 예제는 global threshold값, Otsu thresholding적용, Gaussian blur를 통해 nosise를 제거한 후 Otsu thresholding적용 결과 입니다.
 

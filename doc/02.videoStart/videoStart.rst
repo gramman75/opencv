@@ -8,7 +8,7 @@
 Goal
 ====
     * 동영상을 읽고, 보여주고, 저장할 수 있다.
-    * 관련 함수인 ``cv2.VideoCapure()`` , ``cv2.VideoWriter()`` 에 대해서 알 수 있다.
+    * 관련 함수인 ``cv2.VideoCapture()`` , ``cv2.VideoWriter()`` 에 대해서 알 수 있다.
 
 
 Camera로 부터 영상 재생
@@ -20,7 +20,7 @@ Camera로부터 영상을 읽어, 화면에 보옂기 위해서 아래와 같은
       일반적으로 0 이면 Camera와 연결이 됩니다.
     * Loop를 돌면서 frame을 읽어 들입니다.
     * 읽은 frame에 대해서 변환작업을 수행한 후, 화면에 보여줍니다.
-    * 영상 재생이 끝나면, VideoCapure Object를 release하고 window를 닫습니다.
+    * 영상 재생이 끝나면, VideoCapture Object를 release하고 window를 닫습니다.
 
 아래 예제는 동영상을 읽어 grayscale로 변환 후 재생하는 예제입니다.
 

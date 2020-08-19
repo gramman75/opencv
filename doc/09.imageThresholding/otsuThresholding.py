@@ -11,7 +11,7 @@ ret2, th2 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
 blur = cv2.GaussianBlur(img,(5,5),0)
 
-ret3, th3 = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+ret3, th3 = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
 # plot all the images and their histograms
 images = [img, 0, th1, img, 0, th2, blur, 0, th3]

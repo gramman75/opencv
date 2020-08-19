@@ -59,7 +59,7 @@ thresholding type은 아래와 같습니다.
 .. py:function:: cv2.adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C)
 
     :param src: grayscale image
-    :param maxValue: 임계값
+    :param maxValue: 임계값을 넘었을 때 적용할 value
     :param adaptiveMethod: thresholding value를 결정하는 계산 방법
     :param thresholdType: threshold type
     :param blockSize: thresholding을 적용할 영역 사이즈

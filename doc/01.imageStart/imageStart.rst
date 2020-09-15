@@ -57,7 +57,7 @@ B(lue), G(reen), R(ed)로 표현을 합니다.
 
 ``cv2.imshow()`` 함수는 이미지를 사이즈에 맞게 보여줍니다.
 
->>> c22.imshow('image', img)
+>>> cv2.imshow('image', img)
 >>> cv2.waitKey(0)
 >>> cv2.destroyAllWindows()
 
